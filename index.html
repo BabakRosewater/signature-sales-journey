@@ -5,28 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signature Sales Journey Training Hub</title>
 
-  <!-- Tailwind (fine for internal training hub) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Markdown renderer + sanitizer -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 
-  <!-- React (UMD builds so Babel JSX works cleanly) -->
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom-client.production.min.js"></script>
+  <!-- React UMD -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 
+  <!-- IMPORTANT: react-dom-client UMD (creates window.ReactDOMClient) -->
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom-client.production.min.js"></script>
 
-  <!-- Babel (so app.js can be JSX without a build step) -->
+  <!-- Babel -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body class="text-slate-900">
   <div id="root"></div>
 
-  <!-- Our app (NO module mode) -->
+  <!-- NO module mode -->
   <script type="text/babel" data-presets="react" src="/app.js"></script>
 </body>
 </html>
