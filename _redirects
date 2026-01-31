@@ -1,2 +1,2 @@
-/module  /module/overview-and-framework 302
-/module/  /module/overview-and-framework 302
+/  /module/overview-and-framework 302
+/module/*  /index.html 200
