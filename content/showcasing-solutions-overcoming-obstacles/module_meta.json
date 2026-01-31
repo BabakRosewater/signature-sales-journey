@@ -1,0 +1,8 @@
+{
+  "title": "Module 03 — Showcasing Solutions & Overcoming Obstacles",
+  "description": "Selection + objections + turn",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

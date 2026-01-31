@@ -1,0 +1,8 @@
+{
+  "title": "Module 02 — Uncovering Needs & Building Trust",
+  "description": "Discovery + appraisal alignment",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

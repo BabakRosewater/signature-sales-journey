@@ -1,0 +1,8 @@
+{
+  "title": "Module 09 — Post-Sale Follow-Up & Loyalty",
+  "description": "Follow-up systems + loyalty",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

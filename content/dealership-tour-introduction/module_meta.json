@@ -1,0 +1,8 @@
+{
+  "title": "Module 06 — Dealership Tour & Introduction",
+  "description": "Tour that builds trust",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

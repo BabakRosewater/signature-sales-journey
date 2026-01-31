@@ -1,0 +1,13 @@
+[
+  { "order": 0, "slug": "overview-and-framework", "title": "00 — Overview & Framework", "description": "Natural Sales Process + Modular Training Framework" },
+  { "order": 1, "slug": "power-greeting", "title": "Module 01 — Greeting & First Impressions", "description": "Trust-first presence, non-verbal cues, scenarios, role-play" },
+  { "order": 2, "slug": "uncovering-needs-building-trust", "title": "Module 02 — Uncovering Needs & Building Trust", "description": "Discovery, appraisal, questions, scenarios, worksheets" },
+  { "order": 3, "slug": "showcasing-solutions-overcoming-obstacles", "title": "Module 03 — Showcasing Solutions & Overcoming Obstacles", "description": "Selection, objections, Feel-Felt-Found, turn process, worksheets" },
+  { "order": 4, "slug": "emotional-test-drive", "title": "Module 04 — Creating an Emotional Connection", "description": "Emotional Test Drive steps, science, worksheet" },
+  { "order": 5, "slug": "decision-point-building-value", "title": "Module 05 — Decision Point & Building Value", "description": "Hood ornament approach, value-building, worksheet" },
+  { "order": 6, "slug": "dealership-tour-introduction", "title": "Module 06 — Dealership Tour & Introduction", "description": "Tour flow + worksheet" },
+  { "order": 7, "slug": "closing-with-confidence", "title": "Module 07A — Closing with Confidence", "description": "Commitment, presenting numbers, worksheet" },
+  { "order": 8, "slug": "manager-closes", "title": "Module 07B — Manager Closes", "description": "Objection philosophy + close techniques" },
+  { "order": 9, "slug": "after-they-say-yes", "title": "Module 08 — After They Say Yes", "description": "Post-yes action steps" },
+  { "order": 10, "slug": "post-sale-follow-up-and-loyalty", "title": "Module 09 — Post-Sale Follow-Up & Loyalty", "description": "Follow-up methods, word tracks, unsold scripts, tips" }
+]

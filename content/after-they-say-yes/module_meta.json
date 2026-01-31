@@ -1,0 +1,8 @@
+{
+  "title": "Module 08 — After They Say Yes",
+  "description": "Post-yes steps + momentum",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}
