@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { createRoot } from "react-dom/client";
+const { useEffect, useMemo, useRef, useState } = React;
+const { createRoot } = ReactDOM;
 
 /** ---------- helpers ---------- */
 const jsonFetch = async (url) => {
