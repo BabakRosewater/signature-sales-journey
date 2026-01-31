@@ -1,10 +1,5 @@
-# 1) Let Pages Functions handle API routes (don't rewrite these to index.html)
- /api/*  /api/:splat  200
+/        /module/overview-and-framework 302
+/module  /module/overview-and-framework 302
+/module/ /module/overview-and-framework 302
 
-# 2) Make the homepage go to your default module (optional but nice)
- /  /module/overview-and-framework  302
- /module  /module/overview-and-framework  302
- /module/  /module/overview-and-framework  302
-
-# 3) SPA fallback for module routes (THIS is the key)
- /module/*  /index.html  200
+/module/* /index.html 200
