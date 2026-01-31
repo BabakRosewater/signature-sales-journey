@@ -1,0 +1,8 @@
+{
+  "title": "Module 07B — Manager Closes",
+  "description": "Manager-level objection resolution",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

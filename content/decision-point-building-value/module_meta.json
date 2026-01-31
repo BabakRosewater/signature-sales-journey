@@ -1,0 +1,8 @@
+{
+  "title": "Module 05 — Decision Point & Building Value",
+  "description": "Hood ornament + value building",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

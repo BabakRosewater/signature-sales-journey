@@ -1,0 +1,8 @@
+{
+  "title": "Module 04 — Creating an Emotional Connection",
+  "description": "Emotional Test Drive",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Module 01 — Greeting & First Impressions",
+  "description": "Trust-first presence + greeting execution",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}

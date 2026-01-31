@@ -1,0 +1,8 @@
+{
+  "title": "00 — Overview & Framework",
+  "description": "Natural Sales Process + Modular Training Framework",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ]
+}
