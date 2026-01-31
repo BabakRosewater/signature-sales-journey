@@ -1,2 +1,2 @@
-/api/* /api/:splat 200
-/* /index.html 200
+/module  /module/overview-and-framework 302
+/module/  /module/overview-and-framework 302
