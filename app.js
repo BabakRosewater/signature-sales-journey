@@ -1,5 +1,6 @@
+/* global React, ReactDOM, marked, DOMPurify */
+
 const { useEffect, useMemo, useRef, useState } = React;
-const { createRoot } = ReactDOM;
 
 /** ---------- helpers ---------- */
 const jsonFetch = async (url) => {
@@ -106,19 +107,24 @@ function App() {
   // Load module_meta.json when slug changes
   useEffect(() => {
     if (!slug) return;
+
     (async () => {
       setMeta(null);
       setTabError("");
       setTabHtml("");
+
       const m = await jsonFetch(`/content/${slug}/module_meta.json`);
       setMeta(m);
 
       // Default tab
-      const firstTab = (m.tabs && m.tabs[0] && m.tabs[0].id) ? m.tabs[0].id : "overview";
+      const firstTab =
+        m.tabs && m.tabs[0] && m.tabs[0].id ? m.tabs[0].id : "overview";
       setActiveTabId(firstTab);
 
       // Seed AI settings
-      setAiSystem(m.ai?.system || "You are a dealership sales trainer. Be concise, specific, and usable.");
+      setAiSystem(
+        m.ai?.system || "You are a dealership sales trainer. Be concise, specific, and usable."
+      );
       setAiModel(m.ai?.model || "gemini-2.0-flash");
       setAiPrompt(m.ai?.starterPrompt || "");
       setAiResult("");
@@ -136,6 +142,7 @@ function App() {
   // Load tab content (markdown) when active tab changes
   useEffect(() => {
     if (!slug || !activeTab) return;
+
     if (activeTab.type !== "markdown") {
       setTabHtml("");
       setTabError("");
@@ -167,6 +174,7 @@ function App() {
       setAiResult("Type a prompt first.");
       return;
     }
+
     setAiBusy(true);
     setAiResult("");
     setTabError("");
@@ -183,14 +191,12 @@ function App() {
         body: JSON.stringify({
           prompt: aiPrompt,
           system: aiSystem,
-          model: aiModel
-        })
+          model: aiModel,
+        }),
       });
 
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data?.error || `${res.status} ${res.statusText}`);
-      }
+      if (!res.ok) throw new Error(data?.error || `${res.status} ${res.statusText}`);
 
       setAiResult(data?.text || "(No text returned)");
     } catch (e) {
@@ -199,26 +205,26 @@ function App() {
       setAiBusy(false);
     }
   };
+
   return (
-  <div className="min-h-screen">
-  {/* Header */}
-  <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
-    <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-      {/* Brand / Logo (logo only — removes duplicate text) */}
-      <div className="flex items-center">
-        <img
-          src="/logo.svg"
-          alt="Signature Sales Journey Training Hub"
-          className="h-10 md:h-11 w-auto"
-        />
+    <div className="min-h-screen">
+      {/* Header (logo only) */}
+      <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <div className="flex items-center">
+            <img
+              src="/logo.svg"
+              alt="Signature Sales Journey Training Hub"
+              className="h-10 md:h-11 w-auto"
+            />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Badge>{slug ? `/module/${slug}` : "loading…"}</Badge>
+          </div>
+        </div>
       </div>
 
-      {/* Route badge */}
-      <div className="flex items-center gap-2">
-        <Badge>{slug ? `/module/${slug}` : "loading…"}</Badge>
-      </div>
-    </div>
-  </div>
       <div className="mx-auto grid max-w-7xl grid-cols-12 gap-4 px-4 py-4">
         {/* Sidebar */}
         <aside className="col-span-12 lg:col-span-4">
@@ -282,13 +288,14 @@ function App() {
               })}
             </div>
 
-            {/* Content */}
+            {/* Errors */}
             {tabError ? (
               <div className="rounded-xl bg-rose-50 p-3 text-sm text-rose-800 ring-1 ring-rose-200">
                 {tabError}
               </div>
             ) : null}
 
+            {/* Markdown tab */}
             {activeTab?.type === "markdown" ? (
               tabLoading ? (
                 <div className="text-sm text-slate-500">Loading…</div>
@@ -300,6 +307,7 @@ function App() {
               )
             ) : null}
 
+            {/* AI tab */}
             {activeTab?.type === "ai" ? (
               <div className="space-y-3">
                 <div className="grid gap-2">
@@ -342,9 +350,7 @@ function App() {
               </div>
             ) : null}
 
-            {!activeTab ? (
-              <div className="text-sm text-slate-500">Select a module…</div>
-            ) : null}
+            {!activeTab ? <div className="text-sm text-slate-500">Select a module…</div> : null}
           </div>
         </main>
       </div>
@@ -352,4 +358,9 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("root")).render(<App />);
+/** ---------- mount ---------- */
+const rootEl = document.getElementById("root");
+if (!rootEl) throw new Error('Missing <div id="root"></div>');
+
+const root = ReactDOM.createRoot(rootEl);
+root.render(<App />);
