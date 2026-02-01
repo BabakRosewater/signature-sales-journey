@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Signature Sales Journey Training Hub</title>
 
+  <!-- Brand typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  </style>
+
   <!-- Tailwind (fine for internal hub) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -15,8 +23,8 @@
   <!-- React UMD -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 
-  <!-- ReactDOM UMD (THIS exposes window.ReactDOM + ReactDOM.createRoot in React 18) -->
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- React 18 root support (preferred): exposes window.ReactDOMClient.createRoot -->
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom-client.production.min.js"></script>
 
   <!-- Babel (so app.js can be JSX without a build step) -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -28,6 +36,6 @@
   <div id="root"></div>
 
   <!-- Our app (NO module mode) -->
-  <script type="text/babel" data-presets="env,react" src="/app.js"></script>
+  <script type="text/babel" data-presets="react" src="/app.js"></script>
 </body>
 </html>
