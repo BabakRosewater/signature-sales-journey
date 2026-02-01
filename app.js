@@ -199,15 +199,18 @@ function App() {
       setAiBusy(false);
     }
   };
-
   return (
     <div className="min-h-screen">
       {/* Header */}
       <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-2xl bg-slate-900"></div>
-            <div className="leading-tight">
+<img
+  src="/logo.svg"
+  alt="Signature Sales Journey Training Hub"
+  className="h-9 md:h-10 w-auto"
+/>
+          <div className="leading-tight">
               <div className="text-sm font-semibold text-slate-900">Signature Sales Journey</div>
               <div className="text-xs text-slate-500">Training Hub</div>
             </div>
