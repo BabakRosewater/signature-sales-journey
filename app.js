@@ -1,4 +1,4 @@
-const { useEffect, useMemo, useRef, useState } = React; 
+const { useEffect, useMemo, useRef, useState } = React;
 const { createRoot } = ReactDOMClient;
 
 /** ---------- helpers ---------- */
