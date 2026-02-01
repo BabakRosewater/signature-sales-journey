@@ -1,0 +1,21 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: Ensuring visibility -->
+  <rect width="800" height="200" fill="#ffffff" />
+
+  <!-- Typography centered -->
+  <g transform="translate(400, 90)">
+    <!-- Main Title -->
+    <text font-family="Arial, sans-serif" font-weight="900" font-size="34" letter-spacing="0.5" fill="#000000" text-anchor="middle">
+      Signature Sales Journey <tspan fill="#2563eb">Training Hub</tspan>
+    </text>
+    
+    <!-- Decorative Underline -->
+    <rect x="-240" y="15" width="480" height="2" fill="#2563eb" />
+    <rect x="-240" y="15" width="480" height="2" fill="#2563eb" />
+    
+    <!-- Tagline -->
+    <text y="45" font-family="Arial, sans-serif" font-weight="600" font-size="14" letter-spacing="3" fill="#64748b" text-anchor="middle" style="text-transform: uppercase;">
+      Solution-Driven • Fact-Based
+    </text>
+  </g>
+</svg>
