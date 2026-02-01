@@ -23,7 +23,10 @@
   <!-- React UMD -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 
-  <!-- React 18 root support (preferred): exposes window.ReactDOMClient.createRoot -->
+  <!-- ✅ IMPORTANT: ReactDOM UMD must load BEFORE react-dom-client -->
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- ✅ React 18 client root support: exposes window.ReactDOMClient.createRoot -->
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom-client.production.min.js"></script>
 
   <!-- Babel (so app.js can be JSX without a build step) -->
@@ -36,6 +39,6 @@
   <div id="root"></div>
 
   <!-- Our app (NO module mode) -->
-  <script type="text/babel" data-presets="react" src="/app.js"></script>
+  <script type="text/babel" data-presets="env,react" src="/app.js"></script>
 </body>
 </html>
