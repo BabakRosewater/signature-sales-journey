@@ -1,4 +1,4 @@
 /* Light polish on markdown output */
-.prose h1, .prose h2, .prose h3 { scroll-margin-top: 96px; }
+.prose h1, .prose h2, .prose h3 { scroll-margin-top: 120px; }
 .prose code { background: rgba(15, 23, 42, 0.06); padding: 2px 6px; border-radius: 6px; }
-.prose pre  { background: rgba(15, 23, 42, 0.06); padding: 12px; border-radius: 12px; overflow: auto; }
+.prose pre { background: rgba(15, 23, 42, 0.06); padding: 12px; border-radius: 12px; overflow: auto; }
