@@ -1,5 +1,5 @@
-const { useEffect, useMemo, useRef, useState } = React;
-const { createRoot } = ReactDOM;   // or ReactDOM.createRoot(...)
+const { useEffect, useMemo, useRef, useState } = React; 
+const { createRoot } = ReactDOMClient;
 
 /** ---------- helpers ---------- */
 const jsonFetch = async (url) => {
