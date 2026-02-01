@@ -212,16 +212,16 @@ function App() {
       <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <div className="flex items-center">
-            <img
-              src="/logo.svg"
-              alt="Signature Sales Journey Training Hub"
-              className="h-10 md:h-11 w-auto"
-            />
+         <img
+  src="/logo.svg"
+  alt="Signature Sales Journey Training Hub"
+  className="h-14 md:h-16 lg:h-18 w-auto"
+/>
+
           </div>
 
-          <div className="flex items-center gap-2">
-            <Badge>{slug ? `/module/${slug}` : "loading…"}</Badge>
-          </div>
+         {/* removed route badge */}
+
         </div>
       </div>
 
