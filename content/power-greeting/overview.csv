@@ -1,0 +1,25 @@
+row_id,section,heading,body,bullets,quote,attribution,notes
+PG-001,objective,"Objective","Establish a positive first impression to build rapport with the customer.",,,,Top-of-module objective.
+PG-002,objective,"Mindset","Approach each customer with the idea of helping them solve a problem or achieve a goal, not of selling a product or service.",,Approach each customer with the idea of helping them solve a problem or achieve a goal, not of selling a product or service.,Brian Tracy,Use as opening quote block.
+PG-010,science,"1.0 The Science","The Greeting/First Impressions stage is not just about saying hello—it integrates psychological principles that help us create meaningful connection and set the foundation for trust.",,,,Intro paragraph for science section.
+PG-011,science,"Thin-Slicing","People make quick judgments based on limited information, often within seconds.","Body language|Tone of voice|Attire|Dealership cleanliness",,,Reference in notes.,Ambady & Rosenthal (1992) in notes.
+PG-012,science,"Halo Effect","A positive first interaction influences the customer’s overall perception of the individual and the dealership.","Warmth|Friendliness|Professional presence",,,Reference in notes.,Nisbett & Wilson (1977) in notes.
+PG-013,science,"Primacy Effect","What happens first is remembered and anchors later judgments.","Warm + professional greeting|Informative first moments",,,Reference in notes.,Asch (1946) in notes.
+PG-014,science,"Emotional Contagion","Emotions transfer between people and shape the mood of the interaction.","Bring positivity|Match energy appropriately",,,Reference in notes.,Hatfield et al. (1994) in notes.
+PG-015,science,"Expectation Confirmation","Satisfaction increases when reality meets/exceeds expectations created by the first impression.","Set clear expectations|Deliver on promises",,,Reference in notes.,Oliver (1980) in notes.
+PG-016,science,"Environment & Context","Physical surroundings influence perception and trust.","Clean|Organized|Inviting",,,Reference in notes.,Bitner (1992) in notes.
+PG-017,science,"Mirroring & Matching","Subtly aligning style and tone builds rapport and comfort.","Match pace|Mirror posture|Adjust tone",,,Reference in notes.,Chartrand & Bargh (1999) in notes.
+PG-020,standards,"Immediate Engagement","Greet or acknowledge every guest within the first 10 seconds (even if you’re busy).","10-second rule|Acknowledge + re-engage",,,Turn into a “Success Standards” callout.
+PG-021,standards,"Tone & Body Language","Use warm tone, open posture, and positive presence without being overbearing.","Warm|Clear|Open posture|Face guest",,,Include example greeting line in markdown.
+PG-022,standards,"Eye Contact + Smile","Use natural eye contact and a genuine smile to convey confidence and sincerity.","Natural eye contact rhythm|Genuine smile",,,Behavior checklist candidate.
+PG-023,standards,"Non-Verbal Communication","Body language speaks louder than words—avoid defensive posture and use inviting gestures.","Stand tall|Arms uncrossed|Open palms",,,Can be formatted as do/don’t cards.
+PG-030,scenarios,"Walk-In Scenario","Walk-in guests may be browsing or purposeful; greet promptly and invite their purpose without pressure.","Prompt greeting|Approachable|Neutral inquiry",,,Add script row next.
+PG-031,scenarios,"Walk-In Script","Hi! Thanks for coming in today. What brings you in—looking for something specific or just browsing?",,,,Use as ready-to-use word track.
+PG-032,scenarios,"Drive-Up Scenario","Drive-up guests often have a specific purpose; meet promptly and offer guidance without overwhelm.","Meet at vehicle when appropriate|Offer direction|Casual welcome",,,Keep it light and helpful.
+PG-033,scenarios,"Drive-Up Script","Welcome to SignatureHyundai. Is there something specific you’re looking for today, or can I show you a couple of options?",,,,Word track.
+PG-034,scenarios,"Browser Scenario","Browsing guests want space; acknowledge, offer help, then give room and stay accessible.","Acknowledge|Give space|Stay available",,,Good for non-pushy culture.
+PG-035,scenarios,"Browser Script","Has anyone greeted you yet? Welcome in—feel free to look around. If you want pricing or info, I’m here when you’re ready.",,,,Word track.
+PG-036,scenarios,"Close Proximity","Use service/waiting moments to build rapport and open a low-pressure conversation.","Service-first greeting|Soft transition",,,Keep respectful.
+PG-037,scenarios,"Weather-Adapted","In bad weather, prioritize comfort first—invite inside and offer refreshment.","Acknowledge weather|Offer comfort|Reduce stress",,,Add beverage/comfort language.
+PG-040,roleplay,"Role-Play Focus","Practice greetings with tone, posture, eye contact, and open-ended questions.","Welcome|Browser|Drive-up|Service proximity|Weather",,,Use for practice agenda.
+PG-050,worksheet,"Worksheet Purpose","Reinforce the importance of first impressions and the Four Ways of Contact using reflection questions.","What we do|How we look|What we say|How we say it",,,Worksheet section header row.
