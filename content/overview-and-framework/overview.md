@@ -1,3 +1,61 @@
+<div class="hero">
+  <div class="eyebrow">Signature Sales Journey</div>
+
+# Overview & Framework
+
+A step-by-step training program designed to help us deliver a **consistent, trust-first** experience — every guest, every time.
+
+  <div class="cards">
+    <div class="card">
+      <div class="cardTitle">What we believe</div>
+      <div class="muted">Transparency, trust, and doing the right thing.</div>
+    </div>
+    <div class="card">
+      <div class="cardTitle">How we price</div>
+      <div class="muted">Best Price Promise — market-based pricing upfront.</div>
+    </div>
+    <div class="card">
+      <div class="cardTitle">What it creates</div>
+      <div class="muted">Calm, cooperative buying experiences that convert.</div>
+    </div>
+  </div>
+</div>
+
+---
+
+## Best Price Promise
+
+- No haggling  
+- No games  
+- No pressure  
+
+Our job is to **listen, understand, and help** — not persuade.
+
+---
+
+## The Natural Sales Process (NSP)
+
+> **NSP definition:** Guests never feel “sold,” and consultants don’t feel like they’re “selling,” even though the engagement often culminates in a transaction.  
+> — Babak R.M
+
+### What You’ll Learn
+- Building genuine relationships  
+- Active listening  
+- Educate and inform  
+- Solution-oriented consulting  
+- Transparent engagement  
+- Natural follow-up  
+- Fostering referrals  
+- Continuous evolution  
+
+---
+
+## Our Modular Training Framework
+
+- **Scalability:** supports growth and change  
+- **Adaptability:** fits different learning styles  
+- **Consistency:** protects the guest experience  
+
 # Overview & Framework
 
 The Hyundai Signature Sales Journey is a comprehensive, step-by-step training program designed to empower our sales team with the mindset, skills, and consistency needed to deliver exceptional experiences.
