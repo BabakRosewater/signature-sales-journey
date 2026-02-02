@@ -5,7 +5,7 @@
   <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900">
     Uncovering Needs &amp; Building Trust
   </h2>
-
+  
   <p class="mt-2 text-slate-700">
     <span class="font-semibold text-slate-900">Objective:</span>
     Gain a deep understanding of customer needs, preferences, timeline, and budget.
