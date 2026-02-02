@@ -1,5 +1,5 @@
 {
-  "title": "00 — Overview & Framework",
+  "title": "Overview & Framework",
   "description": "Natural Sales Process + Modular Training Framework",
   "tabs": [
     { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
