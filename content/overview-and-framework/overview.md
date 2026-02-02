@@ -1,4 +1,4 @@
-**Jump to:** [Best Price Promise](#best-price-promise) · [NSP](#the-natural-sales-process-nsp) · [Modular Framework](#our-modular-training-framework)
+**Jump to:** [Best Price Promise](#tab=best-price) · [NSP](#tab=nsp) · [Modular Framework](#tab=framework)
 
 <div class="hero">
   <div class="eyebrow">Signature Sales Journey</div>
