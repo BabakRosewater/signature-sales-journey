@@ -1,0 +1,67 @@
+row_id,section,heading,body,bullets,quote,attribution,notes
+UNT-001,objective,"Objective","Uncover what truly matters to the guest (needs + motivations) while building trust through clarity, empathy, and a consistent, guest-first process.",,,,Top-of-module objective.
+UNT-002,objective,"Outcome","By the end of this module, the team can run a structured needs conversation that feels natural, earns permission, and produces a clear ‘Needs Map’ for vehicle selection.","Needs Map|Permission-based questions|Summarize + confirm|Smooth transition to selection",,,Use as success criteria.
+UNT-003,objective,"Definition: Uncovering Needs + Trust","A guided conversation that helps guests feel understood and respected—so we can recommend the right solution without pressure.","Curiosity|Listening|Clarity|Respect",,,Short definition card.
+UNT-004,objective,"Why It Matters","Guests don’t resist questions—they resist feeling ‘worked.’ Trust is built when questions have a clear purpose and lead to helpful next steps.","Purposeful questions|Transparent intent|Helpful next step",,,Use as coaching anchor.
+UNT-010,mindset,"Mindset","Your job is to understand before you recommend. We earn the right to present options by listening deeply and confirming we ‘got it.’",,"Seek first to understand, then to be understood.",Stephen R. Covey,Use as opening quote block.
+UNT-011,mindset,"Curiosity Over Control","Curiosity keeps the guest relaxed. Control makes the guest defensive. Lead with calm questions, not commands.","Curious tone|No assumptions|No rush",,,Coach: “If you feel urgency, slow down.”
+UNT-012,mindset,"Permission Creates Comfort","Permission-based questions reduce resistance and increase cooperation.","Is it okay if…|Do you mind if…|Can I ask…",,,Standardize language across the store.
+UNT-013,mindset,"Transparency Builds Trust","Explain WHY you’re asking. Guests trust questions that help them, not questions that help us close.","Reason for asking|Benefit to guest",,,Make it a habit.
+UNT-020,science,"1.0 The Science","Great discovery reduces uncertainty. When guests feel understood, they become more open, honest, and decisive.",,,,Intro paragraph for science section.
+UNT-021,science,"Cognitive Load","Too many options create stress. Clear needs reduce choice overload and speed up decisions.","Limit options|Clarify priorities|Reduce noise",,,Use 2–3 best-fit options rule.
+UNT-022,science,"Loss Aversion","Guests fear making a wrong choice more than they desire a ‘good deal.’ Discovery lowers regret risk.","Prevent regret|Confirm must-haves|Explain tradeoffs",,,Tie to “confidence in decision.”
+UNT-023,science,"Trust Signals","Trust grows when we listen, reflect, and keep promises (even small ones).","Note-taking|Summaries|Time respect|Follow-through",,,Coach: trust is behavioral.
+UNT-024,science,"Autonomy & Control","People cooperate when they feel choice and autonomy. Discovery should feel like collaboration, not interrogation.","Offer choices|Ask permission|Invite corrections",,,Use “Did I get that right?”
+UNT-025,science,"Consistency Effect","A consistent process feels safer than a random experience. Guests relax when the path is clear.","Simple steps|Clear next move|Consistent language",,,Align to one-price consistency.
+UNT-030,standards,"2.0 Success Standards","These behaviors make discovery feel helpful, professional, and calm.",,,,Section intro.
+UNT-031,standards,"Set a 60-Second Agenda","Before questions, explain what happens next in one minute so the guest knows the ‘why.’","What we’ll do|How long|What you’ll get",,,Turn into a callout card.
+UNT-032,standards,"Start Broad, Then Funnel","Begin with open questions, then narrow into must-haves and constraints.","Open → specific|Lifestyle → features|Pain points → solution",,,Avoid jumping straight to payment.
+UNT-033,standards,"Ask 3 Before You Tell 1","For every recommendation or feature, ask 3 questions first.","Ask|Ask|Ask|Then recommend",,,Coaching rule.
+UNT-034,standards,"Use Neutral Language","Avoid leading questions that push a model or outcome.","Neutral wording|No assumptions|No pressure",,,Replace “Wouldn’t you agree…” language.
+UNT-035,standards,"Confirm + Summarize","Summarize what you heard, then ask the guest to confirm or correct it.","Recap|Confirm|Prioritize",,,This is the trust-building moment.
+UNT-036,standards,"Prioritize Must-Haves vs Nice-to-Haves","Help guests rank what matters most before showing vehicles.","Top 3 must-haves|Top 3 nice-to-haves",,,Use as selection filter.
+UNT-037,standards,"Decision-Makers Early","Respectfully clarify who is involved in the decision and what they care about.","Who else?|What matters to them?|Next step",,,Do this without sounding suspicious.
+UNT-038,standards,"Time & Timeline Respect","Ask about timing in a non-pushy way. Align the plan to their timeframe.","Today|This week|Research phase",,,Use “ideal timeline” language.
+UNT-039,standards,"Trade & Current Vehicle Context","Understand current vehicle satisfaction and pain points before recommending changes.","Likes|Dislikes|What must improve",,,This creates emotional clarity.
+UNT-040,standards,"Notes Visible, Not Secret","Write notes in a way that feels collaborative, not like you’re building leverage.","Explain note-taking|Share summary",,,“I’m taking notes so I don’t miss anything.”
+UNT-050,tool,"3.0 The Needs Map","The Needs Map is the output of discovery: what they do, what they need, what they feel, and what matters most.",,,,Introduce the tool.
+UNT-051,tool,"Needs Map Categories","Cover these in order: lifestyle/usage, passengers/cargo, must-haves, comfort/tech, budget approach, timeline, trade, decision-makers.","Usage|Passengers|Cargo|Must-haves|Nice-to-haves|Budget approach|Timeline|Trade|Decision-makers",,,Use as a checklist in your app.
+UNT-052,tool,"Emotional Drivers","Ask one question that reveals the ‘why’ behind the purchase—this is where trust deepens.","Safety|Confidence|Pride|Reliability|Freedom|Family",,,Use once, naturally.
+UNT-053,tool,"Constraints","Clarify constraints without making it about money pressure.","Parking|Garage|Commute|Weather|Budget comfort|Availability",,,Constraints drive better recommendations.
+UNT-060,scenarios,"4.0 Scenarios","Use these scripts as patterns—adapt tone, keep structure.",,,,Scenario intro.
+UNT-061,scenarios,"Discovery Transition Line","Bridge from greeting into discovery with permission and purpose.",,,"","",Use script row next.
+UNT-062,scenarios,"Transition Script","Welcome in—so I can be helpful and not waste your time, is it okay if I ask a few quick questions about what you’re looking for?",,,,Ready-to-use word track.
+UNT-063,scenarios,"Agenda Script (60 seconds)","Set expectations and reduce anxiety.",,,,"","",Use script row next.
+UNT-064,scenarios,"Agenda Script","Perfect. Here’s what we’ll do: I’ll ask a few questions, we’ll narrow it to 2–3 best-fit options, then you can decide what you want to see first. Sound good?",,,,Ready-to-use word track.
+UNT-065,scenarios,"Open Question Starter","Begin broad and guest-centered.",,,,"","",Use script row next.
+UNT-066,scenarios,"Open Starter Script","What brought you in today—and what would make this a great outcome for you?",,,,Core open question.
+UNT-067,scenarios,"Lifestyle/Usage Question","Make the vehicle about their real life.",,,,"","",Use script row next.
+UNT-068,scenarios,"Usage Script","Walk me through a normal week—commute, family, trips, weather—how will this vehicle actually be used?",,,,Gets real needs fast.
+UNT-069,scenarios,"Must-Have Clarifier","Turn preferences into priorities.",,,,"","",Use script row next.
+UNT-070,scenarios,"Must-Have Script","If we had to narrow it down, what are your top three must-haves—and what’s nice but not required?",,,,Helps selection.
+UNT-071,scenarios,"Silent / Short-Answer Guest","Use gentle options and give them control.",,,,"","",Use script row next.
+UNT-072,scenarios,"Silent Guest Script","No worries—some people like to think it through. Would you rather start with size (SUV vs sedan) or with your top priority (payment comfort vs features)?",,,,Avoids interrogation feel.
+UNT-073,scenarios,"Skeptical Guest (Guard Up)","Lead with transparency and autonomy.",,,,"","",Use script row next.
+UNT-074,scenarios,"Skeptical Guest Script","Totally fair—shopping can feel stressful. My goal is to make this simple. You stay in control; I’ll just guide the process and you tell me what fits.",,,,Defuses pressure.
+UNT-075,scenarios,"Price-First Guest","Acknowledge, give clarity, then add context by needs.",,,,"","",Use script row next.
+UNT-076,scenarios,"Price-First Script","Absolutely—price matters. We keep it simple with one clear price so there’s no back-and-forth. Before I point you to the best option, what matters most in the vehicle?",,,,Aligns with one-price without getting defensive.
+UNT-077,scenarios,"Decision-Maker Not Present","Stay respectful and plan next step.",,,,"","",Use script row next.
+UNT-078,scenarios,"Decision-Maker Script","That makes sense. When you think about the other person involved, what do you think matters most to them—so we can make sure we don’t miss it?",,,,Keep it collaborative.
+UNT-079,scenarios,"Trade Conversation","Keep it simple and value-focused.",,,,"","",Use script row next.
+UNT-080,scenarios,"Trade Script","What are you driving now—and what do you love about it? What do you wish was better?",,,,Pain points become selling points.
+UNT-090,standards,"5.0 Common Mistakes to Avoid","These kill trust fast—coach them out early.",,,,Add as warning section.
+UNT-091,standards,"Interrogation Mode","Rapid-fire questions with no purpose explanation feels like a trap.","Slow down|Explain why|Invite collaboration",,,Fix: use agenda + permission.
+UNT-092,standards,"Feature Dumping","Talking features before needs feels salesy and random.","Ask first|Tie features to needs|2–3 options",,,Rule: needs before notes.
+UNT-093,standards,"Payment Too Early","Jumping to payment before value increases resistance.","Value first|Fit first|Then payment comfort",,,Time it correctly.
+UNT-094,standards,"Over-Promising","Trust dies when we promise and don’t deliver.","Under-promise|Over-deliver|Be precise",,,Coach: “Say what’s true.”
+UNT-100,roleplay,"6.0 Role-Play Focus","Practice discovery that feels natural: tone, pacing, permission, and summarizing.",,"If you listen, people will tell you exactly what they need.",Unknown,Use as practice mindset.
+UNT-101,roleplay,"Role-Play Scenarios","Run 5-minute reps and score them using the coaching cues.","Walk-in|Price-first|Silent guest|Skeptical guest|Decision-maker absent",,,Rotate partners weekly.
+UNT-102,roleplay,"Coach’s Scoring Cues","Score: agenda set, # of open questions, permission language, summary accuracy, must-have ranking, next-step clarity.","Agenda|Open questions|Permission|Summary|Priorities|Next step",,,Add 1–5 rubric in app.
+UNT-110,worksheet,"7.0 Worksheet Purpose","Turn discovery into a repeatable habit by reflecting on real guest conversations.",,,,Worksheet section header row.
+UNT-111,worksheet,"Reflection Prompt","Did my questions feel helpful to the guest—or helpful to me? What proof do I have?",,,,Great for coaching 1:1.
+UNT-112,worksheet,"Needs Map Practice","Write a Needs Map for your last 3 guests and circle the top 3 must-haves you confirmed out loud.","Needs Map|Top 3|Confirmed summary",,,Use for daily huddle review.
+UNT-113,worksheet,"Trust Behavior Check","List one trust behavior you did well and one you’ll improve next shift.","One strength|One improvement",,,Make it weekly.
+UNT-120,metrics,"8.0 Observable Metrics","We coach behaviors we can see and measure.",,,,Tie to accountability.
+UNT-121,metrics,"Minimum Standard","Every guest has a documented Needs Map before vehicle selection (notes in CRM or worksheet).","Needs Map completed|Notes captured|Priorities ranked",,,Creates consistency.
+UNT-122,metrics,"Quality Standard","Guest can repeat their top 3 must-haves and agrees with your summary before you present options.","Guest confirms|Top 3 clear|Summary accurate",,,This is the trust checkpoint.
+UNT-123,metrics,"Process Standard","Present only 2–3 best-fit options based on confirmed priorities.","2–3 options|Explain why|Invite choice",,,Reduces overwhelm and increases confidence.
