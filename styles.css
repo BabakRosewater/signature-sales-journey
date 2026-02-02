@@ -1,4 +1,145 @@
-/* Light polish on markdown output */
-.prose h1, .prose h2, .prose h3 { scroll-margin-top: 120px; }
-.prose code { background: rgba(15, 23, 42, 0.06); padding: 2px 6px; border-radius: 6px; }
-.prose pre { background: rgba(15, 23, 42, 0.06); padding: 12px; border-radius: 12px; overflow: auto; }
+/* ---------- Global markdown UX (applies to anything inside .prose) ---------- */
+
+.prose {
+  /* Better reading experience */
+  font-size: 15px;
+  line-height: 1.7;
+  color: #0f172a; /* slate-900 */
+}
+
+.prose > * + * {
+  margin-top: 0.75rem;
+}
+
+.prose h1 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.prose h2 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 800;
+  margin-top: 1.5rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid rgba(15, 23, 42, 0.18);
+}
+
+.prose h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-top: 1.1rem;
+}
+
+.prose p {
+  margin: 0.6rem 0;
+  color: rgba(15, 23, 42, 0.92);
+}
+
+.prose strong {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.prose a {
+  color: #1d4ed8; /* blue-700 */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0.6rem 0 1rem 1.25rem;
+}
+
+.prose li {
+  margin: 0.25rem 0;
+}
+
+.prose hr {
+  border: 0;
+  height: 1px;
+  background: rgba(15, 23, 42, 0.12);
+  margin: 1.25rem 0;
+}
+
+/* Callouts (just use Markdown blockquote ">") */
+.prose blockquote {
+  margin: 1rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid rgba(2, 132, 199, 0.45);
+  background: rgba(2, 132, 199, 0.06);
+  border-radius: 14px;
+}
+.prose blockquote p {
+  margin: 0.25rem 0;
+  color: rgba(15, 23, 42, 0.92);
+}
+
+/* Code blocks */
+.prose code {
+  background: rgba(15, 23, 42, 0.06);
+  padding: 0.15rem 0.35rem;
+  border-radius: 8px;
+  font-size: 0.92em;
+}
+.prose pre {
+  background: rgba(15, 23, 42, 0.06);
+  padding: 12px;
+  border-radius: 14px;
+  overflow: auto;
+}
+
+/* Scroll offset so heading anchor links don’t hide under sticky header */
+.prose h1, .prose h2, .prose h3 {
+  scroll-margin-top: 96px;
+}
+
+/* ---------- Optional “component” classes you can use inside markdown ---------- */
+
+/* A soft “hero” intro block */
+.prose .hero {
+  padding: 14px 16px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.prose .eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.55);
+  font-weight: 800;
+}
+
+.prose .cards {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+@media (min-width: 768px) {
+  .prose .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.prose .card {
+  padding: 12px 14px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.prose .cardTitle {
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.prose .muted {
+  color: rgba(15, 23, 42, 0.62);
+}
