@@ -1,3 +1,4 @@
+**Jump to:** [Best Price Promise](#best-price-promise) · [NSP](#the-natural-sales-process-nsp) · [Modular Framework](#our-modular-training-framework)
 # Module 08 — After They Say Yes
 
 Post-yes steps + momentum
