@@ -42,7 +42,6 @@
 - Role-play + coaching notes  
 - Worksheet to reinforce behaviors
 
-Jump to: [The Science](#tab=science) · [Standards](#tab=greetings) · [Role-Play](#tab=roleplay)
 
 ---
 
