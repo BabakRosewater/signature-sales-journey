@@ -5,38 +5,33 @@
   "brand": "SignatureHyundai",
   "version": "1.0.0",
   "last_updated": "2026-02-10",
-  "objective": "Guide the guest through a test drive that connects features to feelings, reduces uncertainty, and builds confident ownership vision—without pressure.",
-  "position_in_journey": "Discovery → Selection → Test Drive → Decision",
-  "estimated_time_minutes": 60,
+  "objective": "Build authentic emotional connection through empathy, curiosity, and personalization—so the guest feels understood, safe, and excited to move forward with confidence.",
+  "position_in_journey": "Discovery → Selection → Emotional Test Drive (before/through Decision)",
+  "estimated_time_minutes": 55,
   "prerequisites": [
     "power-greeting",
     "uncovering-needs-and-trust",
     "showcasing-solutions-overcoming-obstacles"
   ],
-  "learning_outcomes": [
-    "Set expectations and create psychological safety before leaving the lot.",
-    "Run a simple, repeatable Emotional Test Drive flow (Setup → Experience → Confirm).",
-    "Translate features into life benefits using a values bridge (Need → Feature → Feeling → Moment).",
-    "Use future pacing to help the guest imagine ownership in real scenarios.",
-    "Use micro-confirmations every 60–90 seconds to keep alignment and comfort high.",
-    "Handle uncertainty mid-drive using calm empathy and simplified choices."
+  "description": "Emotional Test Drive flow, science, standards, scripts, role-play, worksheet.",
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
-  "files": [
-    "1_overview.md",
-    "2_science.md",
-    "3_standards.md",
-    "4_scripts.md",
-    "5_roleplay.md",
-    "6_worksheet.md",
-    "overview.csv"
+  "data_files": [
+    { "id": "overview", "label": "Overview CSV", "type": "csv", "file": "overview.csv" }
   ],
   "tags": [
-    "test-drive",
-    "emotional-test-drive",
+    "empathy",
     "trust",
-    "confidence",
-    "future-pacing",
-    "benefit-translation",
-    "micro-confirmations"
+    "connection",
+    "emotional-test-drive",
+    "storytelling",
+    "future-pacing"
   ]
 }
