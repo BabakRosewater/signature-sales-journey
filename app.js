@@ -55,7 +55,14 @@ const inferTabLabel = (file) => {
 };
 
 const buildTabsFromMeta = (m) => {
-  if (Array.isArray(m?.tabs) && m.tabs.length) return m.tabs;
+  if (!m) return [];
+
+  if (Array.isArray(m?.tabs) && m.tabs.length) {
+    return m.tabs.map((t) => ({
+      ...t,
+      type: t.type || (t.file ? "markdown" : "ai"),
+    }));
+  }
 
   const fileTabs = Array.isArray(m?.files)
     ? m.files
@@ -140,7 +147,7 @@ function App() {
       setTabError("");
       setTabHtml("");
       const m = await jsonFetch(`/content/${slug}/module_meta.json`);
-      setMeta(m);
+      setMeta({ ...m, __slug: slug });
 
       // Default tab
       const firstTab = buildTabsFromMeta(m)?.[0]?.id || "overview";
@@ -168,6 +175,7 @@ function App() {
   // Load tab content (markdown) when active tab changes
   useEffect(() => {
     if (!slug || !activeTab) return;
+    if (!meta || meta.__slug !== slug) return;
 
     if (activeTab.type !== "markdown") {
       setTabHtml("");
@@ -188,7 +196,7 @@ function App() {
         setTabLoading(false);
       }
     })();
-  }, [slug, activeTabId, activeTab?.type]);
+  }, [slug, activeTabId, activeTab?.type, activeTab?.file]);
 
   const currentTitle = useMemo(() => {
     const m = modules.find((x) => x.slug === slug);
