@@ -2,12 +2,46 @@
   "title": "Module 02: Uncovering Needs & Building Trust",
   "description": "Discovery + early appraisal integration to build trust, save time, and align the right solution to needs, budget, and timeline.",
   "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
-    { "id": "science", "label": "Science", "type": "markdown", "file": "2_the_science.md" },
-    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
-    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
-    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_role_play.md" },
-    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
+    {
+      "id": "overview",
+      "label": "Overview",
+      "type": "markdown",
+      "file": "1_overview.md"
+    },
+    {
+      "id": "science",
+      "label": "Science",
+      "type": "markdown",
+      "file": "2_science.md"
+    },
+    {
+      "id": "standards",
+      "label": "Standards",
+      "type": "markdown",
+      "file": "3_standards.md"
+    },
+    {
+      "id": "scripts",
+      "label": "Scripts",
+      "type": "markdown",
+      "file": "4_scripts.md"
+    },
+    {
+      "id": "roleplay",
+      "label": "Role-Play",
+      "type": "markdown",
+      "file": "5_roleplay.md"
+    },
+    {
+      "id": "worksheet",
+      "label": "Worksheet",
+      "type": "markdown",
+      "file": "6_worksheet.md"
+    },
+    {
+      "id": "ai",
+      "label": "AI Lab",
+      "type": "ai"
+    }
   ]
 }
