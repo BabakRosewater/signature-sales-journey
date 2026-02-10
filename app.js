@@ -39,6 +39,49 @@ const renderMarkdownSafe = (md) => {
   return window.DOMPurify.sanitize(html);
 };
 
+const inferTabLabel = (file) => {
+  const map = {
+    "1_overview.md": "Overview",
+    "2_science.md": "Science",
+    "2_the_science.md": "Science",
+    "3_standards.md": "Standards",
+    "4_scripts.md": "Scripts",
+    "5_roleplay.md": "Role-Play",
+    "5_role_play.md": "Role-Play",
+    "6_worksheet.md": "Worksheet",
+    "overview.md": "Overview",
+  };
+  return map[file] || file.replace(/\.md$/i, "").replace(/^[0-9]+_/, "");
+};
+
+const buildTabsFromMeta = (m) => {
+  if (!m) return [];
+
+  if (Array.isArray(m?.tabs) && m.tabs.length) {
+    return m.tabs.map((t) => ({
+      ...t,
+      type: t.type || (t.file ? "markdown" : "ai"),
+    }));
+  }
+
+  const fileTabs = Array.isArray(m?.files)
+    ? m.files
+        .filter((f) => typeof f === "string" && /\.md$/i.test(f))
+        .map((file) => ({
+          id: file.replace(/\.md$/i, ""),
+          label: inferTabLabel(file),
+          type: "markdown",
+          file,
+        }))
+    : [];
+
+  if (fileTabs.length) {
+    return [...fileTabs, { id: "ai", label: "AI Lab", type: "ai" }];
+  }
+
+  return [{ id: "overview", label: "Overview", type: "markdown", file: "overview.md" }];
+};
+
 /** ---------- UI ---------- */
 function Button({ children, onClick, kind = "primary", disabled = false }) {
   const base =
@@ -63,6 +106,8 @@ function App() {
   const [tabLoading, setTabLoading] = useState(false);
   const [tabError, setTabError] = useState("");
   const [tabHtml, setTabHtml] = useState("");
+  const contentRef = useRef(null);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   // AI state
   const [aiPrompt, setAiPrompt] = useState("");
@@ -71,6 +116,7 @@ function App() {
   const [aiResult, setAiResult] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
   const aiAbortRef = useRef(null);
+  const tabs = useMemo(() => buildTabsFromMeta(meta), [meta]);
 
   useEffect(() => {
     const onPop = () => setSlug(getSlugFromPath() || "");
@@ -103,10 +149,21 @@ function App() {
       setTabError("");
       setTabHtml("");
       const m = await jsonFetch(`/content/${slug}/module_meta.json`);
-      setMeta(m);
+      setMeta({ ...m, __slug: slug });
 
-      // Default tab
-      const firstTab = m?.tabs?.[0]?.id ? m.tabs[0].id : "overview";
+      // Default tab (prefer last opened tab for this module)
+      const normalizedTabs = buildTabsFromMeta(m);
+      const savedTabId = (() => {
+        try {
+          return window.localStorage.getItem(`ssj_tab_${slug}`);
+        } catch {
+          return null;
+        }
+      })();
+      const firstTab =
+        normalizedTabs.find((t) => t.id === savedTabId)?.id ||
+        normalizedTabs[0]?.id ||
+        "overview";
       setActiveTabId(firstTab);
 
       // Seed AI settings
@@ -123,14 +180,30 @@ function App() {
     });
   }, [slug]);
 
+  // Persist last-opened tab per module
+  useEffect(() => {
+    if (!slug || !activeTabId) return;
+    try {
+      window.localStorage.setItem(`ssj_tab_${slug}`, activeTabId);
+    } catch {
+      // ignore storage restrictions
+    }
+  }, [slug, activeTabId]);
+
   const activeTab = useMemo(() => {
-    if (!meta?.tabs?.length) return null;
-    return meta.tabs.find((t) => t.id === activeTabId) || meta.tabs[0];
-  }, [meta, activeTabId]);
+    if (!tabs.length) return null;
+    return tabs.find((t) => t.id === activeTabId) || tabs[0];
+  }, [tabs, activeTabId]);
+
+  const activeTabIndex = useMemo(
+    () => tabs.findIndex((t) => t.id === activeTabId),
+    [tabs, activeTabId]
+  );
 
   // Load tab content (markdown) when active tab changes
   useEffect(() => {
     if (!slug || !activeTab) return;
+    if (!meta || meta.__slug !== slug) return;
 
     if (activeTab.type !== "markdown") {
       setTabHtml("");
@@ -151,7 +224,36 @@ function App() {
         setTabLoading(false);
       }
     })();
-  }, [slug, activeTabId, activeTab?.type]);
+  }, [slug, activeTabId, activeTab?.type, activeTab?.file]);
+
+  // Reading progress indicator for markdown tabs
+  useEffect(() => {
+    if (activeTab?.type !== "markdown") {
+      setReadingProgress(0);
+      return;
+    }
+
+    const calcProgress = () => {
+      const el = contentRef.current;
+      if (!el) {
+        setReadingProgress(0);
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      const viewport = window.innerHeight || 1;
+      const total = Math.max(el.scrollHeight - viewport * 0.45, 1);
+      const progressed = Math.min(Math.max(viewport * 0.35 - rect.top, 0), total);
+      setReadingProgress(Math.max(0, Math.min(100, Math.round((progressed / total) * 100))));
+    };
+
+    calcProgress();
+    window.addEventListener("scroll", calcProgress, { passive: true });
+    window.addEventListener("resize", calcProgress);
+    return () => {
+      window.removeEventListener("scroll", calcProgress);
+      window.removeEventListener("resize", calcProgress);
+    };
+  }, [activeTab?.type, activeTabId, tabHtml]);
 
   const currentTitle = useMemo(() => {
     const m = modules.find((x) => x.slug === slug);
@@ -248,11 +350,33 @@ function App() {
               {meta?.description ? (
                 <div className="mt-1 text-sm text-slate-600">{meta.description}</div>
               ) : null}
+              {meta?.objective ? (
+                <div className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
+                  <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
+                </div>
+              ) : null}
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+                {meta?.estimated_time_minutes ? (
+                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
+                    ~{meta.estimated_time_minutes} min
+                  </span>
+                ) : null}
+                {activeTabIndex >= 0 ? (
+                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
+                    Tab {activeTabIndex + 1} of {tabs.length}
+                  </span>
+                ) : null}
+                {activeTab?.type === "markdown" ? (
+                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
+                    Reading progress {readingProgress}%
+                  </span>
+                ) : null}
+              </div>
             </div>
 
             {/* Tabs */}
-            <div className="mb-4 flex flex-wrap gap-2">
-              {(meta?.tabs || []).map((t) => {
+            <div className="mb-3 flex flex-wrap gap-2">
+              {tabs.map((t) => {
                 const isActive = t.id === activeTabId;
                 return (
                   <button
@@ -270,6 +394,28 @@ function App() {
               })}
             </div>
 
+            <div className="mb-4 flex items-center gap-2">
+              <Button
+                kind="secondary"
+                disabled={activeTabIndex <= 0}
+                onClick={() => setActiveTabId(tabs[activeTabIndex - 1]?.id)}
+              >
+                ← Previous
+              </Button>
+              <Button
+                kind="secondary"
+                disabled={activeTabIndex < 0 || activeTabIndex >= tabs.length - 1}
+                onClick={() => setActiveTabId(tabs[activeTabIndex + 1]?.id)}
+              >
+                Next →
+              </Button>
+              {activeTab?.type === "markdown" ? (
+                <div className="ml-auto h-2 w-40 overflow-hidden rounded-full bg-slate-200" aria-label="Reading progress">
+                  <div className="h-full bg-slate-900 transition-all" style={{ width: `${readingProgress}%` }} />
+                </div>
+              ) : null}
+            </div>
+
             {/* Content */}
             {tabError ? (
               <div className="rounded-xl bg-rose-50 p-3 text-sm text-rose-800 ring-1 ring-rose-200">
@@ -281,7 +427,7 @@ function App() {
               tabLoading ? (
                 <div className="text-sm text-slate-500">Loading…</div>
               ) : (
-                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: tabHtml }} />
+                <div ref={contentRef} className="prose max-w-none" dangerouslySetInnerHTML={{ __html: tabHtml }} />
               )
             ) : null}
 

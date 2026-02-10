@@ -46,4 +46,3 @@ By the end of this module, we can:
 - Handling common objections without tension
 - Running a smooth Turn: giving + receiving
 
-Jump to: [Science](#tab=science) · [Standards](#tab=standards) · [Scripts](#tab=scripts) · [Role-Play](#tab=roleplay) · [Worksheet](#tab=worksheet)

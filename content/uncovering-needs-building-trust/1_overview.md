@@ -65,4 +65,3 @@ Use this when moving to Selection:
 
 > “Based on what you shared—(need 1), (need 2), and staying around (budget/comfort)—I have 2–3 options that fit really well. Let’s look at them together.”
 
-Jump to: [Science](#tab=science) · [Standards](#tab=greetings) · [Scripts](#tab=scripts) · [Role-Play](#tab=roleplay)
