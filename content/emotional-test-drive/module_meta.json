@@ -9,7 +9,7 @@
     { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "5_worksheet.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
   ]
-} and 
+} 
 {
   "module_number": 4,
   "slug": "emotional-test-drive",
