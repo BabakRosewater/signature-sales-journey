@@ -1,8 +1,48 @@
 {
-  "title": "Module 05 — Decision Point & Building Value",
-  "description": "Hood ornament + value building",
+  "module_number": 5,
+  "slug": "decision-point-building-value",
+  "title": "Decision Point & Building Value",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Help guests reach a confident decision by clarifying what matters most, translating features into real-life outcomes, and using a calm, fact-based ‘Decision Point’ conversation that keeps the process simple and trust-first.",
+  "position_in_journey": "Selection → Emotional Test Drive → Decision Point (commitment + value clarity before numbers)",
+  "estimated_time_minutes": 60,
+  "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-and-trust",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive"
+  ],
+  "description": "Decision Point flow (Hood Ornament moment), value stacking, clarity language, and calm commitment cues—before presenting numbers.",
+  "learning_outcomes": [
+    "Recognize the Decision Point moment and guide it without pressure.",
+    "Summarize needs → match → value in a clear, confident way.",
+    "Translate features into outcomes (comfort, confidence, safety, simplicity).",
+    "Use framing and choice clarity (2–3 options) to reduce decision fatigue.",
+    "Use permission-based commitment language that feels respectful and natural.",
+    "Set up the numbers conversation with trust, clarity, and shared mission tone."
+  ],
   "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ],
+  "data_files": [
+    { "id": "overview", "label": "Overview CSV", "type": "csv", "file": "overview.csv" }
+  ],
+  "tags": [
+    "decision-point",
+    "value-building",
+    "commitment",
+    "framing",
+    "clarity",
+    "trust",
+    "one-price",
+    "guest-first"
   ]
 }
