@@ -2,31 +2,24 @@
   "module_number": 4,
   "slug": "emotional-test-drive",
   "title": "Emotional Test Drive",
-  "description": "A simple, repeatable test drive flow that builds confidence through emotional check-ins, real-life scenarios, and value-based language.",
   "brand": "SignatureHyundai",
   "version": "1.0.0",
   "last_updated": "2026-02-10",
-  "objective": "Guide a test drive that turns features into feelings—so the guest can picture ownership and confidently say, ‘this fits my life.’",
-  "estimated_time_minutes": 50,
+  "objective": "Guide the guest through a test drive that connects features to feelings, reduces uncertainty, and builds confident ownership vision—without pressure.",
+  "position_in_journey": "Discovery → Selection → Test Drive → Decision",
+  "estimated_time_minutes": 60,
   "prerequisites": [
     "power-greeting",
     "uncovering-needs-and-trust",
     "showcasing-solutions-overcoming-obstacles"
   ],
   "learning_outcomes": [
-    "Run a consistent Emotional Test Drive flow (start → scenes → check-ins → wrap).",
-    "Use future pacing + sensory language to make benefits feel real.",
-    "Use micro-confirmations to keep the guest engaged and safe.",
-    "Create a clear ‘decision-ready’ moment before returning to numbers."
-  ],
-  "tabs": [
-    { "id": "overview", "label": "Overview", "file": "1_overview.md" },
-    { "id": "science", "label": "Science", "file": "2_science.md" },
-    { "id": "standards", "label": "Standards", "file": "3_standards.md" },
-    { "id": "scripts", "label": "Scripts", "file": "4_scripts.md" },
-    { "id": "roleplay", "label": "Role-Play", "file": "5_roleplay.md" },
-    { "id": "worksheet", "label": "Worksheet", "file": "6_worksheet.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
+    "Set expectations and create psychological safety before leaving the lot.",
+    "Run a simple, repeatable Emotional Test Drive flow (Setup → Experience → Confirm).",
+    "Translate features into life benefits using a values bridge (Need → Feature → Feeling → Moment).",
+    "Use future pacing to help the guest imagine ownership in real scenarios.",
+    "Use micro-confirmations every 60–90 seconds to keep alignment and comfort high.",
+    "Handle uncertainty mid-drive using calm empathy and simplified choices."
   ],
   "files": [
     "1_overview.md",
@@ -37,5 +30,13 @@
     "6_worksheet.md",
     "overview.csv"
   ],
-  "tags": ["test-drive", "emotional-connection", "future-pacing", "confidence", "micro-confirmations"]
+  "tags": [
+    "test-drive",
+    "emotional-test-drive",
+    "trust",
+    "confidence",
+    "future-pacing",
+    "benefit-translation",
+    "micro-confirmations"
+  ]
 }

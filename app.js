@@ -39,6 +39,42 @@ const renderMarkdownSafe = (md) => {
   return window.DOMPurify.sanitize(html);
 };
 
+const inferTabLabel = (file) => {
+  const map = {
+    "1_overview.md": "Overview",
+    "2_science.md": "Science",
+    "2_the_science.md": "Science",
+    "3_standards.md": "Standards",
+    "4_scripts.md": "Scripts",
+    "5_roleplay.md": "Role-Play",
+    "5_role_play.md": "Role-Play",
+    "6_worksheet.md": "Worksheet",
+    "overview.md": "Overview",
+  };
+  return map[file] || file.replace(/\.md$/i, "").replace(/^[0-9]+_/, "");
+};
+
+const buildTabsFromMeta = (m) => {
+  if (Array.isArray(m?.tabs) && m.tabs.length) return m.tabs;
+
+  const fileTabs = Array.isArray(m?.files)
+    ? m.files
+        .filter((f) => typeof f === "string" && /\.md$/i.test(f))
+        .map((file) => ({
+          id: file.replace(/\.md$/i, ""),
+          label: inferTabLabel(file),
+          type: "markdown",
+          file,
+        }))
+    : [];
+
+  if (fileTabs.length) {
+    return [...fileTabs, { id: "ai", label: "AI Lab", type: "ai" }];
+  }
+
+  return [{ id: "overview", label: "Overview", type: "markdown", file: "overview.md" }];
+};
+
 /** ---------- UI ---------- */
 function Button({ children, onClick, kind = "primary", disabled = false }) {
   const base =
@@ -71,6 +107,7 @@ function App() {
   const [aiResult, setAiResult] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
   const aiAbortRef = useRef(null);
+  const tabs = useMemo(() => buildTabsFromMeta(meta), [meta]);
 
   useEffect(() => {
     const onPop = () => setSlug(getSlugFromPath() || "");
@@ -106,7 +143,7 @@ function App() {
       setMeta(m);
 
       // Default tab
-      const firstTab = m?.tabs?.[0]?.id ? m.tabs[0].id : "overview";
+      const firstTab = buildTabsFromMeta(m)?.[0]?.id || "overview";
       setActiveTabId(firstTab);
 
       // Seed AI settings
@@ -124,9 +161,9 @@ function App() {
   }, [slug]);
 
   const activeTab = useMemo(() => {
-    if (!meta?.tabs?.length) return null;
-    return meta.tabs.find((t) => t.id === activeTabId) || meta.tabs[0];
-  }, [meta, activeTabId]);
+    if (!tabs.length) return null;
+    return tabs.find((t) => t.id === activeTabId) || tabs[0];
+  }, [tabs, activeTabId]);
 
   // Load tab content (markdown) when active tab changes
   useEffect(() => {
@@ -252,7 +289,7 @@ function App() {
 
             {/* Tabs */}
             <div className="mb-4 flex flex-wrap gap-2">
-              {(meta?.tabs || []).map((t) => {
+              {tabs.map((t) => {
                 const isActive = t.id === activeTabId;
                 return (
                   <button
