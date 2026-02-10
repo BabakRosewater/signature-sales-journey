@@ -1,74 +1,63 @@
-# 2.0 The Science of Decision & Value (Clarity Wins)
+# 2.0 The Science of Decision + Value (Clarity Wins)
 
 ## What’s Happening in the Guest’s Mind
-At this stage, guests often feel:
-- decision fatigue (too many options)
-- fear of regret (what if I choose wrong?)
-- loss sensitivity (payments, trade value, time)
-- social pressure (spouse, friends, online comparisons)
+At this stage, guests are balancing:
+- excitement (this could be the one)
+- uncertainty (what if I regret it?)
+- mental load (options, trims, payments, trade)
+- social influence (partner, friends, online reviews)
 
-Your job is to lower cognitive load and increase confidence.
+Your job is to reduce cognitive load and increase confidence.
 
 ---
 
 ## Principle 1: Choice Overload
-More options can reduce action.
-Clarity increases commitment.
+Too many choices increases delay.
+Clarity creates movement.
 
 **Application**
-- Present 2–3 best-fit options
-- Use simple language and comparisons
-- Ask: “Which one feels closest to what you described?”
+- Narrow to 2–3 best-fit options
+- Use plain-language comparisons
+- Ask: “Which feels closer to your life?”
 
 ---
 
-## Principle 2: Framing (Features → Outcomes)
-Specs don’t move emotion; outcomes do.
+## Principle 2: Framing (Outcomes Beat Specs)
+A feature is just information.
+An outcome is meaning.
 
 **Application**
-- “AWD” → “Confidence in winter”
-- “Safety suite” → “Peace of mind with your family”
-- “Cargo space” → “Less stress packing and loading”
+- AWD → confidence in winter
+- driver assist → peace of mind with family
+- cargo space → less stress and easier routines
+- warranty coverage → feeling protected
 
 ---
 
-## Principle 3: Loss Aversion
-People fear a bad outcome more than they desire a good one.
+## Principle 3: Loss Aversion (Fear of a Bad Decision)
+Guests fear getting stuck or making a mistake.
 
 **Application**
-- Reduce perceived risk:
+- reduce perceived risk with calm language:
   - “Let’s make this simple.”
-  - “We’ll verify the fit before any commitment.”
-  - “We’ll keep the next step clear and low-pressure.”
+  - “We’ll keep the next step clear.”
+  - “No pressure—just clarity.”
 
 ---
 
-## Principle 4: Commitment & Consistency
-Small yeses create forward motion.
+## Principle 4: Commitment + Consistency
+Small “yes” moments build momentum.
 
 **Application**
-Use micro-commitments:
-- “Does this match what you had in mind?”
-- “If we can make the numbers comfortable, would this be the one?”
+- Fit check: “How close is this to what you had in mind?”
+- Conditional: “If we can make numbers comfortable…”
+- Two-choice: “Which feels closer—A or B?”
 
 ---
 
-## Principle 5: The Peak-End Rule
-Guests remember emotional peaks and how the process ends.
+## Principle 5: Peak-End
+Guests remember emotional peaks and how the phase ends.
 
 **Application**
-- Create one “peak” moment (their favorite benefit tied to life)
-- End with clarity:
-  - what we learned,
-  - what they chose,
-  - what happens next.
-
----
-
-## Principle 6: Trust Beats Technique
-Value-building only works when the guest believes you’re for them.
-
-**Application**
-- Use permission-based language
-- Avoid pressure cues
-- Maintain a calm, service-first tone
+- create one “aha” (their favorite outcome)
+- end with a crisp summary + next step

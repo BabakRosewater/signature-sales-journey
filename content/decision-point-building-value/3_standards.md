@@ -1,54 +1,46 @@
 # 3.0 Success Standards (Non-Negotiables)
 
-## Standard 1: Clarity First
-Before moving to numbers, the guest should clearly understand:
-- why this vehicle fits, and
-- what value it creates in their life.
+## Standard 1: Decision Before Numbers
+Before payments, the guest should clearly understand:
+- why it fits
+- what value it creates in real life
 
 ---
 
-## Standard 2: Two-Layer Value
-Every key point should include:
-- Feature → Outcome
-- Outcome → Feeling
-
-Example:
-“AWD helps you feel confident on winter roads—less stress, more control.”
+## Standard 2: 2–3 Options Max
+More options = more anxiety.
+We protect clarity.
 
 ---
 
-## Standard 3: Summarize in Their Words
-Use a short recap:
-- “You said ___ matters because ___.”
-- “This option fits because ___.”
+## Standard 3: Use Their Words
+Summarize priorities in their language.
+Guests trust what feels remembered.
 
 ---
 
-## Standard 4: 2–3 Options Maximum
-Avoid overwhelming.
-If needed:
-- “Let’s narrow it down to two that best fit what you described.”
+## Standard 4: Two-Layer Value (Feature → Outcome → Feeling)
+Every key point must land as an outcome:
+- “what it does for them”
+- “how it makes life feel”
 
 ---
 
-## Standard 5: Decision Point Question = Permission-Based
-No “close-y” pressure lines.
-Use calm commitment questions that respect the guest.
+## Standard 5: Micro-Commitment Only (No Pressure Closing)
+We do not “trap” guests.
+We invite clarity and next steps.
 
 ---
 
-## Standard 6: Transition to Numbers With Service Tone
-Numbers are not a battle.
-They are the next step in helping.
-
-Example:
-“Would it be helpful if we looked at how it breaks down with the options you chose?”
+## Standard 6: Numbers Transition = Service Step
+“Would it be helpful if we looked at…”
+Numbers are information, not confrontation.
 
 ---
 
-## Standard 7: No Surprise Energy
-Keep the tone consistent:
-- calm,
-- professional,
-- confident,
-- guest-first.
+## Standard 7: Calm Tone Always
+Decision Point should feel:
+- clear
+- respectful
+- confident
+- simple

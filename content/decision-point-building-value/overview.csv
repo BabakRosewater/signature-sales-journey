@@ -1,21 +1,18 @@
 row_id,section,heading,body,bullets,quote,attribution,notes
-DP-001,objective,"Objective","Help guests reach a confident decision by clarifying what matters most, translating features into outcomes, and using a calm, fact-based Decision Point conversation that keeps the process simple and trust-first.",,,,Top-of-module objective.
-DP-002,objective,"Core Idea","Guests don’t need more information—they need more clarity. Our job is to reduce uncertainty and make the next step obvious and comfortable.",,,,"Anchor line near the top of the module."
-DP-003,objective,"What Great Looks Like","Summarize in their words, build value through outcomes, ask a respectful micro-commitment, and transition to numbers as a service step.","Summarize needs|Connect features to outcomes|Ask Decision Point question|Clean transition to numbers",,,Use as a quick checklist block.
+DP-001,objective,"Objective","Guide guests to a confident decision by clarifying what matters most, translating features into real-life outcomes, and leading a calm, trust-first Decision Point conversation before numbers.",,,,Top-of-module objective.
+DP-002,objective,"Hood Ornament Moment","The Decision Point is when the guest starts to feel ownership: 'this fits my life.' Our job is to make that moment clear, calm, and easy.","Recap priorities|Confirm fit|Build value|Ask micro-commitment|Clean next step",,,Use as the module anchor framework.
 DP-010,science,"2.0 The Science","Decision fatigue, fear of regret, and loss sensitivity increase at the decision stage. Clarity lowers cognitive load and builds confidence.",,,,Intro paragraph for science section.
-DP-011,science,"Choice Overload","Too many options reduces action. Limiting to 2–3 best-fit options increases confidence.","2–3 options|Simple comparisons|Ask preference",,,Tie to selection discipline.
-DP-012,science,"Framing","Guests respond to outcomes more than specs; translate features into real-life benefits.","Feature→Outcome|Outcome→Feeling|Real-life moments",,,Core value language technique.
-DP-013,science,"Loss Aversion","Guests fear making a wrong choice more than they desire a perfect choice; reduce perceived risk through calm clarity.","Normalize big decision|Remove uncertainty|Clear next step",,,Use in 'I need to think' handling.
-DP-014,science,"Commitment & Consistency","Small yeses create momentum; use micro-commitments that feel respectful and permission-based.","Fit check|If-we-could|Two-choice close",,,Place in scripts.
-DP-015,science,"Peak-End","Guests remember emotional peaks and how the process ends; plan one 'aha' moment and end with a calm summary.","One peak moment|Clear summary|Next step",,,Great coaching cue for managers.
-DP-020,standards,"Clarity First","Before numbers, ensure the guest understands why it fits and what value it creates.","Needs recap|Best-fit reasoning|Outcome language",,,Non-negotiable standard.
-DP-021,standards,"Two-Layer Value","Every key point includes feature→outcome and outcome→feeling.","Feature|Outcome|Feeling",,,Observer checklist item.
-DP-022,standards,"Summarize in Their Words","Use a short recap that mirrors the guest’s priorities and reasons.","You said…|Because…|That’s why…",,,Builds trust fast.
-DP-023,standards,"Decision Point Question","Use a calm, respectful commitment question—never pressure.","Scale 1–10|If-we-could|Option A vs B",,,Make this a standard phrase set.
-DP-024,standards,"Transition to Numbers","Present numbers as the next helpful step, not a confrontation.","Would it be helpful if…|Keep it simple|Stay calm",,,Maintains one-price trust tone.
-DP-030,scripts,"Value Recap Script","Confirm priorities and link the chosen vehicle to the guest’s reasons.","Top 3 priorities|Why behind them|Best-fit link",,,Copy/paste block.
-DP-031,scripts,"Value Bridge Sentence","Need→Feature→Outcome/Feeling→Real-life moment.","Because you mentioned…|This helps give you…|Especially when…",,,Core sentence template.
-DP-032,scripts,"Decision Point Questions","Use one of three respectful micro-commitments.","Fit check|If-we-could|Two-choice close",,,Rotate based on situation.
-DP-033,scripts,"I Need to Think Response","Validate, then isolate uncertainty with one question and simplify.","Validate|Clarify|Simplify|Next step",,,Keeps it human, not pushy.
-DP-040,roleplay,"Role-Play Focus","Practice value bridges, decision point questions, and transitions to numbers under real-world uncertainty.","Value bridges|Micro-commitments|Uncertainty isolation|Two-choice close",,,Use in 15-minute huddles.
-DP-050,worksheet,"Worksheet Purpose","Reinforce value mapping, decision point readiness, and clean transition language to numbers.","Priorities|Value bridges|Decision point question|Transition line",,,Use after shadowing or role-play.
+DP-011,science,"Choice Overload","Too many options increases anxiety and delay. Limiting to 2–3 best-fit options restores clarity.","2–3 options|Simple comparisons|Ask preference",,,Tie to selection discipline.
+DP-012,science,"Outcomes Beat Specs","Guests respond to outcomes more than features; translate specs into real-life benefits and feelings.","Feature→Outcome|Outcome→Feeling|Real-life scenarios",,,Core value-building habit.
+DP-013,science,"Loss Aversion","Guests fear making a wrong decision; reduce perceived risk through calm language and clear next steps.","Normalize big decision|Reduce uncertainty|Clear next step",,,Use in 'I need to think' handling.
+DP-014,science,"Micro-Commitments","Small yeses build momentum and confidence when done respectfully.","Fit check|If-we-could|Two-choice clarity",,,Place in scripts as standard options.
+DP-020,standards,"Decision Before Numbers","Before payments, the guest should understand why it fits and what value it creates.","Why it fits|Daily outcomes|Concern solved",,,Non-negotiable standard.
+DP-021,standards,"Use Their Words","Summarize priorities in the guest’s language to build trust and reduce confusion.","You said…|Because…|That’s why…",,,Observer checklist item.
+DP-022,standards,"Two-Layer Value","Every key point includes feature→outcome and outcome→feeling.","Feature|Outcome|Feeling",,,Keeps presentations human and relevant.
+DP-023,standards,"Clean Numbers Transition","Numbers are a service step, not a confrontation. Use permission-based language.","Would it be helpful if…|Keep it simple|Stay calm",,,Protects trust-first tone.
+DP-030,scripts,"15-Second Recap","A short recap of top priorities and why they matter, in the guest’s words.","Priority 1|Priority 2|Priority 3|Because…",,,Copy/paste block.
+DP-031,scripts,"3-Sentence Value Stack","Fit reason + daily outcome + concern solved.","Why it fits|What they'll feel|What it solves",,,Core script for decision point.
+DP-032,scripts,"Decision Point Questions","Three respectful micro-commitment options to maintain momentum without pressure.","1–10 fit check|If-we-could|Option A vs B",,,Use based on situation.
+DP-033,scripts,"I Need to Think","Validate, isolate uncertainty with one question, then simplify the next step.","Validate|Clarify|Simplify|Next step",,,Keep it human.
+DP-040,roleplay,"Role-Play Focus","Practice recaps, value stacks, micro-commitments, and clean transitions under uncertainty.","Recap|Value bridges|Micro-commitments|Uncertainty isolation|Numbers transition",,,Use in manager-led huddles.
+DP-050,worksheet,"Worksheet Purpose","Reinforce Decision Point clarity: priorities, value stack, decision question, and clean transition language.","Priorities|Value stack|Decision question|Transition line",,,Use after shadowing or role-play.

@@ -8,52 +8,57 @@ Rotate every 8 minutes.
 
 ---
 
-## Drill 1: Value Bridge Reps (Feature → Outcome → Feeling)
-**Goal:** Deliver 5 value bridges in 2 minutes without sounding scripted.
+## Drill 1: Recap + Fit (15 seconds)
+**Goal:** Priorities recap in the guest’s words + one fit sentence.
+
+Guest prompt:
+“I want something safe and comfortable, but I’m overwhelmed.”
 
 Observer scores:
-- Natural tone (1–5)
-- “That fits my life” clarity (1–5)
+- Accurate recall (1–5)
+- Clarity (1–5)
+- Calm tone (1–5)
 
 ---
 
-## Drill 2: Decision Point Question (Soft Commitment)
-Guest says: “I like it… I’m just not sure.”
+## Drill 2: Value Bridge Reps
+**Goal:** Deliver 5 value bridges without sounding scripted.
+
+Pick needs:
+- safety
+- winter confidence
+- comfort
+- tech convenience
+- space
+
+---
+
+## Drill 3: Decision Point Question
+Guest says:
+“I like it… I’m just not sure.”
 
 **Goal:**
 - validate
-- simplify (2 options max)
-- ask one decision point question
+- simplify to 2 options (if needed)
+- ask ONE Decision Point question
 
 ---
 
-## Drill 3: ‘I Need to Think’ (Uncertainty Removal)
-Guest says: “I need to think about it.”
+## Drill 4: “I Need to Think”
+Guest says:
+“I need to think about it.”
 
 **Goal:**
-- calm acknowledgement
+- validate
 - isolate uncertainty with one question
-- provide clarity
-- end with a simple next step
+- clarify
+- propose a simple next step
 
 ---
 
-## Drill 4: Two-Choice Close (No Pressure)
-Present two best-fit vehicles.
+## Drill 5: Clean Transition to Numbers
+**Goal:** Make numbers feel like a helpful service step.
 
-**Goal:**
-- compare simply
-- tie each to a different value
-- ask: “Which feels closer to your life?”
-
----
-
-## Drill 5: Transition to Numbers (Respect + Confidence)
-**Goal:**
-Set up numbers like a service step:
-“Would it be helpful if…”
 No pressure cues.
-
-Debrief:
-- What line sounded most human?
-- Where did it start feeling like “closing” instead of “helping”?
+No “close” energy.
+Just clarity.

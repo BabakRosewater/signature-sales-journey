@@ -1,58 +1,56 @@
 # 4.0 Scripts & Word Tracks
 
-## 4.1 The Value Recap (Needs → Fit)
-“Let me make sure I’m tracking. You told me the big priorities are **{priority 1}**, **{priority 2}**, and **{priority 3}**—mostly because **{why}**.  
-That’s why this one stands out: it matches those priorities without forcing tradeoffs.”
+## 4.1 Hood Ornament Set-Up (Decision Point Framing)
+“Let’s make sure this fits your life—not just looks good on paper.”
 
 ---
 
-## 4.2 Feature → Outcome → Feeling (Value Bridge)
+## 4.2 The 15-Second Recap (Their Words)
+“From what you told me, the big priorities are **{P1}**, **{P2}**, and **{P3}**—mostly because **{WHY}**.”
+
+---
+
+## 4.3 The Value Stack (3 sentences)
+1) “That’s why this one stands out: **{fit reason}**.”  
+2) “The part you’ll feel every day is **{outcome}**.”  
+3) “And it solves the concern you mentioned about **{concern}**.”
+
+---
+
+## 4.4 Feature → Outcome → Feeling (Value Bridge)
 “Because you mentioned **{need}**, this **{feature}** helps give you **{outcome/feeling}**, especially when **{real-life moment}**.”
 
 Examples:
 - “Because winter confidence matters, AWD helps you feel in control when the roads get messy.”
-- “Because family safety matters, this driver-assist package gives you peace of mind on daily drives.”
+- “Because family safety matters, this driver assist package gives you peace of mind on daily drives.”
 
 ---
 
-## 4.3 The Decision Point Question (Soft Commitment)
-Pick one:
-
-1) **Fit Check**
+## 4.5 Decision Point Questions (Pick One)
+### A) Fit Check (1–10)
 “On a scale of 1–10, how close is this to what you had in mind?”
 
-2) **If-We-Could**
+### B) If-We-Could (Comfortable Numbers)
 “If we can make the numbers comfortable, would you feel good moving forward with this one?”
 
-3) **Two-Choice Close (No Pressure)**
+### C) Two-Choice Clarity
 “Which feels closer to your life—Option A or Option B?”
 
 ---
 
-## 4.4 Handling ‘I Need to Think’
+## 4.6 “I Need to Think” (Uncertainty Isolation)
 “Totally fair—this is a big decision.  
-Before you think, can I ask one quick thing: what part feels unclear or uncertain right now?”
+Before you think, what part feels unclear or uncertain right now?”
 
 (Then)
 “Let’s make that part simple first.”
 
 ---
 
-## 4.5 Transition to Numbers (Clean + Service-First)
-“Would it be helpful if we looked at what this looks like with the options you chose—just so you can see it clearly?”
+## 4.7 Transition to Numbers (Clean + Trust-First)
+“Would it be helpful if we looked at what this breaks down to with the options you chose—just so you can see it clearly?”
 
 ---
 
-## 4.6 One-Price Promise Value Line (If Applicable)
-“Our one-price approach is designed to keep this simple and respectful—clear numbers, no back-and-forth games.  
-That way you can focus on fit and comfort, not pressure.”
-
----
-
-## 4.7 End-of-Phase Summary (Peak-End)
-“Here’s what we know:
-- What matters most: **{top value}**
-- Best fit option: **{vehicle}**
-- Why it fits: **{2–3 outcomes}**
-
-Want to take the next step and see it in numbers?”
+## 4.8 Partner/Spouse Alignment (Respectful)
+“Is there anything your partner will care about most—safety, payment, space, or something else—so we can make sure this checks that box too?”
