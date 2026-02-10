@@ -2,7 +2,6 @@ row_id,section,heading,body,bullets,quote,attribution,notes
 SSO-001,objective,"Objective","Learn how to effectively present vehicle options and address customer concerns or objections, guiding them toward a confident and informed purchasing decision.",,,,Top-of-module objective.
 SSO-002,objective,"Core Idea","A great presentation is not a feature tour—it’s a needs-based solution story that keeps the guest in control.","Needs-based|Benefit-first|Invite feedback|2–3 options",,,Use as a module anchor.
 SSO-003,objective,"Service-First Quote","Serving the guest well is what creates the sale—not pressure.",,,"A sale is not something you pursue; it’s what happens to you while you are immersed in serving others.",Mike White,Use as opening quote block.
-
 SSO-010,science,"3.0 The Science","This module applies cognitive and emotional principles to help guests feel understood, reduce uncertainty, and build confidence during selection and turns.",,,,Intro paragraph for science section.
 SSO-011,science,"Reciprocity","People feel a pull to respond positively after receiving value or kindness.","Small gestures|Comfort items|Helpful effort",,"We'd like to offer you a complimentary coffee while you explore our vehicle options.",,Reference: Cialdini (1984).
 SSO-012,science,"Commitment & Consistency","When guests state preferences, they tend to align future decisions with those stated values.","Repeat priorities|Confirm must-haves|Link back to their words",,"You mentioned safety features are important to you. How do you feel about the advanced safety package in this model?",,Reference: Cialdini (1984).
@@ -13,29 +12,24 @@ SSO-016,science,"Scarcity","Limited availability increases perceived value and u
 SSO-017,science,"Dual-Process Theory","Blend emotional (fast) and analytical (slow) decision systems.","Story + visuals|Specs + numbers|Hands-on demo",,"Let me show you how it feels, and then we’ll review the numbers so you can decide confidently.",,Reference: Kahneman (2011).
 SSO-018,science,"Autonomy, Mastery, Purpose","People are motivated by control, competence, and meaning.","Give choices|Teach features|Connect to goals",,"This car’s customizable technology lets you tailor your experience—so you stay in control.",,Reference: Pink (2009).
 SSO-019,science,"Predictably Irrational","Emotions and biases shape decisions; guide toward clarity and long-term value.","Reframe value|Reduce regret|Compare total impact",,"I understand the price difference feels big—let’s look at the long-term value this hybrid offers.",,Reference: Ariely (2008).
-
 SSO-030,operations,"Application in Daily Operations","Use these practices to make selection feel simple and guest-first.","Story + visuals|Interactive demos|Benefits tied to needs|Empathy + facts|Urgency without pressure",,,Turn into a checklist card.
 SSO-031,operations,"Sales Presentations","Make features relatable through stories, visuals, and hands-on moments.","Story|Demo|Invite reaction",,,Keep it simple: show, then ask.
 SSO-032,operations,"Needs Assessment","Ask open-ended questions and listen for motivations that drive the decision.","Open questions|Active listening|Clarify priorities",,,Bridge from Module 2.
 SSO-033,operations,"Feature Presentation","Frame features as solutions to what the guest already said matters.","Needs → feature → benefit|Use their words",,,Avoid feature dumping.
 SSO-034,operations,"Handling Objections","Acknowledge, clarify root cause, respond with value, and invite next step.","Acknowledge|Empathize|Clarify|Respond|Invite",,,Connect to AERI / Feel-Felt-Found.
 SSO-035,operations,"Closing Momentum","Reinforce value, reduce uncertainty, and create a calm next step.","Confirm fit|Reduce overwhelm|Clear next move",,,Use “2–3 best fit options” rule.
-
 SSO-040,improvement,"Continuous Improvement","Use customer feedback and team practice to refine delivery over time.","Feedback loops|Training reps|Best-practice sharing|Metrics",,,Section intro.
 SSO-041,improvement,"Feedback Loops","Ask guests to share what felt clear vs confusing; adjust accordingly.","What was most helpful?|What’s still unclear?",,,Simple end-of-visit question.
 SSO-042,improvement,"Training Sessions","Practice selection stories, objection handling, and turns weekly.","Role play|Manager coaching|Peer feedback",,,Reps build confidence.
 SSO-043,improvement,"Performance Metrics","Track outcomes that reflect clarity and trust.","Appointment show|Close rate|CSI|Turn success|Time-to-decision",,,Tie to coaching.
-
 SSO-050,turn_science,"Part II: The Science of Turn 100%","A turn is a trust moment. The goal is to add value while preserving momentum and comfort.",,,,Intro paragraph for turn science.
 SSO-051,turn_science,"Cognitive Dissonance","Explain the benefit of added support so expectations stay aligned.","Explain why|Benefit to guest|Keep you present",,"I want to ensure all your questions are thoroughly answered, so I’ve asked our product specialist to join us.",,Reference: Festinger (1957).
 SSO-052,turn_science,"Social Proof for Turns","Normalize teamwork—many guests prefer expert support.","Normalize|Reassure|Keep it common",,"Many of our customers have found it helpful to speak with our financing expert to explore the best options.",,Reference: Cialdini (1984).
 SSO-053,turn_science,"Reciprocity in Turns","Frame the turn as extra care and effort from the team.","Team support|Extra effort|Service tone",,"We’re committed to finding the perfect fit for you, so our team is here every step of the way.",,Reference: Cialdini (1984).
-
 SSO-060,turn_skills,"Communication Strategies","These skills keep the guest comfortable during selection and turns.","Active listening|Empathy|Solution dialogue",,,Section intro.
 SSO-061,turn_skills,"Active Listening","Reflect, clarify, and show non-verbal attentiveness.","Paraphrase|Clarify|Eye contact|Nod",,,Use with every concern.
 SSO-062,turn_skills,"Empathetic Responses","Validate feelings and reassure without minimizing.","Validate|Normalize|Reassure",,"I can see why that’s important to you.",,Use before facts.
 SSO-063,turn_skills,"Solution-Oriented Dialogue","Shift from problem to options and next steps.","Benefits|Options|Positive language",,"Let’s find the best solution together.",,Keep it collaborative.
-
 SSO-070,selection,"3.1 Selection & Alternate Selection","Present a best-fit primary option and keep an alternate ready to maintain momentum and confidence.",,,,Section intro.
 SSO-071,selection,"Showcase Primary Selection","Start with the option that best matches confirmed needs and motivations.","Needs match|Benefits|Emotional relevance",,,Use their words from discovery.
 SSO-072,selection,"Benefits-Oriented Presentation","Translate features into daily-life outcomes for the guest.","Feature → benefit|Lifestyle match|Why it matters",,,Avoid spec dumping.
@@ -43,48 +37,39 @@ SSO-073,selection,"Emotional Connection","Help the guest picture ownership and u
 SSO-074,selection,"Read Customer Signals","Use hesitation as a cue to introduce an alternate option confidently.","Body language|Questions|Uncertainty|Price tension",,,Coach: “Signals are data.”
 SSO-075,selection,"Introduce Alternate as Positive","Alternate is not a fallback—present it as another strong fit aligned to their needs.","Positive framing|Same core needs|Solves concern",,"Based on what you told me, I have another option that might be an even better fit.",,Keep momentum.
 SSO-076,selection,"Key Phrases for Alternate","Use these to pivot without pressure.","Better fit|Extra benefit|Tied to their words",,"Since you mentioned wanting more room for weekend trips, let me show you this model.",,Make it sound helpful, not salesy.
-
 SSO-080,transition,"3.2 Transition to Selection","Bridge discovery into options by summarizing needs, explaining your reasoning, and inviting collaboration.",,,,Section intro.
 SSO-081,transition,"Recap Needs","Summarize priorities in the guest’s language and confirm accuracy.","Recap|Confirm|Prioritize",,"From what you told me, safety and tech are top priorities—did I capture that right?",,Trust checkpoint.
 SSO-082,transition,"Smooth Transition Phrases","Move forward with calm confidence and a clear plan.","2–3 options|Invite questions|Collaborative tone",,"Now that I understand what matters most, I’d love to show you a couple of great fits.",,Keep pace.
 SSO-083,transition,"Maintain Confidence","Invite questions and acknowledge the decision size without pressure.","Invite|Reassure|No pressure",,"If any questions come up as we look, tell me—my goal is to keep this comfortable and clear.",,Use proactively.
-
 SSO-090,alignment,"3.3 Align Needs with Selection","Connect each highlighted feature directly to a stated need, lifestyle, or concern.",,,,Section intro.
 SSO-091,alignment,"Feature-to-Benefit Link","Explain why the feature matters to them—not why it matters to us.","Need → feature → benefit",,,Use simple language.
 SSO-092,alignment,"Visualization + Storytelling","Use short stories and ‘imagine’ language to make benefits real.","Imagine|Short story|Relatable use-case",,,Keep stories brief and relevant.
 SSO-093,alignment,"Check for Fit","Ask for feedback to keep the guest engaged and in control.","How does that feel?|Does that solve it?|Anything missing?",,,Don’t monologue.
-
 SSO-100,presentation,"3.6 Customized Presentation","Tailor emphasis based on the guest’s priorities; adapt as you go using their reactions.",,,,Section intro.
 SSO-101,presentation,"Safety-Focused Guest","Emphasize safety systems as peace of mind and family protection.","ADAS|Cameras|Blind spot|Lane keep",,,Benefit language > tech jargon.
 SSO-102,presentation,"Tech-Focused Guest","Show connectivity and ease; demonstrate quickly.","CarPlay|Android Auto|360 camera|UX",,,Demo + let them try.
 SSO-103,presentation,"Performance-Focused Guest","Connect capability to their lifestyle (towing, weather, driving feel).","Power|Modes|AWD|Towing",,,Keep it practical.
 SSO-104,presentation,"Adapt in Real Time","If they light up on something—go deeper; if they glaze over—shift.","Read cues|Adjust depth|Stay relevant",,,Coach: “Follow energy.”
-
 SSO-110,objections,"3.6 Questions, Concerns, Objections","Identify the feedback type and respond with the right approach to keep trust and momentum.",,,,Section intro.
 SSO-111,objections,"Questions","Requests for information; respond clearly and link back to needs.","Clear answer|No overwhelm|Link to needs",,,End with “Does that help?”
 SSO-112,objections,"Concerns","Worries/anxiety; respond with empathy, reassurance, and options.","Listen|Validate|Reassure|Offer options",,,Don’t rush to fix—acknowledge first.
 SSO-113,objections,"Objections","A barrier to moving forward; isolate root cause and respond with value and a next step.","Acknowledge|Clarify|Value|Next step",,,Treat as progress, not conflict.
-
 SSO-120,formula,"3.7 Feel, Felt, Found","Use empathy + social proof + reframe to reduce tension and restore confidence.",,,,Section intro.
 SSO-121,formula,"Feel","Acknowledge emotion and perspective.","Understand|Validate",,"I understand how you feel.",,Keep tone calm.
 SSO-122,formula,"Felt","Normalize with others’ experiences.","Many felt that way|You’re not alone",,"Many of our customers felt the same way at first.",,Don’t sound scripted—make it real.
 SSO-123,formula,"Found","Share the resolution and new perspective.","Reframe value|Show outcome|Invite next step",,"They found that the long-term value made it the right choice.",,Close with a question.
-
 SSO-130,proactive,"3.8 Proactive Thinking, Empathy, Confidence","Prepare for common objections, respond with empathy, and confidently guide toward solutions.",,,,Section intro.
 SSO-131,proactive,"Anticipate Common Concerns","Bring up key info early to prevent concerns from growing.","Warranty|Maintenance|MPG|Safety|Financing",,,Share before asked.
 SSO-132,proactive,"Positive Language","Frame responses around value and outcomes.","Value|Clarity|Next step",,,Avoid reinforcing negatives.
 SSO-133,proactive,"Objection Isolation","Clarify the true barrier before solving.","Clarify|Restate|Narrow|Confirm|Hidden objections",,,Use before presenting solutions.
-
 SSO-140,worksheet,"3.9 Worksheet: Practice Drill","Practice labeling feedback types, writing responses, and isolating objections.",,,,Worksheet section intro.
 SSO-141,worksheet,"Feedback Type Sorting","Label each statement as question/concern/objection and explain why.","Question|Concern|Objection",,,Use in team huddle.
 SSO-142,worksheet,"Response Building","Write a response using empathy + clarity + next step.","Empathy|Facts|Options|Invite",,,Score clarity 1–5.
 SSO-143,worksheet,"Isolation Steps","Practice clarifying questions and confirmation statements.","Clarify|Restate|Narrow|Confirm",,,Build muscle memory.
-
 SSO-150,turn,"3.10 Turn","Turn at the right moment to preserve momentum and increase comfort.","Stalled|Authority needed|Expertise needed|Fresh energy",,,Turn is strategy, not failure.
 SSO-151,turn,"3.11 When It’s Time to Turn","Recognize signals that additional help will serve the guest better.","Persistent objections|Stall|Disengagement|Escalation cues|Negotiation impasse",,,Use early—not late.
 SSO-152,turn,"3.12 Why We Turn","Turns add expertise, confidence, and resolution while demonstrating teamwork.","Expertise|Confidence|Resolve sticking points|Re-engage|Reduce tension",,,Turn = service.
 SSO-153,turn,"3.13 Giving vs Receiving the Turn","Give with value + context; receive with rapport + continuity + immediate value.","Brief handoff|Acknowledge prior convo|Add value immediately|Maintain continuity",,,Make it seamless.
-
 SSO-160,turn,"Setup for a Successful Turn","Build up the team member, explain why, and reassure you remain available.","Build up|Explain benefit|Stay present|Smooth intro",,,No awkward pauses.
 SSO-161,turn,"Taking the Turn","Introduce clearly, provide context so the guest doesn’t repeat themselves, and move forward.","Intro|Context|Next step",,,Team alignment is critical.
 SSO-162,turn,"Support Turns","Support coworkers with behind-the-scenes communication and consistent messaging.","Quick brief|Unified message|Step in if needed",,,Consistency protects trust.
