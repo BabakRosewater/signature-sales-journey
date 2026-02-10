@@ -297,25 +297,30 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-100">
       {/* Header (LOGO ONLY — bigger, and NO /module/... badge) */}
-      <div className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center px-4 py-3">
-          <img
-            src="/logo.svg"
-            alt="Signature Sales Journey Training Hub"
-            className="h-14 sm:h-16 md:h-[76px] w-auto max-w-[560px]"
-          />
+      <div className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-3">
+            <img
+              src="/logo.svg"
+              alt="Signature Sales Journey Training Hub"
+              className="h-12 sm:h-14 md:h-16 w-auto max-w-[420px]"
+            />
+          </div>
+          <div className="hidden rounded-xl bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-600 ring-1 ring-slate-200 lg:block">
+            Training Hub
+          </div>
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-12 gap-4 px-4 py-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-12 gap-5 px-4 py-5">
         {/* Sidebar */}
-        <aside className="col-span-12 lg:col-span-4">
-          <div className="rounded-2xl bg-white p-3 shadow-sm ring-1 ring-slate-200">
+        <aside className="col-span-12 lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
+          <div className="rounded-3xl bg-white p-3 shadow-sm ring-1 ring-slate-200">
             <div className="mb-2 flex items-center justify-between">
-              <div className="text-sm font-semibold">Modules</div>
-              <span className="text-xs text-slate-500">{modules.length}</span>
+              <div className="text-sm font-semibold text-slate-900">Modules</div>
+              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600 ring-1 ring-slate-200">{modules.length}</span>
             </div>
 
             <div className="max-h-[70vh] overflow-auto pr-1">
@@ -325,10 +330,10 @@ function App() {
                   <button
                     key={m.slug}
                     onClick={() => navigateToModule(m.slug)}
-                    className={`w-full rounded-xl px-3 py-2 text-left transition ${
+                    className={`w-full rounded-2xl border px-3 py-2.5 text-left transition ${
                       isActive
-                        ? "bg-slate-900 text-white"
-                        : "bg-white hover:bg-slate-50 text-slate-900"
+                        ? "border-slate-900 bg-slate-900 text-white shadow-sm"
+                        : "border-slate-200 bg-white text-slate-900 hover:bg-slate-50"
                     }`}
                   >
                     <div className="text-sm font-semibold">{m.title}</div>
@@ -344,8 +349,8 @@ function App() {
 
         {/* Main */}
         <main className="col-span-12 lg:col-span-8">
-          <div className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
-            <div className="mb-3">
+          <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
+            <div className="mb-4">
               <div className="text-xl font-extrabold">{currentTitle}</div>
               {meta?.description ? (
                 <div className="mt-1 text-sm text-slate-600">{meta.description}</div>
@@ -375,7 +380,7 @@ function App() {
             </div>
 
             {/* Tabs */}
-            <div className="mb-3 flex flex-wrap gap-2">
+            <div className="mb-3 flex flex-wrap gap-2 rounded-2xl bg-slate-50 p-2 ring-1 ring-slate-200">
               {tabs.map((t) => {
                 const isActive = t.id === activeTabId;
                 return (

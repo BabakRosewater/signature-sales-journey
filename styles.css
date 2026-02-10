@@ -143,3 +143,21 @@
 .prose .muted {
   color: rgba(15, 23, 42, 0.62);
 }
+
+/* App-like polish */
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.prose {
+  font-size: 15px;
+}
+
+.prose h1 {
+  margin-bottom: 0.75rem;
+}
+
+.prose p,
+.prose li {
+  text-wrap: pretty;
+}
