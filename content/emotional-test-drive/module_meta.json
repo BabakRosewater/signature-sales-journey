@@ -1,16 +1,4 @@
-{
-  "title": "Greeting & First Impressions",
-  "description": "Trust-first presence, non-verbal cues, scenarios, role-play, and facility standards.",
-  "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
-    { "id": "science", "label": "The Science", "type": "markdown", "file": "2_science.md" },
-    { "id": "greetings", "label": "Standards", "type": "markdown", "file": "3_greetings.md" },
-    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "4_roleplay.md" },
-    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "5_worksheet.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
-  ]
-} 
-{
+ {
   "module_number": 4,
   "slug": "emotional-test-drive",
   "title": "Emotional Test Drive",
