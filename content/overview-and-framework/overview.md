@@ -1,4 +1,3 @@
-Jump to: [Best Price Promise](#tab=best-price) · [NSP](#tab=nsp) · [Modular Framework](#tab=framework)
 
 <div class="hero">
   <div class="eyebrow">Signature Sales Journey</div>

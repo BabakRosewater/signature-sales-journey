@@ -1,0 +1,41 @@
+{
+  "module_number": 11,
+  "slug": "post-sale-follow-up-loyalty",
+  "title": "Post-Sale Follow-Up & Loyalty",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Turn delivery into long-term loyalty by executing a consistent post-sale follow-up system that protects trust, builds confidence in ownership, and creates repeat/referral momentum—without sounding scripted or pushy.",
+  "position_in_journey": "Delivery → Ownership Success → Repeat & Referral",
+  "estimated_time_minutes": 50,
+  "prerequisites": [
+    "after-they-say-yes"
+  ],
+  "learning_outcomes": [
+    "Run a simple post-sale follow-up cadence that feels personal and helpful.",
+    "Prevent buyer’s remorse and reduce early ownership friction (features, service, questions).",
+    "Set the first service appointment and explain what to expect in a trust-first way.",
+    "Ask for referrals and reviews naturally by earning them through support.",
+    "Use CRM notes to personalize follow-up and build long-term relationship memory.",
+    "Re-engage unsold opportunities ethically when the time is right (without pressure)."
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "follow-up",
+    "loyalty",
+    "ownership",
+    "referrals",
+    "reviews",
+    "service-introduction",
+    "retention",
+    "relationship"
+  ]
+}
