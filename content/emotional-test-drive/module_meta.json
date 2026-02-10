@@ -1,4 +1,4 @@
- {
+[ {
   "module_number": 4,
   "slug": "emotional-test-drive",
   "title": "Emotional Test Drive",
@@ -40,3 +40,4 @@
     "micro-confirmations"
   ]
 }
+]
