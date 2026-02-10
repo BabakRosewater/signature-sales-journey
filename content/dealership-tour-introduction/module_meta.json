@@ -1,8 +1,44 @@
 {
-  "title": "Module 06 — Dealership Tour & Introduction",
-  "description": "Tour that builds trust",
-  "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  "module_number": 6,
+  "slug": "dealership-tour-introduction",
+  "title": "Dealership Tour & Introduction",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Use a short, purposeful dealership tour to increase comfort, credibility, and trust—introducing key people and touchpoints that reinforce how we support the guest before, during, and after the sale.",
+  "position_in_journey": "Decision Point → Dealership Tour → Numbers / Commitment",
+  "estimated_time_minutes": 35,
+  "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-and-trust",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive",
+    "decision-point-building-value"
+  ],
+  "learning_outcomes": [
+    "Explain why we do the tour and when to do it (timing).",
+    "Deliver a 3–6 minute tour that feels helpful, not corny.",
+    "Introduce the right people with a trust-first purpose.",
+    "Use the tour to reduce anxiety and increase confidence before numbers.",
+    "Create one ‘proof of support’ moment (service + ownership).",
+    "Transition smoothly from tour to the next step."
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "dealership-tour",
+    "introduction",
+    "trust",
+    "credibility",
+    "service",
+    "ownership",
+    "transition"
   ]
 }
