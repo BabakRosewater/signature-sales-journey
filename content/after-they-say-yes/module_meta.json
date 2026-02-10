@@ -1,8 +1,42 @@
 {
-  "title": "Module 08 — After They Say Yes",
-  "description": "Post-yes steps + momentum",
-  "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  "module_number": 10,
+  "slug": "after-they-say-yes",
+  "title": "After They Say Yes",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Lock in trust and momentum after commitment by guiding the guest through next steps with clarity, celebration, and zero surprises—so they feel confident, cared for, and excited to take delivery.",
+  "position_in_journey": "Commitment → Next Steps → Delivery Setup",
+  "estimated_time_minutes": 45,
+  "prerequisites": [
+    "closing-with-confidence",
+    "manager-closes"
+  ],
+  "learning_outcomes": [
+    "Confirm commitment cleanly and reduce buyer’s remorse risk immediately.",
+    "Set a calm, confident roadmap of what happens next (no confusion, no drift).",
+    "Protect trust by introducing team handoffs and timing expectations properly.",
+    "Maintain momentum during paperwork/finance transition with permission-based language.",
+    "Keep the guest emotionally positive with simple celebration and reassurance.",
+    "Capture clean notes and align internal team steps to avoid re-work and surprises."
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "commitment",
+    "handoff",
+    "next-steps",
+    "trust",
+    "delivery",
+    "finance-transition",
+    "no-surprises",
+    "customer-experience"
   ]
 }

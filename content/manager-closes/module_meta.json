@@ -1,8 +1,52 @@
 {
-  "title": "Module 07B — Manager Closes",
-  "description": "Manager-level objection resolution",
+  "module_number": 8,
+  "slug": "manager-closes",
+  "title": "Manager Closes",
+  "description": "A trust-first manager turn that protects the guest experience, resolves friction, and earns a confident next step—without pressure.",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Use a structured, low-pressure manager close to clarify truth, resolve concerns, and align next steps—so the guest feels supported and the deal stays clean.",
+  "position_in_journey": "After Closing With Confidence → Before/During Numbers → Save-A-Deal if needed",
+  "estimated_time_minutes": 45,
+  "prerequisites": [
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive",
+    "decision-point-building-value",
+    "closing-with-confidence"
+  ],
+  "learning_outcomes": [
+    "Run a consistent manager turn that feels supportive, not confrontational.",
+    "Diagnose whether the issue is a question, concern, objection, or misalignment.",
+    "Use 'Unshakable Facts' to create clarity without pressure.",
+    "Resolve the real issue with one clean ask and a clear next step.",
+    "Keep team choreography clean: handoff, positioning, and roles."
+  ],
   "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
+    { "id": "overview", "label": "Overview", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "file": "6_worksheet.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "manager-turn",
+    "turn-process",
+    "objections",
+    "unshakable-facts",
+    "clarity",
+    "trust",
+    "save-a-deal"
   ]
 }
