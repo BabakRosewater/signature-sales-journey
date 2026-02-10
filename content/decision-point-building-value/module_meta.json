@@ -1,8 +1,43 @@
 {
-  "title": "Module 05 — Decision Point & Building Value",
-  "description": "Hood ornament + value building",
-  "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  "module_number": 5,
+  "slug": "decision-point-building-value",
+  "title": "Decision Point & Building Value",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Guide guests to a confident decision by clarifying what matters most, translating features into real-life outcomes, and leading a calm, trust-first Decision Point conversation before numbers.",
+  "position_in_journey": "Emotional Test Drive → Decision Point (Hood Ornament) → Numbers",
+  "estimated_time_minutes": 55,
+  "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-and-trust",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive"
+  ],
+  "learning_outcomes": [
+    "Recognize the Decision Point moment and guide it without pressure.",
+    "Summarize the guest’s priorities in their words and confirm fit.",
+    "Translate features into outcomes (confidence, comfort, safety, simplicity).",
+    "Use a simple value stack that feels factual and respectful.",
+    "Use permission-based commitment language (micro-commitments) to maintain trust.",
+    "Transition to numbers as a helpful next step—not a confrontation."
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "decision-point",
+    "hood-ornament",
+    "value-building",
+    "clarity",
+    "commitment",
+    "trust-first",
+    "one-price"
   ]
 }
