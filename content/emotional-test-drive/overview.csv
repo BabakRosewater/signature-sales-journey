@@ -1,0 +1,21 @@
+row_id,section,heading,body,bullets,quote,attribution,notes
+ETD-001,objective,"Objective","Guide the guest through a test drive that connects features to feelings, reduces uncertainty, and builds confident ownership vision—without pressure.",,,,Top-of-module objective.
+ETD-002,objective,"Core Idea","The test drive is not a feature tour—it is a confidence event. Our job is to create safety, meaning, and confidence.",,,,"Use as opening block under objective."
+ETD-003,objective,"Flow","Use a repeatable Emotional Test Drive flow: Setup → Experience → Confirm.","Setup|Experience|Confirm",,,Add as a visual workflow in the app.
+ETD-010,science,"2.0 The Science","Guests use the test drive to reduce fear of regret, uncertainty, and trust concerns. Emotional connection lowers threat and speeds confident decisions.",,,,Intro paragraph for science section.
+ETD-011,science,"Psychological Safety","Safety comes from clear expectations, calm pace, permission-based language, and giving the guest control.","Route/time|Comfort checks|Invite questions|Guest control",,,Turn into a “Success Standards” callout.
+ETD-012,science,"Future Pacing","Ownership vision increases confidence. Use specific life scenes so benefits feel real.","Winter commute|School drop-off|Highway merge|Parking at work|Weekend road trip",,,Use throughout drive and walkaround.
+ETD-013,science,"Feature → Benefit Translation","Specs overwhelm. Benefits help guests decide. Use Need → Feature → Feeling → Moment.","Need|Feature|Feeling|Moment",,,Core sentence template for scripts.
+ETD-014,science,"Micro-Confirmations","People don’t object when confused—they go quiet. Check alignment every 60–90 seconds.","How does that feel?|Is that what you expected?|Does that solve it?",,,Observer checklist item.
+ETD-015,science,"Peak-End Rule","Guests remember the strongest moment and the ending. Plan one peak moment and end with calm clarity.","One peak|Clear wrap-up|Simple next step",,,Add to roleplay drill.
+ETD-020,standards,"Pre-Drive Setup","Before moving, confirm top 2 priorities, explain route/time, comfort check, and choose a focus moment.","Priorities|Route/time|Comfort|Focus moment",,,Non-negotiable standard.
+ETD-021,standards,"Only What Matters","No feature dumping. Tie features only to stated needs and real life moments.","No dumping|Tie to needs|Tie to moments",,,Reinforce coaching.
+ETD-022,standards,"Permission-Based Prompts","Use permission language before pointing features out or prompting a peak moment.","Would it help if…|Can I point out…|Do you want to feel…",,,Keeps trust-first tone.
+ETD-023,standards,"Post-Drive Fit Questions","Always ask fit questions and clarify the next step without pressure.","How close?|Like most?|Change?|Compare?|Next step",,,This drives confidence and momentum.
+ETD-030,scripts,"Pre-Drive Setup Script","Set expectations and confirm top 2 priorities in ~60 seconds.",,,,"Put as copy/paste word track."
+ETD-031,scripts,"Values Bridge Sentence","Because you mentioned {need}, this {feature} helps give you {feeling}, especially when {moment}.",,,,"Core template for the whole module."
+ETD-032,scripts,"Peak Moment Setup","Do you want to feel what it’s like merging? Nothing aggressive—just enough to feel how smooth and confident it is.",,,,"Use for highway merge moment."
+ETD-033,scripts,"Quiet Guest Reset","That’s totally okay—this is a lot to take in. What’s going through your mind right now?",,,,"Use when guest goes quiet mid-drive."
+ETD-034,scripts,"Post-Drive Close","Based on {priority 1} and {priority 2}, how close did this feel to what you had in mind? What did you like most and what would you change?",,,,"Calm, clear close."
+ETD-040,roleplay,"Role-Play Focus","Practice the full flow under pressure: setup, values bridge, micro-confirmations, quiet guest reset, post-drive fit close.","Setup|Bridge|Confirm|Reset|Close",,,Use for weekly huddles.
+ETD-050,worksheet,"Worksheet Purpose","Reinforce pre-drive setup, values bridge practice, micro-confirmations, and post-drive fit questions for consistent execution.","Setup|Bridge|Confirmations|Fit questions|Reflection",,,Worksheet header row.

@@ -1,0 +1,21 @@
+row_id,section,heading,body,bullets,quote,attribution,notes
+CC-001,objective,"Objective","Guide the guest to a clear, confident decision by presenting numbers simply, confirming alignment with their priorities, addressing concerns calmly, and asking for commitment without pressure.",,,,Top-of-module objective.
+CC-002,objective,"Core Idea","Closing with confidence is calm leadership: recap → numbers → confirm → commitment → next steps.","Recap values|Simple numbers|Confirm alignment|Commitment ask|Clear next step",,,Use as the module anchor framework.
+CC-010,science,"2.0 The Science","Closing is where risk signals rise (fear of regret, fairness, uncertainty). Simplicity and clarity reduce cognitive load and increase confidence.",,,,Intro paragraph for science section.
+CC-011,science,"Cognitive Load","When information feels heavy, guests delay. Reduce overwhelm with structure and short explanations.","One page|One option first|Pause|Summarize",,,Observer checklist item: 'kept it simple.'
+CC-012,science,"Loss Aversion","Guests feel the risk of a mistake more than the joy of a gain. Pressure increases fear; clarity reduces it.","Reassure|Confirm fit|No pressure",,,Avoid urgency tactics unless true.
+CC-013,science,"Choice Architecture","Too many options increases anxiety. Two clean options create comfort and forward movement.","Option A vs B|Ask preference|Keep it simple",,,Use two-option close when unsure.
+CC-014,science,"Commitment & Consistency","When guests affirm priorities, they’re more likely to act consistently. Recap priorities before numbers.","Recap|Tie numbers to priorities|Confirm alignment",,,Make recap a non-negotiable step.
+CC-015,science,"Procedural Fairness","Guests accept outcomes more when the process feels fair and respectful.","Narrate intention|Invite questions|Transparent tone",,,Keep body language calm and open.
+CC-016,science,"Peak-End","Guests remember endings. End with clarity and respect, even if they don’t buy today.","Clear next step|No pressure|Confidence",,,Protect relationship and referrals.
+CC-020,standards,"Recap Before Numbers","Summarize what matters most first, then present numbers.","30-second recap|Confirm|Then numbers",,,Non-negotiable.
+CC-021,standards,"Calm Pace + Silence","Present, pause, and let the guest process.","Short explanation|Pause|Let them speak",,,Silence is a skill.
+CC-022,standards,"Confirm Before Close","Ask alignment before commitment ask.","How close is this?|Does it match?",,,Prevents hard 'no'.
+CC-023,standards,"Two-Option Close","If uncertain, offer 2 clear paths and ask preference.","Option A|Option B|Which fits?",,,Avoid 5-scenario spiral.
+CC-024,standards,"No Pressure Language","Avoid guilt, fear tactics, and pushy urgency. Build urgency through clarity and truth only.","No guilt|No threats|No 'today only'",,,Protect brand trust-first.
+CC-025,standards,"Clean Next Steps Always","Even without a yes today, summarize and set a next step.","Summary|Next step|Follow-up time",,,Keeps momentum and respect.
+CC-030,scripts,"Transition to Numbers","Set expectations: keep it simple and collaborative.","I’ll keep it simple|One best-fit first|Adjust together",,,Copy/paste block.
+CC-031,scripts,"Commitment Ask","Ask directly, respectfully, without pressure.","Would you like to move forward?",,,Deliver calmly.
+CC-032,scripts,"Common Stalls","Use isolation questions to find the real barrier.","Is it fit, payment, or timing?",,,Then solve and re-check.
+CC-040,roleplay,"Role-Play Focus","Practice recap, numbers delivery, strategic silence, two-option close, and handling stalls while keeping trust intact.","Recap|Numbers|Silence|Option A/B|Isolate|Next steps",,,Use for manager-led close drills.
+CC-050,worksheet,"Worksheet Purpose","Reinforce the closing structure, two-option close, objection isolation, and clean next-step language.","Recap script|Numbers setup|Two-option close|Objection isolate|Next steps",,,Use after role-play and shadowing.
