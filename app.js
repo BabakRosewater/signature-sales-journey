@@ -106,6 +106,8 @@ function App() {
   const [tabLoading, setTabLoading] = useState(false);
   const [tabError, setTabError] = useState("");
   const [tabHtml, setTabHtml] = useState("");
+  const contentRef = useRef(null);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   // AI state
   const [aiPrompt, setAiPrompt] = useState("");
@@ -149,8 +151,19 @@ function App() {
       const m = await jsonFetch(`/content/${slug}/module_meta.json`);
       setMeta({ ...m, __slug: slug });
 
-      // Default tab
-      const firstTab = buildTabsFromMeta(m)?.[0]?.id || "overview";
+      // Default tab (prefer last opened tab for this module)
+      const normalizedTabs = buildTabsFromMeta(m);
+      const savedTabId = (() => {
+        try {
+          return window.localStorage.getItem(`ssj_tab_${slug}`);
+        } catch {
+          return null;
+        }
+      })();
+      const firstTab =
+        normalizedTabs.find((t) => t.id === savedTabId)?.id ||
+        normalizedTabs[0]?.id ||
+        "overview";
       setActiveTabId(firstTab);
 
       // Seed AI settings
@@ -167,10 +180,25 @@ function App() {
     });
   }, [slug]);
 
+  // Persist last-opened tab per module
+  useEffect(() => {
+    if (!slug || !activeTabId) return;
+    try {
+      window.localStorage.setItem(`ssj_tab_${slug}`, activeTabId);
+    } catch {
+      // ignore storage restrictions
+    }
+  }, [slug, activeTabId]);
+
   const activeTab = useMemo(() => {
     if (!tabs.length) return null;
     return tabs.find((t) => t.id === activeTabId) || tabs[0];
   }, [tabs, activeTabId]);
+
+  const activeTabIndex = useMemo(
+    () => tabs.findIndex((t) => t.id === activeTabId),
+    [tabs, activeTabId]
+  );
 
   // Load tab content (markdown) when active tab changes
   useEffect(() => {
@@ -197,6 +225,35 @@ function App() {
       }
     })();
   }, [slug, activeTabId, activeTab?.type, activeTab?.file]);
+
+  // Reading progress indicator for markdown tabs
+  useEffect(() => {
+    if (activeTab?.type !== "markdown") {
+      setReadingProgress(0);
+      return;
+    }
+
+    const calcProgress = () => {
+      const el = contentRef.current;
+      if (!el) {
+        setReadingProgress(0);
+        return;
+      }
+      const rect = el.getBoundingClientRect();
+      const viewport = window.innerHeight || 1;
+      const total = Math.max(el.scrollHeight - viewport * 0.45, 1);
+      const progressed = Math.min(Math.max(viewport * 0.35 - rect.top, 0), total);
+      setReadingProgress(Math.max(0, Math.min(100, Math.round((progressed / total) * 100))));
+    };
+
+    calcProgress();
+    window.addEventListener("scroll", calcProgress, { passive: true });
+    window.addEventListener("resize", calcProgress);
+    return () => {
+      window.removeEventListener("scroll", calcProgress);
+      window.removeEventListener("resize", calcProgress);
+    };
+  }, [activeTab?.type, activeTabId, tabHtml]);
 
   const currentTitle = useMemo(() => {
     const m = modules.find((x) => x.slug === slug);
@@ -293,10 +350,32 @@ function App() {
               {meta?.description ? (
                 <div className="mt-1 text-sm text-slate-600">{meta.description}</div>
               ) : null}
+              {meta?.objective ? (
+                <div className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
+                  <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
+                </div>
+              ) : null}
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+                {meta?.estimated_time_minutes ? (
+                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
+                    ~{meta.estimated_time_minutes} min
+                  </span>
+                ) : null}
+                {activeTabIndex >= 0 ? (
+                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
+                    Tab {activeTabIndex + 1} of {tabs.length}
+                  </span>
+                ) : null}
+                {activeTab?.type === "markdown" ? (
+                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
+                    Reading progress {readingProgress}%
+                  </span>
+                ) : null}
+              </div>
             </div>
 
             {/* Tabs */}
-            <div className="mb-4 flex flex-wrap gap-2">
+            <div className="mb-3 flex flex-wrap gap-2">
               {tabs.map((t) => {
                 const isActive = t.id === activeTabId;
                 return (
@@ -315,6 +394,28 @@ function App() {
               })}
             </div>
 
+            <div className="mb-4 flex items-center gap-2">
+              <Button
+                kind="secondary"
+                disabled={activeTabIndex <= 0}
+                onClick={() => setActiveTabId(tabs[activeTabIndex - 1]?.id)}
+              >
+                ← Previous
+              </Button>
+              <Button
+                kind="secondary"
+                disabled={activeTabIndex < 0 || activeTabIndex >= tabs.length - 1}
+                onClick={() => setActiveTabId(tabs[activeTabIndex + 1]?.id)}
+              >
+                Next →
+              </Button>
+              {activeTab?.type === "markdown" ? (
+                <div className="ml-auto h-2 w-40 overflow-hidden rounded-full bg-slate-200" aria-label="Reading progress">
+                  <div className="h-full bg-slate-900 transition-all" style={{ width: `${readingProgress}%` }} />
+                </div>
+              ) : null}
+            </div>
+
             {/* Content */}
             {tabError ? (
               <div className="rounded-xl bg-rose-50 p-3 text-sm text-rose-800 ring-1 ring-rose-200">
@@ -326,7 +427,7 @@ function App() {
               tabLoading ? (
                 <div className="text-sm text-slate-500">Loading…</div>
               ) : (
-                <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: tabHtml }} />
+                <div ref={contentRef} className="prose max-w-none" dangerouslySetInnerHTML={{ __html: tabHtml }} />
               )
             ) : null}
 
