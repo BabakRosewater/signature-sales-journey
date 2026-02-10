@@ -1,8 +1,46 @@
 {
-  "title": "Module 07A — Closing with Confidence",
-  "description": "Presenting numbers with confidence",
-  "tabs": [
-    { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
-    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  "module_number": 7,
+  "slug": "closing-with-confidence",
+  "title": "Closing with Confidence",
+  "brand": "SignatureHyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-10",
+  "objective": "Guide the guest to a clear, confident decision by presenting numbers simply, confirming alignment with their priorities, addressing concerns calmly, and asking for commitment without pressure.",
+  "position_in_journey": "Dealership Tour → Numbers → Commitment → Handoff",
+  "estimated_time_minutes": 50,
+  "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-and-trust",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive",
+    "decision-point-building-value",
+    "dealership-tour-introduction"
+  ],
+  "learning_outcomes": [
+    "Present numbers with clarity and calm confidence (no overwhelm).",
+    "Use a simple close structure: recap → numbers → confirm → commit.",
+    "Separate questions vs concerns vs objections during the close.",
+    "Use two-option choice architecture to reduce anxiety and delay.",
+    "Handle common closing stalls (\"I need to think\", \"I want to shop\", payment).",
+    "Ask for commitment in a respectful, professional way.",
+    "End with clean next steps so the guest feels in control."
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "closing",
+    "commitment",
+    "numbers",
+    "confidence",
+    "choice-architecture",
+    "objections",
+    "next-steps"
   ]
 }
