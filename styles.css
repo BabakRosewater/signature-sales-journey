@@ -161,3 +161,10 @@ body {
 .prose li {
   text-wrap: pretty;
 }
+
+.prose mark.search-hit {
+  background: #fef08a;
+  color: #0f172a;
+  border-radius: 0.3rem;
+  padding: 0 0.2rem;
+}

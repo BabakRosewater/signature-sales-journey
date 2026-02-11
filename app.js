@@ -39,6 +39,18 @@ const renderMarkdownSafe = (md) => {
   return window.DOMPurify.sanitize(html);
 };
 
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const highlightHtml = (html, query) => {
+  if (!html || !query?.trim()) return html;
+  const re = new RegExp(`(${escapeRegExp(query.trim())})`, "gi");
+  const highlighted = html.replace(/(<[^>]+>)|([^<]+)/g, (match, tag, text) => {
+    if (tag) return tag;
+    return text.replace(re, '<mark class="search-hit">$1</mark>');
+  });
+  return window.DOMPurify.sanitize(highlighted);
+};
+
 const inferTabLabel = (file) => {
   const map = {
     "1_overview.md": "Overview",
@@ -105,7 +117,10 @@ function App() {
 
   const [tabLoading, setTabLoading] = useState(false);
   const [tabError, setTabError] = useState("");
+  const [tabMarkdown, setTabMarkdown] = useState("");
   const [tabHtml, setTabHtml] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
   const contentRef = useRef(null);
   const [readingProgress, setReadingProgress] = useState(0);
 
@@ -141,13 +156,37 @@ function App() {
     });
   }, []);
 
+  const showToast = (message) => {
+    setToastMessage(message);
+    window.setTimeout(() => setToastMessage(""), 1400);
+  };
+
+  const copyCurrentTab = async (activeTab) => {
+    if (!activeTab) return;
+    const source = activeTab.type === "markdown" ? tabMarkdown : aiResult;
+    if (!source) {
+      showToast("Nothing to copy yet");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(source);
+      showToast("Copied");
+    } catch (e) {
+      console.error(e);
+      showToast("Copy failed");
+    }
+  };
+
   // Load module_meta.json when slug changes
   useEffect(() => {
     if (!slug) return;
     (async () => {
       setMeta(null);
       setTabError("");
+      setTabMarkdown("");
       setTabHtml("");
+      setSearchQuery("");
       const m = await jsonFetch(`/content/${slug}/module_meta.json`);
       setMeta({ ...m, __slug: slug });
 
@@ -200,12 +239,20 @@ function App() {
     [tabs, activeTabId]
   );
 
+  const visibleTabHtml = useMemo(
+    () => highlightHtml(tabHtml, searchQuery),
+    [tabHtml, searchQuery]
+  );
+
   // Load tab content (markdown) when active tab changes
   useEffect(() => {
     if (!slug || !activeTab) return;
     if (!meta || meta.__slug !== slug) return;
 
+    setSearchQuery("");
+
     if (activeTab.type !== "markdown") {
+      setTabMarkdown("");
       setTabHtml("");
       setTabError("");
       setTabLoading(false);
@@ -217,6 +264,7 @@ function App() {
       setTabError("");
       try {
         const md = await textFetch(`/content/${slug}/${activeTab.file}`);
+        setTabMarkdown(md);
         setTabHtml(renderMarkdownSafe(md));
       } catch (e) {
         setTabError(`Could not load ${activeTab.file}. ${e.message}`);
@@ -224,7 +272,7 @@ function App() {
         setTabLoading(false);
       }
     })();
-  }, [slug, activeTabId, activeTab?.type, activeTab?.file]);
+  }, [slug, activeTabId, activeTab?.type, activeTab?.file, meta]);
 
   // Reading progress indicator for markdown tabs
   useEffect(() => {
@@ -253,7 +301,7 @@ function App() {
       window.removeEventListener("scroll", calcProgress);
       window.removeEventListener("resize", calcProgress);
     };
-  }, [activeTab?.type, activeTabId, tabHtml]);
+  }, [activeTab?.type, activeTabId, visibleTabHtml]);
 
   const currentTitle = useMemo(() => {
     const m = modules.find((x) => x.slug === slug);
@@ -305,7 +353,7 @@ function App() {
             <img
               src="/logo.svg"
               alt="Signature Sales Journey Training Hub"
-              className="h-12 sm:h-14 md:h-16 w-auto max-w-[420px]"
+              className="h-12 w-auto max-w-[420px] sm:h-14 md:h-16"
             />
           </div>
           <div className="hidden rounded-xl bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-600 ring-1 ring-slate-200 lg:block">
@@ -320,7 +368,9 @@ function App() {
           <div className="rounded-3xl bg-white p-3 shadow-sm ring-1 ring-slate-200">
             <div className="mb-2 flex items-center justify-between">
               <div className="text-sm font-semibold text-slate-900">Modules</div>
-              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600 ring-1 ring-slate-200">{modules.length}</span>
+              <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600 ring-1 ring-slate-200">
+                {modules.length}
+              </span>
             </div>
 
             <div className="max-h-[70vh] overflow-auto pr-1">
@@ -352,9 +402,7 @@ function App() {
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <div className="mb-4">
               <div className="text-xl font-extrabold">{currentTitle}</div>
-              {meta?.description ? (
-                <div className="mt-1 text-sm text-slate-600">{meta.description}</div>
-              ) : null}
+              {meta?.description ? <div className="mt-1 text-sm text-slate-600">{meta.description}</div> : null}
               {meta?.objective ? (
                 <div className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
                   <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
@@ -399,7 +447,22 @@ function App() {
               })}
             </div>
 
-            <div className="mb-4 flex items-center gap-2">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              {activeTab?.type === "markdown" ? (
+                <input
+                  className="h-10 min-w-0 flex-1 rounded-xl border border-slate-200 bg-white px-3 text-sm outline-none focus:border-slate-400"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search in this tab..."
+                />
+              ) : (
+                <div className="flex-1" />
+              )}
+
+              <Button kind="secondary" onClick={() => copyCurrentTab(activeTab)}>
+                Copy tab
+              </Button>
+
               <Button
                 kind="secondary"
                 disabled={activeTabIndex <= 0}
@@ -415,7 +478,10 @@ function App() {
                 Next →
               </Button>
               {activeTab?.type === "markdown" ? (
-                <div className="ml-auto h-2 w-40 overflow-hidden rounded-full bg-slate-200" aria-label="Reading progress">
+                <div
+                  className="ml-auto h-2 w-40 overflow-hidden rounded-full bg-slate-200"
+                  aria-label="Reading progress"
+                >
                   <div className="h-full bg-slate-900 transition-all" style={{ width: `${readingProgress}%` }} />
                 </div>
               ) : null}
@@ -432,7 +498,11 @@ function App() {
               tabLoading ? (
                 <div className="text-sm text-slate-500">Loading…</div>
               ) : (
-                <div ref={contentRef} className="prose max-w-none" dangerouslySetInnerHTML={{ __html: tabHtml }} />
+                <div
+                  ref={contentRef}
+                  className="prose max-w-none"
+                  dangerouslySetInnerHTML={{ __html: visibleTabHtml }}
+                />
               )
             ) : null}
 
@@ -482,6 +552,12 @@ function App() {
           </div>
         </main>
       </div>
+
+      {toastMessage ? (
+        <div className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white shadow-lg">
+          {toastMessage}
+        </div>
+      ) : null}
     </div>
   );
 }
