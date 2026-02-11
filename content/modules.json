@@ -65,5 +65,11 @@
     "slug": "post-sale-follow-up-loyalty",
     "title": "Module \u2014 Post-Sale Follow-Up & Loyalty",
     "description": "Follow-up cadence, service introduction, reviews, referrals, retention"
+  },
+  {
+    "order": 11,
+    "slug": "full-journey-script-playbook",
+    "title": "Module \u2014 Full Journey Script Playbook",
+    "description": "Complete word tracks from greeting through follow-up and save-a-deal."
   }
 ]

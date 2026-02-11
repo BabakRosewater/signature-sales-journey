@@ -1,0 +1,52 @@
+{
+  "module_number": 11,
+  "slug": "full-journey-script-playbook",
+  "title": "Full Journey Script Playbook",
+  "brand": "Clark Hyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-02-11",
+  "objective": "Provide one complete, ready-to-use word-track library for every step of the sales journey—from first greeting through post-sale follow-up and save-a-deal recovery.",
+  "position_in_journey": "Greeting → Discovery → Presentation → Drive → Numbers → Close → Delivery → Follow-Up",
+  "estimated_time_minutes": 45,
+  "prerequisites": [
+    "overview-and-framework",
+    "power-greeting",
+    "uncovering-needs-building-trust",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive",
+    "decision-point-building-value",
+    "dealership-tour-introduction",
+    "closing-with-confidence",
+    "manager-closes",
+    "after-they-say-yes",
+    "post-sale-follow-up-loyalty"
+  ],
+  "learning_outcomes": [
+    "Deliver a confident 10-second opening for walk-in, drive-up, and weather scenarios.",
+    "Set a clear agenda that reduces guest anxiety early.",
+    "Use structured discovery and transition language to guide decision-making.",
+    "Run a value-focused presentation and emotional test drive with clear prompts.",
+    "Present one-price numbers with calm confidence and concise objection handling.",
+    "Close clearly, deliver professionally, and execute post-sale follow-up scripts.",
+    "Apply a save-a-deal taillight follow-up that preserves trust and momentum."
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "scripts",
+    "word-tracks",
+    "sales-process",
+    "discovery",
+    "objections",
+    "close",
+    "delivery",
+    "follow-up"
+  ]
+}
