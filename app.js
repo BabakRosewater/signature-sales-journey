@@ -432,7 +432,7 @@ function App() {
     <div className="min-h-screen bg-slate-100">
       {/* Branded header — book icon + "Sales Journey / TRAINING HUB" + chips */}
       <div className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
+        <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-3 px-4 py-3 lg:px-8">
           <a href="/" className="flex items-center gap-3 no-underline">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm">
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -468,9 +468,9 @@ function App() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl grid-cols-12 gap-5 px-4 py-5">
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-12 gap-6 px-4 py-5 lg:px-8">
         {/* Sidebar */}
-        <aside className="col-span-12 lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
+        <aside className="col-span-12 lg:col-span-3 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-3xl bg-white p-3 shadow-sm ring-1 ring-slate-200">
             <div className="mb-2 flex items-center justify-between">
               <div className="text-sm font-semibold text-slate-900">Modules</div>
@@ -529,7 +529,7 @@ function App() {
         </aside>
 
         {/* Main */}
-        <main className="col-span-12 lg:col-span-8">
+        <main className="col-span-12 lg:col-span-9">
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <div className="mb-4">
               {/* Breadcrumb */}
