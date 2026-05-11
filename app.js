@@ -215,7 +215,7 @@ function App() {
         m.ai?.system ||
           "You are a dealership sales trainer. Be concise, specific, and usable."
       );
-      setAiModel(m.ai?.model || "gemini-2.0-flash");
+      setAiModel(m.ai?.model || "gemini-2.5-flash");
       setAiPrompt(m.ai?.starterPrompt || "");
       setAiResult("");
     })().catch((e) => {
