@@ -66,6 +66,11 @@ const inferTabLabel = (file) => {
   return map[file] || file.replace(/\.md$/i, "").replace(/^[0-9]+_/, "");
 };
 
+const SUPPLEMENT_TRAINING_LINKS = {
+  "power-greeting": "/supplement_training/module_1_greeting_and_first_impressions.html",
+  "decision-point-building-value": "/supplement_training/module_5_decision_point_and_building_value.html",
+};
+
 const buildTabsFromMeta = (m) => {
   if (!m) return [];
 
@@ -458,6 +463,17 @@ function App() {
               ) : (
                 <div className="flex-1" />
               )}
+
+              {SUPPLEMENT_TRAINING_LINKS[slug] ? (
+                <a
+                  href={SUPPLEMENT_TRAINING_LINKS[slug]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-xl bg-white px-3 py-2 text-sm font-semibold text-slate-900 ring-1 ring-slate-200 transition hover:bg-slate-50"
+                >
+                  Supplement Training ↗
+                </a>
+              ) : null}
 
               <Button kind="secondary" onClick={() => copyCurrentTab(activeTab)}>
                 Copy tab
