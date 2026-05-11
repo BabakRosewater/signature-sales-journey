@@ -71,6 +71,70 @@ const SUPPLEMENT_TRAINING_LINKS = {
   "decision-point-building-value": "/supplement_training/module_5_decision_point_and_building_value.html",
 };
 
+/**
+ * Per-tab UX label/subtitle, used by the Quick Start banner.
+ * Keys match the labels returned by inferTabLabel / module_meta tab labels.
+ * Modules whose labels aren't listed here fall back to the raw label.
+ */
+const TAB_UX = {
+  "Overview":        { eyebrow: "Quick Start",     subtitle: "Objective, outcomes, and the flow for this step." },
+  "Science":         { eyebrow: "Why It Works",    subtitle: "The principles behind trust + decision clarity." },
+  "Standards":       { eyebrow: "Non-Negotiables", subtitle: "What great looks like — every time." },
+  "Scripts":         { eyebrow: "Word Tracks",     subtitle: "Scenario language you can copy and run." },
+  "Role-Play":       { eyebrow: "Practice Reps",   subtitle: "Scenarios + rubrics to build consistency fast." },
+  "Worksheet":       { eyebrow: "Action Plan",     subtitle: "Capture your plan and use it in the showroom." },
+  "Quick Reference": { eyebrow: "Quick Reference", subtitle: "Fast scan summary you can use in the moment." },
+  "AI Lab":          { eyebrow: "AI Coach",        subtitle: "Live coaching backed by Gemini." },
+};
+
+/**
+ * Sister-site links shown in the Master Hub drawer.
+ * Only real, externally hosted Cloudflare Pages projects — no internal
+ * placeholders that would 404 in this repo.
+ */
+const HUB_SECTIONS = [
+  {
+    title: "Central Launchpad",
+    links: [
+      { label: "Sales • Service • Parts Hub", href: "https://sales-service-parts-hub.pages.dev" },
+    ],
+  },
+  {
+    title: "Sales • Inventory • CRM",
+    links: [
+      { label: "Core Incentives Matrix",   href: "https://sales-battle-card.pages.dev/region_incentives/" },
+      { label: "Inventory Finder",         href: "https://clark-inventory-finder.pages.dev" },
+      { label: "Save-A-Deal Logic",        href: "https://save-a-deal-logic.pages.dev" },
+      { label: "Activation Framework",     href: "https://sales-battle-card.pages.dev/daily_training/save-a-deal_activation_framework/" },
+    ],
+  },
+  {
+    title: "Training • Coaching",
+    links: [
+      { label: "Sales Journey Training (You are here)", href: "#", isCurrent: true },
+    ],
+  },
+  {
+    title: "Service Excellence",
+    links: [
+      { label: "Service Battle Cards", href: "https://service-battle-card.pages.dev/" },
+    ],
+  },
+];
+
+/**
+ * Sidebar eyebrow label for a module: "Start Here" / "Module 01" / "Playbook".
+ * Driven by the existing `order` field in /content/modules.json.
+ */
+const moduleSidebarLabel = (m) => {
+  if (!m) return "";
+  if (m.slug === "full-journey-script-playbook") return "Playbook";
+  const order = typeof m.order === "number" ? m.order : null;
+  if (order === 0) return "Start Here";
+  if (order === null) return "Module";
+  return `Module ${String(order).padStart(2, "0")}`;
+};
+
 const buildTabsFromMeta = (m) => {
   if (!m) return [];
 
