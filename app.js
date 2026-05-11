@@ -588,13 +588,53 @@ function App() {
                 ) : null}
               </div>
 
-              {/* Quick Start / tab-specific banner */}
-              {activeTab && TAB_UX[activeTab.label] ? (
-                <div className="mt-4 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
-                  <div className="app-eyebrow">{TAB_UX[activeTab.label].eyebrow}</div>
-                  <div className="mt-0.5 text-sm text-slate-700">{TAB_UX[activeTab.label].subtitle}</div>
-                </div>
-              ) : null}
+              {/* Quick Start / tab-specific hero banner */}
+              {activeTab && TAB_UX[activeTab.label] ? (() => {
+                const ux = TAB_UX[activeTab.label];
+                const tone = TONE_CLASSES[ux.tone] || TONE_CLASSES.slate;
+                const moduleLabel = moduleSidebarLabel(modules.find((m) => m.slug === slug));
+                const total = tabs.length;
+                const step = Math.max(1, activeTabIndex + 1);
+                const pct = total > 0 ? Math.round((step / total) * 100) : 0;
+                return (
+                  <div className={`mt-4 rounded-2xl border-0 px-5 py-5 ring-1 ${tone.card}`}>
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                      <div className="flex min-w-0 items-start gap-4">
+                        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${tone.iconBox}`}>
+                          <span className="[&_svg]:h-6 [&_svg]:w-6">{ux.icon}</span>
+                        </div>
+                        <div className="min-w-0">
+                          <div className="mb-1 flex flex-wrap items-center gap-2">
+                            {moduleLabel ? (
+                              <span className={`rounded-lg px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-widest ${tone.pill}`}>
+                                {moduleLabel}
+                              </span>
+                            ) : null}
+                            <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
+                              {meta?.title || currentTitle}
+                            </span>
+                          </div>
+                          <h3 className={`text-2xl font-black leading-tight tracking-tight ${tone.title}`}>{ux.eyebrow}</h3>
+                          <p className="mt-1 text-sm font-medium text-slate-600">{ux.subtitle}</p>
+                        </div>
+                      </div>
+
+                      <div className="w-full shrink-0 rounded-xl bg-white/60 p-3 ring-1 ring-white/70 backdrop-blur-sm md:w-60">
+                        <div className="mb-1 flex items-center justify-between text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
+                          <span>Completion</span>
+                          <span className="text-slate-900">{pct}%</span>
+                        </div>
+                        <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200/70">
+                          <div className={`h-full transition-all duration-500 ${tone.bar}`} style={{ width: `${pct}%` }} />
+                        </div>
+                        <div className="mt-2 text-center text-[10px] font-bold text-slate-500">
+                          {step} of {total} sections
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })() : null}
             </div>
 
             {/* Tabs */}
