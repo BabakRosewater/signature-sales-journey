@@ -67,6 +67,7 @@ const inferTabLabel = (file) => {
 };
 
 const SUPPLEMENT_TRAINING_LINKS = {
+  "overview-and-framework": "/roadmap/",
   "power-greeting": "/supplement_training/module_1_greeting_and_first_impressions.html",
   "decision-point-building-value": "/supplement_training/module_5_decision_point_and_building_value.html",
 };
@@ -140,6 +141,7 @@ const HUB_SECTIONS = [
     title: "Training • Coaching",
     links: [
       { label: "Sales Journey Training (You are here)", href: "#", isCurrent: true },
+      { label: "Sales Process Roadmap", href: "/roadmap/" },
     ],
   },
   {
