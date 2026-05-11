@@ -528,30 +528,51 @@ function App() {
               {visibleModules.map((m) => {
                 const isActive = m.slug === slug;
                 const eyebrow = moduleSidebarLabel(m);
+                const pinRoadmapAfter = m.slug === "overview-and-framework";
                 return (
-                  <button
-                    key={m.slug}
-                    onClick={() => navigateToModule(m.slug)}
-                    className={`mb-1.5 flex w-full items-center gap-3 rounded-2xl border px-3 py-2.5 text-left transition ${
-                      isActive
-                        ? "border-slate-900 bg-slate-900 text-white shadow-sm"
-                        : "border-slate-200 bg-white text-slate-900 hover:bg-slate-50"
-                    }`}
-                  >
-                    <div className="min-w-0 flex-1">
-                      <div className={`app-eyebrow ${isActive ? "!text-white/70" : ""}`}>{eyebrow}</div>
-                      <div className="truncate text-sm font-semibold">{m.title}</div>
-                      <div className={`truncate text-xs ${isActive ? "text-white/75" : "text-slate-500"}`}>
-                        {m.description || ""}
-                      </div>
-                    </div>
-                    <svg
-                      className={`h-4 w-4 shrink-0 transition ${isActive ? "text-white" : "text-slate-300"}`}
-                      fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                  <React.Fragment key={m.slug}>
+                    <button
+                      onClick={() => navigateToModule(m.slug)}
+                      className={`mb-1.5 flex w-full items-center gap-3 rounded-2xl border px-3 py-2.5 text-left transition ${
+                        isActive
+                          ? "border-slate-900 bg-slate-900 text-white shadow-sm"
+                          : "border-slate-200 bg-white text-slate-900 hover:bg-slate-50"
+                      }`}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
+                      <div className="min-w-0 flex-1">
+                        <div className={`app-eyebrow ${isActive ? "!text-white/70" : ""}`}>{eyebrow}</div>
+                        <div className="truncate text-sm font-semibold">{m.title}</div>
+                        <div className={`truncate text-xs ${isActive ? "text-white/75" : "text-slate-500"}`}>
+                          {m.description || ""}
+                        </div>
+                      </div>
+                      <svg
+                        className={`h-4 w-4 shrink-0 transition ${isActive ? "text-white" : "text-slate-300"}`}
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+
+                    {pinRoadmapAfter ? (
+                      <a
+                        href="/roadmap/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mb-1.5 flex w-full items-center gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-2.5 text-left text-slate-900 no-underline transition hover:bg-slate-50"
+                      >
+                        <div className="min-w-0 flex-1">
+                          <div className="app-eyebrow">Start Here</div>
+                          <div className="truncate text-sm font-semibold">Sales Process Roadmap</div>
+                          <div className="truncate text-xs text-slate-500">Visual map of the journey</div>
+                        </div>
+                        <svg className="h-4 w-4 shrink-0 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 3h7m0 0v7m0-7L10 14" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h5" />
+                        </svg>
+                      </a>
+                    ) : null}
+                  </React.Fragment>
                 );
               })}
             </div>
