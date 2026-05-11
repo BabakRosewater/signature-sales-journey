@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Process Roadmap</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Smooth transition for the accordion effect */
+        .content-wrapper {
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .card-active .content-wrapper {
+            max-height: 300px; /* Large enough for content */
+            opacity: 1;
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        .card-active .chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+
+    <div class="min-h-screen p-4 md:p-8">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header -->
+            <header class="mb-12 text-center">
+                <h1 class="text-4xl font-extrabold text-slate-900 mb-2 tracking-tight">
+                    Sales Process Roadmap
+                </h1>
+                <p class="text-slate-500 text-lg">
+                    A comprehensive visual guide to the Sales Training Modules.
+                </p>
+            </header>
+
+            <!-- Flowchart Container -->
+            <div class="relative">
+                <!-- Central Line (Desktop Only) -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 z-0"></div>
+
+                <div class="space-y-8 relative z-10" id="flowchart-container">
+
+                    <!-- Module 01 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full md:flex-row-reverse">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-blue-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 01</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-blue-500 shrink-0"><i data-lucide="user-plus"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Power Greeting</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Make a powerful first impression, establish rapport immediately, and set the tone for a professional interaction.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-blue-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-blue-500">1</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 02 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-indigo-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 02</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-indigo-500 shrink-0"><i data-lucide="search"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Uncovering Needs & Trust</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Ask deep-dive questions to understand the customer's 'Why' while establishing yourself as a trusted advisor.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-indigo-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-indigo-500">2</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 03 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full md:flex-row-reverse">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-purple-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 03</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-purple-500 shrink-0"><i data-lucide="lightbulb"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Solutions & Obstacles</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Present specific vehicle features that solve their needs and address concerns before they become deal-breakers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-purple-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-purple-500">3</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 04 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-pink-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 04</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-pink-500 shrink-0"><i data-lucide="car"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Emotional Test Drive</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Move from technical specifications to emotional ownership. Let the customer 'feel' the vehicle in their life.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-pink-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-pink-500">4</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 05 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full md:flex-row-reverse">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-orange-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 05</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-orange-500 shrink-0"><i data-lucide="scale"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Decision Point & Value</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Transition to the numbers by reinforcing the total value proposition and justifying the investment.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-orange-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-orange-500">5</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 06 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-amber-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 06</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-amber-500 shrink-0"><i data-lucide="map"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Dealership Tour</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Showcase the service department and facility to build long-term confidence in the dealership, not just the car.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-amber-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-amber-500">6</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 07 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full md:flex-row-reverse">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-green-600"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 07</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-green-600 shrink-0"><i data-lucide="check-circle"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Closing with Confidence</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Ask for the business clearly and confidently using proven closing techniques and professional persistence.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-green-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-green-600">7</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 08 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-teal-600"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 08</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-teal-600 shrink-0"><i data-lucide="users"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Manager Closes</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Leverage management support to provide extra validation, handle complex negotiations, and solidify the deal.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-teal-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-teal-600">8</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 10 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full md:flex-row-reverse">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-cyan-600"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 10</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-cyan-600 shrink-0"><i data-lucide="file-check"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">After They Say Yes</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Maintain momentum through the paperwork and delivery process. Ensure the transition to F&I is seamless.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-cyan-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-cyan-600">10</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                        <div class="md:hidden py-4 text-slate-300"><i data-lucide="chevron-down" class="w-8 h-8"></i></div>
+                    </div>
+
+                    <!-- Module 11 -->
+                    <div class="module-item flex flex-col md:flex-row items-center w-full">
+                        <div class="w-full md:w-5/12 transition-all duration-300">
+                            <div class="card cursor-pointer bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition-all p-0" onclick="toggleCard(this)">
+                                <div class="p-1 bg-rose-500"></div>
+                                <div class="p-5">
+                                    <span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Module 11</span>
+                                    <div class="flex items-start gap-4 mt-2">
+                                        <div class="p-3 rounded-xl text-white bg-rose-500 shrink-0"><i data-lucide="heart-handshake"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-slate-800 leading-tight">Follow-Up & Loyalty</h3>
+                                            <div class="content-wrapper mt-3">
+                                                <p class="text-slate-600 text-sm leading-relaxed">Stay top-of-mind through strategic touchpoints to generate referrals and ensure lifelong repeat business.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex justify-end">
+                                        <button class="text-xs font-medium uppercase tracking-wider flex items-center gap-1 text-rose-600">
+                                            <span>Learn more</span><i data-lucide="chevron-down" class="w-3 h-3 chevron"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-2/12 z-20">
+                            <div class="w-10 h-10 rounded-full border-4 border-slate-50 flex items-center justify-center shadow-sm text-white font-bold text-sm bg-rose-500">11</div>
+                        </div>
+                        <div class="hidden md:block md:w-5/12"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-16 text-center border-t border-slate-200 pt-8 pb-12">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 rounded-full text-slate-600 text-sm font-medium">
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <span>The Goal: Customer for Life</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Toggle Functionality
+        function toggleCard(cardElement) {
+            const isAlreadyActive = cardElement.classList.contains('card-active');
+
+            // Close all other cards first (accordion style)
+            document.querySelectorAll('.card').forEach(card => {
+                if (card !== cardElement) {
+                    card.classList.remove('card-active');
+                    const btn = card.querySelector('button span');
+                    if (btn) btn.innerText = 'Learn more';
+                }
+            });
+
+            if (!isAlreadyActive) {
+                cardElement.classList.add('card-active');
+                cardElement.querySelector('button span').innerText = 'Show less';
+            } else {
+                cardElement.classList.remove('card-active');
+                cardElement.querySelector('button span').innerText = 'Learn more';
+            }
+        }
+    </script>
+</body>
+</html>
