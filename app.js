@@ -451,7 +451,19 @@ function App() {
                 Section {activeTabIndex + 1}/{tabs.length}
               </span>
             ) : null}
-            {/* Hub button is added in commit 3/3 */}
+            <button
+              type="button"
+              onClick={() => setHubOpen(true)}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-slate-900 px-3 py-2 text-xs font-bold text-white shadow-sm transition hover:bg-slate-800"
+              aria-haspopup="dialog"
+              aria-expanded={hubOpen}
+              aria-controls="master-hub-drawer"
+            >
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12h18M12 3v18M5.636 5.636l12.728 12.728M18.364 5.636L5.636 18.364" />
+              </svg>
+              Hub
+            </button>
           </div>
         </div>
       </div>
@@ -702,6 +714,76 @@ function App() {
           {toastMessage}
         </div>
       ) : null}
+
+      {/* Master Hub drawer */}
+      {hubOpen ? (
+        <>
+          <div className="app-drawer-overlay" onClick={() => setHubOpen(false)} aria-hidden="true" />
+          <div
+            id="master-hub-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Master Hub"
+            className="app-drawer"
+          >
+            <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+              <div>
+                <div className="app-eyebrow">Master Hub</div>
+                <div className="text-base font-extrabold text-slate-900">Sister sites & tools</div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setHubOpen(false)}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                aria-label="Close Master Hub"
+              >
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="space-y-5 px-5 py-5">
+              {HUB_SECTIONS.map((section) => (
+                <div key={section.title}>
+                  <div className="app-eyebrow mb-2">{section.title}</div>
+                  <ul className="space-y-1.5">
+                    {section.links.map((link) => {
+                      const isExternal = !link.isCurrent && /^https?:\/\//i.test(link.href);
+                      return (
+                        <li key={link.label}>
+                          <a
+                            href={link.href}
+                            target={isExternal ? "_blank" : undefined}
+                            rel={isExternal ? "noopener noreferrer" : undefined}
+                            onClick={link.isCurrent ? (e) => { e.preventDefault(); setHubOpen(false); } : undefined}
+                            aria-current={link.isCurrent ? "page" : undefined}
+                            className={`flex items-center justify-between rounded-xl px-3 py-2 text-sm font-semibold ring-1 transition ${
+                              link.isCurrent
+                                ? "bg-slate-900 text-white ring-slate-900"
+                                : "bg-white text-slate-900 ring-slate-200 hover:bg-slate-50"
+                            }`}
+                          >
+                            <span>{link.label}</span>
+                            {isExternal ? (
+                              <svg className="h-3.5 w-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 3h7m0 0v7m0-7L10 14" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h5" />
+                              </svg>
+                            ) : null}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      ) : null}
+
+      <div className="app-footer">v4.0 • Same-Origin Content Mode</div>
     </div>
   );
 }
