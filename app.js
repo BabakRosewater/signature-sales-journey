@@ -558,36 +558,38 @@ function App() {
 
         {/* Main */}
         <main className="col-span-12 lg:col-span-9">
+          {/* Page-level header (above the content card, no card chrome of its own) */}
+          <div className="mb-5">
+            {/* Breadcrumb */}
+            {slug ? (
+              <div className="mb-2 flex items-center gap-2">
+                <span className="app-eyebrow">{moduleSidebarLabel(modules.find((m) => m.slug === slug))}</span>
+                <span className="app-eyebrow !text-slate-300">•</span>
+                <span className="app-eyebrow">Training Module</span>
+              </div>
+            ) : null}
+
+            <h1 className="text-3xl font-black tracking-tight text-slate-900">{currentTitle}</h1>
+            {meta?.description ? (
+              <p className="mt-2 max-w-3xl text-sm font-medium text-slate-600">{meta.description}</p>
+            ) : null}
+            {meta?.objective ? (
+              <div className="mt-3 rounded-xl bg-white/80 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
+                <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
+              </div>
+            ) : null}
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              {meta?.estimated_time_minutes ? (
+                <span className="app-chip">~{meta.estimated_time_minutes} min</span>
+              ) : null}
+              {activeTab?.type === "markdown" ? (
+                <span className="app-chip">Reading {readingProgress}%</span>
+              ) : null}
+            </div>
+          </div>
+
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <div className="mb-4">
-              {/* Breadcrumb */}
-              {slug ? (
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="app-eyebrow">{moduleSidebarLabel(modules.find((m) => m.slug === slug))}</span>
-                  <span className="app-eyebrow !text-slate-300">•</span>
-                  <span className="app-eyebrow">Training Module</span>
-                </div>
-              ) : null}
-
-              <div className="text-2xl font-extrabold tracking-tight text-slate-900">{currentTitle}</div>
-              {meta?.description ? <div className="mt-1 text-sm text-slate-600">{meta.description}</div> : null}
-              {meta?.objective ? (
-                <div className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
-                  <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
-                </div>
-              ) : null}
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                {meta?.estimated_time_minutes ? (
-                  <span className="app-chip">~{meta.estimated_time_minutes} min</span>
-                ) : null}
-                {activeTabIndex >= 0 && tabs.length > 0 ? (
-                  <span className="app-chip">Section {activeTabIndex + 1}/{tabs.length}</span>
-                ) : null}
-                {activeTab?.type === "markdown" ? (
-                  <span className="app-chip">Reading {readingProgress}%</span>
-                ) : null}
-              </div>
-
               {/* Quick Start / tab-specific hero banner */}
               {activeTab && TAB_UX[activeTab.label] ? (() => {
                 const ux = TAB_UX[activeTab.label];
@@ -597,7 +599,7 @@ function App() {
                 const step = Math.max(1, activeTabIndex + 1);
                 const pct = total > 0 ? Math.round((step / total) * 100) : 0;
                 return (
-                  <div className={`mt-4 rounded-2xl border-0 px-5 py-5 ring-1 ${tone.card}`}>
+                  <div className={`rounded-2xl border-0 px-5 py-5 ring-1 ${tone.card}`}>
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                       <div className="flex min-w-0 items-start gap-4">
                         <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${tone.iconBox}`}>
