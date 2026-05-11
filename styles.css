@@ -168,3 +168,83 @@ body {
   border-radius: 0.3rem;
   padding: 0 0.2rem;
 }
+
+/* ---------- Phase 2 UX polish (header / sidebar / banner / hub) ---------- */
+
+/* Small uppercase eyebrow used in sidebar items, breadcrumbs, banner headers */
+.app-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.55);
+}
+
+/* Pill-shaped status chip used in the header (Section X/Y, progress %, etc.) */
+.app-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.05);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(15, 23, 42, 0.75);
+  white-space: nowrap;
+}
+
+/* Master Hub drawer */
+.app-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 40;
+  animation: appDrawerFade 0.18s ease-out;
+}
+.app-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(420px, 92vw);
+  background: #ffffff;
+  box-shadow: -28px 0 70px rgba(2, 6, 23, 0.32);
+  z-index: 50;
+  overflow-y: auto;
+  animation: appDrawerSlide 0.22s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+@keyframes appDrawerFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes appDrawerSlide {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* Sidebar filter input */
+.sidebar-filter {
+  width: 100%;
+  height: 2.25rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  padding: 0 0.75rem;
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.sidebar-filter:focus {
+  border-color: rgba(15, 23, 42, 0.45);
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: rgba(15, 23, 42, 0.45);
+  padding: 1.25rem 0 2rem;
+}
