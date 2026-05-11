@@ -23,7 +23,7 @@ export const onRequestPost = async (context) => {
     const body = await request.json().catch(() => ({}));
     const prompt = (body.prompt || "").toString();
     const system = (body.system || "").toString();
-    const model = (body.model || "gemini-2.0-flash").toString(); // default model
+    const model = (env.GEMINI_MODEL || body.model || "gemini-2.5-flash").toString();
 
     if (!prompt.trim()) {
       return json({ error: "Missing prompt." }, 400);
