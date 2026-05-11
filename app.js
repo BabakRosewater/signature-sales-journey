@@ -72,19 +72,47 @@ const SUPPLEMENT_TRAINING_LINKS = {
 };
 
 /**
- * Per-tab UX label/subtitle, used by the Quick Start banner.
- * Keys match the labels returned by inferTabLabel / module_meta tab labels.
- * Modules whose labels aren't listed here fall back to the raw label.
+ * Inline SVG icons used by tab buttons and the Quick Start hero banner.
+ * Kept as small components so they compose easily and stay stroke-currentColor.
+ */
+const Icons = {
+  BookOpen:  () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>),
+  Flask:     () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v6l-5.5 9.5A2 2 0 005.232 21h13.536a2 2 0 001.732-2.5L15 9V3M9 3h6M9 3H7m8 0h2" /></svg>),
+  Check:     () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" /></svg>),
+  Terminal:  () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>),
+  Target:    () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>),
+  Lightbulb: () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.674M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>),
+  Sparkle:   () => (<svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5l1.4 3.6L16 10l-3.6 1.4L11 15l-1.4-3.6L6 10l3.6-1.4L11 5zM18 14l.7 1.8L20.5 16.5l-1.8.7L18 19l-.7-1.8L15.5 16.5l1.8-.7L18 14z" /></svg>),
+};
+
+/**
+ * Per-tab UX label/subtitle, tone, and icon. Drives the Quick Start hero banner
+ * and the icons on the tab buttons. Modules whose tab labels aren't listed here
+ * fall back to a plain styling with no banner and no icon.
  */
 const TAB_UX = {
-  "Overview":        { eyebrow: "Quick Start",     subtitle: "Objective, outcomes, and the flow for this step." },
-  "Science":         { eyebrow: "Why It Works",    subtitle: "The principles behind trust + decision clarity." },
-  "Standards":       { eyebrow: "Non-Negotiables", subtitle: "What great looks like — every time." },
-  "Scripts":         { eyebrow: "Word Tracks",     subtitle: "Scenario language you can copy and run." },
-  "Role-Play":       { eyebrow: "Practice Reps",   subtitle: "Scenarios + rubrics to build consistency fast." },
-  "Worksheet":       { eyebrow: "Action Plan",     subtitle: "Capture your plan and use it in the showroom." },
-  "Quick Reference": { eyebrow: "Quick Reference", subtitle: "Fast scan summary you can use in the moment." },
-  "AI Lab":          { eyebrow: "AI Coach",        subtitle: "Live coaching backed by Gemini." },
+  "Overview":        { eyebrow: "Quick Start",     subtitle: "Objective, outcomes, and the flow for this step.",    tone: "blue",    icon: <Icons.BookOpen /> },
+  "Science":         { eyebrow: "Why It Works",    subtitle: "The principles behind trust + decision clarity.",      tone: "indigo",  icon: <Icons.Flask /> },
+  "Standards":       { eyebrow: "Non-Negotiables", subtitle: "What great looks like — every time.",                  tone: "emerald", icon: <Icons.Check /> },
+  "Scripts":         { eyebrow: "Word Tracks",     subtitle: "Scenario language you can copy and run.",              tone: "violet",  icon: <Icons.Terminal /> },
+  "Role-Play":       { eyebrow: "Practice Reps",   subtitle: "Scenarios + rubrics to build consistency fast.",       tone: "amber",   icon: <Icons.Target /> },
+  "Worksheet":       { eyebrow: "Action Plan",     subtitle: "Capture your plan and use it in the showroom.",        tone: "slate",   icon: <Icons.Lightbulb /> },
+  "Quick Reference": { eyebrow: "Quick Reference", subtitle: "Fast scan summary you can use in the moment.",         tone: "blue",    icon: <Icons.BookOpen /> },
+  "AI Lab":          { eyebrow: "AI Coach",        subtitle: "Live coaching backed by Gemini.",                      tone: "indigo",  icon: <Icons.Sparkle /> },
+};
+
+/**
+ * Static Tailwind class strings per tone. Defined as literals so the Tailwind
+ * CDN JIT scanner can see every class name at build time (dynamic
+ * `bg-${tone}-50` would be purged).
+ */
+const TONE_CLASSES = {
+  blue:    { card: "bg-blue-50 ring-blue-200",       pill: "bg-blue-100 text-blue-800",       iconBox: "bg-blue-100 text-blue-700",       title: "text-blue-900",    bar: "bg-blue-600" },
+  indigo:  { card: "bg-indigo-50 ring-indigo-200",   pill: "bg-indigo-100 text-indigo-800",   iconBox: "bg-indigo-100 text-indigo-700",   title: "text-indigo-900",  bar: "bg-indigo-600" },
+  emerald: { card: "bg-emerald-50 ring-emerald-200", pill: "bg-emerald-100 text-emerald-800", iconBox: "bg-emerald-100 text-emerald-700", title: "text-emerald-900", bar: "bg-emerald-600" },
+  violet:  { card: "bg-violet-50 ring-violet-200",   pill: "bg-violet-100 text-violet-800",   iconBox: "bg-violet-100 text-violet-700",   title: "text-violet-900",  bar: "bg-violet-600" },
+  amber:   { card: "bg-amber-50 ring-amber-200",     pill: "bg-amber-100 text-amber-800",     iconBox: "bg-amber-100 text-amber-700",     title: "text-amber-900",   bar: "bg-amber-600" },
+  slate:   { card: "bg-slate-100 ring-slate-200",    pill: "bg-slate-200 text-slate-800",     iconBox: "bg-slate-200 text-slate-700",     title: "text-slate-900",   bar: "bg-slate-600" },
 };
 
 /**
@@ -530,59 +558,103 @@ function App() {
 
         {/* Main */}
         <main className="col-span-12 lg:col-span-9">
+          {/* Page-level header (above the content card, no card chrome of its own) */}
+          <div className="mb-5">
+            {/* Breadcrumb */}
+            {slug ? (
+              <div className="mb-2 flex items-center gap-2">
+                <span className="app-eyebrow">{moduleSidebarLabel(modules.find((m) => m.slug === slug))}</span>
+                <span className="app-eyebrow !text-slate-300">•</span>
+                <span className="app-eyebrow">Training Module</span>
+              </div>
+            ) : null}
+
+            <h1 className="text-3xl font-black tracking-tight text-slate-900">{currentTitle}</h1>
+            {meta?.description ? (
+              <p className="mt-2 max-w-3xl text-sm font-medium text-slate-600">{meta.description}</p>
+            ) : null}
+            {meta?.objective ? (
+              <div className="mt-3 rounded-xl bg-white/80 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
+                <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
+              </div>
+            ) : null}
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              {meta?.estimated_time_minutes ? (
+                <span className="app-chip">~{meta.estimated_time_minutes} min</span>
+              ) : null}
+              {activeTab?.type === "markdown" ? (
+                <span className="app-chip">Reading {readingProgress}%</span>
+              ) : null}
+            </div>
+          </div>
+
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <div className="mb-4">
-              {/* Breadcrumb */}
-              {slug ? (
-                <div className="mb-2 flex items-center gap-2">
-                  <span className="app-eyebrow">{moduleSidebarLabel(modules.find((m) => m.slug === slug))}</span>
-                  <span className="app-eyebrow !text-slate-300">•</span>
-                  <span className="app-eyebrow">Training Module</span>
-                </div>
-              ) : null}
+              {/* Quick Start / tab-specific hero banner */}
+              {activeTab && TAB_UX[activeTab.label] ? (() => {
+                const ux = TAB_UX[activeTab.label];
+                const tone = TONE_CLASSES[ux.tone] || TONE_CLASSES.slate;
+                const moduleLabel = moduleSidebarLabel(modules.find((m) => m.slug === slug));
+                const total = tabs.length;
+                const step = Math.max(1, activeTabIndex + 1);
+                const pct = total > 0 ? Math.round((step / total) * 100) : 0;
+                return (
+                  <div className={`rounded-2xl border-0 px-5 py-5 ring-1 ${tone.card}`}>
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                      <div className="flex min-w-0 items-start gap-4">
+                        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${tone.iconBox}`}>
+                          <span className="[&_svg]:h-6 [&_svg]:w-6">{ux.icon}</span>
+                        </div>
+                        <div className="min-w-0">
+                          <div className="mb-1 flex flex-wrap items-center gap-2">
+                            {moduleLabel ? (
+                              <span className={`rounded-lg px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-widest ${tone.pill}`}>
+                                {moduleLabel}
+                              </span>
+                            ) : null}
+                            <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">
+                              {meta?.title || currentTitle}
+                            </span>
+                          </div>
+                          <h3 className={`text-2xl font-black leading-tight tracking-tight ${tone.title}`}>{ux.eyebrow}</h3>
+                          <p className="mt-1 text-sm font-medium text-slate-600">{ux.subtitle}</p>
+                        </div>
+                      </div>
 
-              <div className="text-2xl font-extrabold tracking-tight text-slate-900">{currentTitle}</div>
-              {meta?.description ? <div className="mt-1 text-sm text-slate-600">{meta.description}</div> : null}
-              {meta?.objective ? (
-                <div className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
-                  <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
-                </div>
-              ) : null}
-              <div className="mt-2 flex flex-wrap items-center gap-2">
-                {meta?.estimated_time_minutes ? (
-                  <span className="app-chip">~{meta.estimated_time_minutes} min</span>
-                ) : null}
-                {activeTabIndex >= 0 && tabs.length > 0 ? (
-                  <span className="app-chip">Section {activeTabIndex + 1}/{tabs.length}</span>
-                ) : null}
-                {activeTab?.type === "markdown" ? (
-                  <span className="app-chip">Reading {readingProgress}%</span>
-                ) : null}
-              </div>
-
-              {/* Quick Start / tab-specific banner */}
-              {activeTab && TAB_UX[activeTab.label] ? (
-                <div className="mt-4 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
-                  <div className="app-eyebrow">{TAB_UX[activeTab.label].eyebrow}</div>
-                  <div className="mt-0.5 text-sm text-slate-700">{TAB_UX[activeTab.label].subtitle}</div>
-                </div>
-              ) : null}
+                      <div className="w-full shrink-0 rounded-xl bg-white/60 p-3 ring-1 ring-white/70 backdrop-blur-sm md:w-60">
+                        <div className="mb-1 flex items-center justify-between text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
+                          <span>Completion</span>
+                          <span className="text-slate-900">{pct}%</span>
+                        </div>
+                        <div className="h-2 w-full overflow-hidden rounded-full bg-slate-200/70">
+                          <div className={`h-full transition-all duration-500 ${tone.bar}`} style={{ width: `${pct}%` }} />
+                        </div>
+                        <div className="mt-2 text-center text-[10px] font-bold text-slate-500">
+                          {step} of {total} sections
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })() : null}
             </div>
 
             {/* Tabs */}
             <div className="mb-3 flex flex-wrap gap-2 rounded-2xl bg-slate-50 p-2 ring-1 ring-slate-200">
               {tabs.map((t) => {
                 const isActive = t.id === activeTabId;
+                const ux = TAB_UX[t.label];
                 return (
                   <button
                     key={t.id}
                     onClick={() => setActiveTabId(t.id)}
-                    className={`rounded-xl px-3 py-2 text-sm font-semibold ring-1 transition ${
+                    className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold ring-1 transition ${
                       isActive
                         ? "bg-slate-900 text-white ring-slate-900"
                         : "bg-white text-slate-700 ring-slate-200 hover:bg-slate-50"
                     }`}
                   >
+                    {ux?.icon ? <span className={isActive ? "text-white" : "text-slate-500"}>{ux.icon}</span> : null}
                     {t.label}
                   </button>
                 );
