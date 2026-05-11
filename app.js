@@ -200,7 +200,22 @@ function App() {
   const [aiResult, setAiResult] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
   const aiAbortRef = useRef(null);
+
+  // Phase 2 UX state
+  const [sidebarFilter, setSidebarFilter] = useState("");
+  const [hubOpen, setHubOpen] = useState(false);
+
   const tabs = useMemo(() => buildTabsFromMeta(meta), [meta]);
+
+  const visibleModules = useMemo(() => {
+    const q = sidebarFilter.trim().toLowerCase();
+    if (!q) return modules;
+    return modules.filter((m) =>
+      [m.title, m.description, moduleSidebarLabel(m), m.slug]
+        .filter(Boolean)
+        .some((s) => s.toLowerCase().includes(q))
+    );
+  }, [modules, sidebarFilter]);
 
   useEffect(() => {
     const onPop = () => setSlug(getSlugFromPath() || "");
@@ -415,18 +430,28 @@ function App() {
 
   return (
     <div className="min-h-screen bg-slate-100">
-      {/* Header (LOGO ONLY — bigger, and NO /module/... badge) */}
+      {/* Branded header — book icon + "Sales Journey / TRAINING HUB" + chips */}
       <div className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-          <div className="flex items-center gap-3">
-            <img
-              src="/logo.svg"
-              alt="Signature Sales Journey Training Hub"
-              className="h-12 w-auto max-w-[420px] sm:h-14 md:h-16"
-            />
-          </div>
-          <div className="hidden rounded-xl bg-slate-100 px-3 py-2 text-xs font-semibold text-slate-600 ring-1 ring-slate-200 lg:block">
-            Training Hub
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3">
+          <a href="/" className="flex items-center gap-3 no-underline">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <div className="leading-tight">
+              <div className="text-base font-extrabold tracking-tight text-slate-900">Sales Journey</div>
+              <div className="app-eyebrow">Training Hub</div>
+            </div>
+          </a>
+
+          <div className="flex items-center gap-2">
+            {activeTabIndex >= 0 && tabs.length > 0 ? (
+              <span className="app-chip hidden sm:inline-flex">
+                Section {activeTabIndex + 1}/{tabs.length}
+              </span>
+            ) : null}
+            {/* Hub button is added in commit 3/3 */}
           </div>
         </div>
       </div>
@@ -438,27 +463,52 @@ function App() {
             <div className="mb-2 flex items-center justify-between">
               <div className="text-sm font-semibold text-slate-900">Modules</div>
               <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600 ring-1 ring-slate-200">
-                {modules.length}
+                {visibleModules.length}{sidebarFilter ? `/${modules.length}` : ""}
               </span>
             </div>
 
+            <div className="mb-2">
+              <input
+                className="sidebar-filter"
+                value={sidebarFilter}
+                onChange={(e) => setSidebarFilter(e.target.value)}
+                placeholder="Filter modules..."
+                aria-label="Filter modules"
+              />
+            </div>
+
             <div className="max-h-[70vh] overflow-auto pr-1">
-              {modules.map((m) => {
+              {visibleModules.length === 0 ? (
+                <div className="px-2 py-6 text-center text-xs text-slate-500">
+                  No modules match "{sidebarFilter}".
+                </div>
+              ) : null}
+              {visibleModules.map((m) => {
                 const isActive = m.slug === slug;
+                const eyebrow = moduleSidebarLabel(m);
                 return (
                   <button
                     key={m.slug}
                     onClick={() => navigateToModule(m.slug)}
-                    className={`w-full rounded-2xl border px-3 py-2.5 text-left transition ${
+                    className={`mb-1.5 flex w-full items-center gap-3 rounded-2xl border px-3 py-2.5 text-left transition ${
                       isActive
                         ? "border-slate-900 bg-slate-900 text-white shadow-sm"
                         : "border-slate-200 bg-white text-slate-900 hover:bg-slate-50"
                     }`}
                   >
-                    <div className="text-sm font-semibold">{m.title}</div>
-                    <div className={`text-xs ${isActive ? "text-white/80" : "text-slate-500"}`}>
-                      {m.description || ""}
+                    <div className="min-w-0 flex-1">
+                      <div className={`app-eyebrow ${isActive ? "!text-white/70" : ""}`}>{eyebrow}</div>
+                      <div className="truncate text-sm font-semibold">{m.title}</div>
+                      <div className={`truncate text-xs ${isActive ? "text-white/75" : "text-slate-500"}`}>
+                        {m.description || ""}
+                      </div>
                     </div>
+                    <svg
+                      className={`h-4 w-4 shrink-0 transition ${isActive ? "text-white" : "text-slate-300"}`}
+                      fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 );
               })}
@@ -470,30 +520,41 @@ function App() {
         <main className="col-span-12 lg:col-span-8">
           <div className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-slate-200">
             <div className="mb-4">
-              <div className="text-xl font-extrabold">{currentTitle}</div>
+              {/* Breadcrumb */}
+              {slug ? (
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="app-eyebrow">{moduleSidebarLabel(modules.find((m) => m.slug === slug))}</span>
+                  <span className="app-eyebrow !text-slate-300">•</span>
+                  <span className="app-eyebrow">Training Module</span>
+                </div>
+              ) : null}
+
+              <div className="text-2xl font-extrabold tracking-tight text-slate-900">{currentTitle}</div>
               {meta?.description ? <div className="mt-1 text-sm text-slate-600">{meta.description}</div> : null}
               {meta?.objective ? (
                 <div className="mt-2 rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-700 ring-1 ring-slate-200">
                   <span className="font-semibold text-slate-900">Objective:</span> {meta.objective}
                 </div>
               ) : null}
-              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-600">
+              <div className="mt-2 flex flex-wrap items-center gap-2">
                 {meta?.estimated_time_minutes ? (
-                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
-                    ~{meta.estimated_time_minutes} min
-                  </span>
+                  <span className="app-chip">~{meta.estimated_time_minutes} min</span>
                 ) : null}
-                {activeTabIndex >= 0 ? (
-                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
-                    Tab {activeTabIndex + 1} of {tabs.length}
-                  </span>
+                {activeTabIndex >= 0 && tabs.length > 0 ? (
+                  <span className="app-chip">Section {activeTabIndex + 1}/{tabs.length}</span>
                 ) : null}
                 {activeTab?.type === "markdown" ? (
-                  <span className="rounded-full bg-slate-100 px-2 py-1 ring-1 ring-slate-200">
-                    Reading progress {readingProgress}%
-                  </span>
+                  <span className="app-chip">Reading {readingProgress}%</span>
                 ) : null}
               </div>
+
+              {/* Quick Start / tab-specific banner */}
+              {activeTab && TAB_UX[activeTab.label] ? (
+                <div className="mt-4 rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
+                  <div className="app-eyebrow">{TAB_UX[activeTab.label].eyebrow}</div>
+                  <div className="mt-0.5 text-sm text-slate-700">{TAB_UX[activeTab.label].subtitle}</div>
+                </div>
+              ) : null}
             </div>
 
             {/* Tabs */}
@@ -540,7 +601,10 @@ function App() {
               ) : null}
 
               <Button kind="secondary" onClick={() => copyCurrentTab(activeTab)}>
-                Copy tab
+                <svg className="mr-1.5 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h11M8 11h11M8 15h11M5 7h.01M5 11h.01M5 15h.01M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                </svg>
+                COPY PAGE
               </Button>
 
               <Button
