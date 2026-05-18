@@ -1,67 +1,118 @@
-<div class="hero">
-  <div class="eyebrow">Module 02</div>
+# Module 2: Uncovering Needs & Building Trust
 
-# Uncovering Needs & Building Trust
+<div class="training-hero">
+  <div class="eyebrow">Module 02 • Discovery + Trust</div>
+  <div class="bigIdea">Discovery is where the sale becomes personal, practical, and trust-based.</div>
+  <p>Use this module to understand the guest’s needs, preferences, timeline, budget comfort, and trade situation before moving into selection.</p>
+</div>
 
-**Objective:** Gain a deep understanding of the guest’s needs, preferences, timeline, and budget. Integrate appraisal early to build trust, offer solutions, and save time—creating an efficient, transparent, trust-based environment.
-
-> “Our job is not to sell, but to listen, understand, and solve.”  
-> — Anonymous
-
-  <div class="cards">
-    <div class="card">
-      <div class="cardTitle">What this module builds</div>
-      <div class="muted">Discovery clarity + early appraisal trust, so Selection feels obvious and pressure-free.</div>
-    </div>
-    <div class="card">
-      <div class="cardTitle">What “great” looks like</div>
-      <div class="muted">Clear needs + budget comfort, trade clarity, and a confident bridge into 2–3 best-fit options.</div>
-    </div>
-    <div class="card">
-      <div class="cardTitle">Why it matters</div>
-      <div class="muted">This step earns trust early and removes friction later (price, payments, trade value).</div>
-    </div>
+<div class="quick-grid four">
+  <div class="training-card blue">
+    <span class="label-pill">Purpose</span>
+    <p>Understand how the guest will use the vehicle in real life.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Trust Builder</span>
+    <p>Ask better questions, listen carefully, and summarize clearly.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Appraisal</span>
+    <p>Introduce the trade early as a customer benefit, not a dealership task.</p>
+  </div>
+  <div class="training-card dark">
+    <span class="label-pill">Next Step</span>
+    <p>Bridge into 2–3 best-fit options with confidence.</p>
   </div>
 </div>
 
 ---
 
-## What “Great” Looks Like
+## Objective
+Gain a deep understanding of the guest’s needs, preferences, timeline, budget, and trade situation. Integrate appraisal early to build trust, offer better solutions, and save time.
 
+> “Our job is not to sell, but to listen, understand, and solve.”
+
+---
+
+## What great looks like
 By the end of this step, we should have:
 
-- A clear picture of **how** the guest will use the vehicle (daily life + edge cases)
-- A clear list of **must-haves**, **nice-to-haves**, and **deal-breakers**
-- A realistic **budget/payment comfort zone** (without pressure)
-- Trade situation clarified: **trade / no trade / unsure**
-- If trade exists, appraisal is started **early** with clear purpose + transparency
-- A strong **bridge into Selection** (2–3 best-fit options)
+<div class="quick-grid two">
+  <div class="training-card">
+    <span class="label-pill">Usage Clarity</span>
+    <p>A clear picture of how the guest will use the vehicle: commute, family, weather, trips, hobbies, and work.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Must-Haves</span>
+    <p>A clear list of must-haves, nice-to-haves, and deal-breakers.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Budget Comfort</span>
+    <p>A realistic payment or budget comfort zone, discussed without pressure.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Trade Clarity</span>
+    <p>Trade / no trade / unsure is clarified, and appraisal is started early when appropriate.</p>
+  </div>
+  <div class="training-card blue">
+    <span class="label-pill">Selection Bridge</span>
+    <p>The salesperson can confidently present 2–3 best-fit options.</p>
+  </div>
+  <div class="training-card dark">
+    <span class="label-pill">Trust</span>
+    <p>The guest feels heard, remembered, and guided — not processed.</p>
+  </div>
+</div>
 
 ---
 
-## Why This Step Matters
-
+## Why this step matters
 Discovery + early appraisal is where we earn trust.
 
-- It reduces friction later (price, payments, trade value).
-- It prevents wasted time showing “cool cars” that don’t fit.
-- It positions us as a **trusted advisor** instead of a transaction.
+<div class="do-dont">
+  <div class="dont-box">
+    <span class="label-pill">Weak Discovery</span>
+    <p>Guessing, showing too many vehicles, avoiding budget, delaying trade, and creating friction later.</p>
+  </div>
+  <div class="do-box">
+    <span class="label-pill">Strong Discovery</span>
+    <p>Open questions, clear summary, early trade clarity, budget comfort, and 2–3 best-fit solutions.</p>
+  </div>
+</div>
 
 ---
 
-## Non-Negotiable Behaviors
-
-- Ask **open-ended questions** first.
-- Listen more than you talk.
-- Confirm understanding by summarizing.
-- Make the appraisal feel like a **customer benefit**, not a dealership step.
-- Take notes (CRM + personal recall) so the guest feels remembered.
+## Non-negotiable behaviors
+<div class="quick-grid three">
+  <div class="training-card"><span class="label-pill">Ask</span><p>Ask open-ended questions first.</p></div>
+  <div class="training-card"><span class="label-pill">Listen</span><p>Listen more than you talk.</p></div>
+  <div class="training-card"><span class="label-pill">Summarize</span><p>Confirm understanding: “So what I’m hearing is…”</p></div>
+  <div class="training-card"><span class="label-pill">Appraise</span><p>Make appraisal feel like a customer benefit.</p></div>
+  <div class="training-card"><span class="label-pill">Document</span><p>Take notes so the guest feels remembered.</p></div>
+  <div class="training-card"><span class="label-pill">Bridge</span><p>Move to selection only after priorities are clear.</p></div>
+</div>
 
 ---
 
-## Core Transition Line
+## Core transition line
+<div class="training-card blue">
+  <span class="label-pill">Transition to Selection</span>
+  <div class="script-line">“Based on what you shared — (need 1), (need 2), and staying around (budget/comfort) — I have 2–3 options that fit really well. Let’s look at them together.”</div>
+</div>
 
-Use this when moving to Selection:
+---
 
-> “Based on what you shared—(need 1), (need 2), and staying around (budget/comfort)—I have 2–3 options that fit really well. Let’s look at them together.”
+## How this connects to Module 03
+<div class="flow-line">
+  <span class="flow-step">Discover priorities</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Clarify trade and budget</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Introduce manager support</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Build the right plan</span>
+</div>
 
+<div class="coach-check">
+  <p><strong>Manager coaching point:</strong> If discovery is weak, manager introduction and selection will feel forced. Strong discovery makes the rest of the journey easier.</p>
+</div>
