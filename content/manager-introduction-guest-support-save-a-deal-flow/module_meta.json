@@ -4,7 +4,7 @@
   "title": "Manager Introduction, Guest Support & Save-A-Deal Flow",
   "description": "Natural manager handoff, early guest support, affordability alignment, showroom flow, and Save-A-Deal follow-up discipline.",
   "brand": "Clark Hyundai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "last_updated": "2026-05-18",
   "objective": "Teach salespeople and managers how to introduce manager involvement early in the guest visit, position the manager as guest support rather than pressure, align around what matters most to the guest, and protect every unsold opportunity through Save-A-Deal logic and disciplined follow-up ownership.",
   "position_in_journey": "After Uncovering Needs & Building Trust → Before Showcasing Solutions & Overcoming Obstacles",
@@ -49,5 +49,10 @@
     "save-a-deal",
     "follow-up-accountability",
     "crm-notes"
-  ]
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 3: Manager Introduction, Guest Support & Save-A-Deal Flow. Coach salespeople and sales managers on early manager introduction, guest-support positioning, affordability alignment, showroom flow, Save-A-Deal review, CRM notes, and same-day follow-up. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for today where a salesperson introduces the manager after discovery, the manager aligns around payment/trade/timing/vehicle fit, and the team creates a Save-A-Deal follow-up plan if the guest leaves unsold. Include the guest line, salesperson line, manager line, coaching points, and scoring rubric."
+  }
 }
