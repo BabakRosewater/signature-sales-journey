@@ -1,88 +1,101 @@
-# 2.0 The Science
+# 2.0 Science: Why Discovery Builds Trust
 
-Discovery and appraisal are not just “questions and paperwork.” They’re trust-building moments powered by psychology.
+<div class="training-hero">
+  <div class="eyebrow">Why It Works</div>
+  <div class="bigIdea">Discovery is not questions and paperwork. It is how the guest decides whether we understand them.</div>
+  <p>Strong discovery lowers pressure, improves selection, and makes appraisal and budget conversations feel more transparent.</p>
+</div>
 
-## Key Psychological Principles
-
-### Active Listening
-**Principle:** Fully concentrate, understand, respond thoughtfully.  
-**Application:**
-- Paraphrase and summarize
-- Ask open-ended questions
-- Affirm the customer’s priorities  
-**Example:**
-- “Fuel efficiency matters to you—tell me what your commute looks like day to day.”
-
-### Empathy
-**Principle:** Understand and validate emotion.  
-**Application:**
-- Acknowledge concerns without minimizing
-- Show genuine interest  
-**Example:**
-- “I can see why safety is a priority—let’s make sure we match you with the right protection and features.”
-
-### Trust Building
-**Principle:** Consistency + transparency + follow-through.  
-**Application:**
-- Be clear about steps and time
-- Don’t guess—verify and report back  
-**Example:**
-- “If I don’t have that answer immediately, I’ll find out and follow up quickly.”
-
-### Priming
-**Principle:** Positive tone influences perception and comfort.  
-**Application:**
-- Use calm, confident language early
-- Frame the process as helpful and simple  
-**Example:**
-- “We’ll make this easy—just a few questions so we can narrow this down fast.”
-
-### Framing
-**Principle:** How we present info changes decisions.  
-**Application:**
-- Present features as *benefits tied to their needs*  
-**Example:**
-- “Because you’re in snow and highway driving, AWD + driver-assist is about confidence and fatigue reduction.”
-
-### Social Proof
-**Principle:** People look to others to validate choices.  
-**Application:**
-- Share real patterns (“Most people like you…”)  
-**Example:**
-- “A lot of families with your needs end up choosing this setup because it balances space and efficiency.”
-
-### Loss Aversion
-**Principle:** People avoid losses more than they pursue gains.  
-**Application:**
-- Use ethically—avoid fear tactics
-- Highlight timing constraints only when real  
-**Example:**
-- “If color/trim is important, availability can change quickly—so we’ll want to confirm options early.”
+<div class="quick-grid three">
+  <div class="training-card blue">
+    <span class="label-pill">Listening</span>
+    <p>Guests trust people who accurately reflect what matters to them.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Clarity</span>
+    <p>The better the discovery, the cleaner the selection and numbers process.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Transparency</span>
+    <p>Early appraisal and budget clarity reduce surprises later.</p>
+  </div>
+</div>
 
 ---
 
-## Daily Application Strategies
-- **Active Listening + Empathy:** Open-ended questions + reflective summaries  
-- **Trust Building:** Transparent steps + keep promises  
-- **Priming + Framing:** Positive tone + benefit-based communication  
-- **Social Proof:** Use credibility markers (reviews, patterns, outcomes)  
-- **Loss Aversion:** Protect the customer from wasted time, missed options, or wrong-fit decisions
+## Key principles
+
+<div class="quick-grid two">
+  <div class="training-card">
+    <span class="label-pill">Active Listening</span>
+    <p><strong>Principle:</strong> Fully concentrate, understand, and respond thoughtfully.</p>
+    <p><strong>Use it:</strong> Paraphrase, summarize, ask open-ended questions, and affirm priorities.</p>
+    <div class="script-line">“Fuel efficiency matters to you — tell me what your commute looks like day to day.”</div>
+  </div>
+
+  <div class="training-card green">
+    <span class="label-pill">Empathy</span>
+    <p><strong>Principle:</strong> Understand and validate emotion without minimizing the concern.</p>
+    <p><strong>Use it:</strong> Acknowledge what matters and connect features to the reason behind it.</p>
+    <div class="script-line">“I can see why safety is a priority — let’s make sure we match you with the right protection and features.”</div>
+  </div>
+
+  <div class="training-card blue">
+    <span class="label-pill">Trust Building</span>
+    <p><strong>Principle:</strong> Trust comes from consistency, transparency, and follow-through.</p>
+    <p><strong>Use it:</strong> Be clear about steps and timelines. Do not guess; verify and report back.</p>
+    <div class="script-line">“If I don’t have that answer immediately, I’ll find out and follow up quickly.”</div>
+  </div>
+
+  <div class="training-card amber">
+    <span class="label-pill">Priming</span>
+    <p><strong>Principle:</strong> Positive tone influences comfort and perception.</p>
+    <p><strong>Use it:</strong> Frame the process as helpful and simple.</p>
+    <div class="script-line">“We’ll make this easy — just a few questions so we can narrow this down fast.”</div>
+  </div>
+
+  <div class="training-card">
+    <span class="label-pill">Framing</span>
+    <p><strong>Principle:</strong> How we present information changes how it is understood.</p>
+    <p><strong>Use it:</strong> Present features as benefits tied directly to the guest’s needs.</p>
+    <div class="script-line">“Because you’re in snow and highway driving, AWD and driver-assist are about confidence and reducing fatigue.”</div>
+  </div>
+
+  <div class="training-card green">
+    <span class="label-pill">Social Proof</span>
+    <p><strong>Principle:</strong> People look to others to validate choices.</p>
+    <p><strong>Use it:</strong> Share real patterns without exaggeration.</p>
+    <div class="script-line">“A lot of families with your needs end up choosing this setup because it balances space and efficiency.”</div>
+  </div>
+
+  <div class="training-card amber">
+    <span class="label-pill">Loss Aversion</span>
+    <p><strong>Principle:</strong> People often want to avoid the wrong decision more than chase the perfect one.</p>
+    <p><strong>Use it ethically:</strong> Protect the guest from wasted time, missed options, or wrong-fit decisions.</p>
+    <div class="script-line">“If color and trim are important, availability can change quickly, so we’ll want to confirm the right options early.”</div>
+  </div>
+
+  <div class="training-card dark">
+    <span class="label-pill">Daily Application</span>
+    <p>Use open-ended questions, reflective summaries, transparent steps, benefit-based communication, credible patterns, and real timing information.</p>
+  </div>
+</div>
 
 ---
 
-## Continuous Improvement Loop
-- Seek feedback (customer + peers)
-- Share wins and misses in huddles
-- Stay updated on lineup and incentives
-- Reflect after each interaction: what worked / what to improve
+## Continuous improvement loop
+<div class="flow-line">
+  <span class="flow-step">Ask</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Listen</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Summarize</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Select better options</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Reflect and improve</span>
+</div>
 
----
-
-## Supporting Research (as provided in your source draft)
-- Active Listening: “86% of customers are willing to pay more for a great experience.” (Salesforce, 2020)
-- Empathy: “73% of customers consider experience a crucial factor in purchasing decisions.” (PwC, 2018)
-- Trust: “81% of consumers need to trust a brand before purchasing.” (Edelman, 2020)
-- Priming: (Williams & Bargh, 2008)
-- Framing: (Tversky & Kahneman, 1981)
-- Social Proof: “92% trust recommendations from friends and family…” (Nielsen, 2012)
-- Loss Aversion: (Kahneman & Tversky, 1979)
+<div class="coach-check">
+  <p><strong>Training point:</strong> The goal of discovery is not to collect information. The goal is to make the guest feel understood enough to trust the next recommendation.</p>
+</div>
