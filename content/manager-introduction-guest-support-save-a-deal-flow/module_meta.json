@@ -1,0 +1,53 @@
+{
+  "module_number": 3,
+  "slug": "manager-introduction-guest-support-save-a-deal-flow",
+  "title": "Manager Introduction, Guest Support & Save-A-Deal Flow",
+  "description": "Natural manager handoff, early guest support, affordability alignment, showroom flow, and Save-A-Deal follow-up discipline.",
+  "brand": "Clark Hyundai",
+  "version": "1.0.0",
+  "last_updated": "2026-05-18",
+  "objective": "Teach salespeople and managers how to introduce manager involvement early in the guest visit, position the manager as guest support rather than pressure, align around what matters most to the guest, and protect every unsold opportunity through Save-A-Deal logic and disciplined follow-up ownership.",
+  "position_in_journey": "After Uncovering Needs & Building Trust → Before Showcasing Solutions & Overcoming Obstacles",
+  "estimated_time_minutes": 55,
+  "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-building-trust"
+  ],
+  "learning_outcomes": [
+    "Introduce managers naturally before there is pressure, friction, or a negotiation moment.",
+    "Explain the manager role as guest support and alignment rather than escalation.",
+    "Connect early manager involvement to payment, trade, timing, vehicle fit, and overall value.",
+    "Support the salesperson without taking over or weakening credibility.",
+    "Recognize when a showroom guest is drifting, unclear, or at risk of leaving without a next step.",
+    "Complete a Save-A-Deal review for unsold showroom opportunities.",
+    "Document guest support and follow-up clearly in CRM."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
+  ],
+  "files": [
+    "1_overview.md",
+    "2_science.md",
+    "3_standards.md",
+    "4_scripts.md",
+    "5_roleplay.md",
+    "6_worksheet.md",
+    "overview.csv"
+  ],
+  "tags": [
+    "manager-introduction",
+    "guest-support",
+    "affordability-alignment",
+    "showroom-flow",
+    "salesperson-handoff",
+    "save-a-deal",
+    "follow-up-accountability",
+    "crm-notes"
+  ]
+}
