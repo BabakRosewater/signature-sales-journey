@@ -1,121 +1,181 @@
+# Start Here: Overview & Framework
 
-<div class="hero">
-  <div class="eyebrow">Signature Sales Journey</div>
+<div class="training-hero">
+  <div class="eyebrow">Signature Sales Journey • Start Here</div>
+  <div class="bigIdea">A trust-first sales process built around clarity, consistency, and doing the right thing.</div>
+  <p>This training hub gives the team a shared language, shared standards, and a repeatable way to create a calm, professional, guest-centered buying experience.</p>
+</div>
 
-# Overview & Framework
+<div class="quick-grid four">
+  <div class="training-card blue">
+    <span class="label-pill">What We Believe</span>
+    <p>Transparency, trust, and doing the right thing.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">How We Price</span>
+    <p>Best Price Promise — clear, market-based pricing upfront.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">How We Sell</span>
+    <p>Listen, understand, guide, and help the guest make a confident decision.</p>
+  </div>
+  <div class="training-card dark">
+    <span class="label-pill">What It Creates</span>
+    <p>Calm, cooperative buying experiences that convert naturally.</p>
+  </div>
+</div>
 
-A step-by-step training program designed to help us deliver a **consistent, trust-first** experience — every guest, every time.
+---
 
-  <div class="cards">
-    <div class="card">
-      <div class="cardTitle">What we believe</div>
-      <div class="muted">Transparency, trust, and doing the right thing.</div>
-    </div>
-    <div class="card">
-      <div class="cardTitle">How we price</div>
-      <div class="muted">Best Price Promise — market-based pricing upfront.</div>
-    </div>
-    <div class="card">
-      <div class="cardTitle">What it creates</div>
-      <div class="muted">Calm, cooperative buying experiences that convert.</div>
-    </div>
+## Why this framework exists
+The Signature Sales Journey is a step-by-step training program designed to help us deliver a consistent, trust-first experience — every guest, every time.
+
+At Clark Hyundai, the sales process should not feel like pressure. It should feel like a professional guide helping the guest solve a problem, evaluate options, and make a confident decision.
+
+<div class="do-dont">
+  <div class="dont-box">
+    <span class="label-pill">Old Sales Feel</span>
+    <p>Pressure, guessing, inconsistent language, unclear handoffs, and follow-up that feels generic.</p>
+  </div>
+  <div class="do-box">
+    <span class="label-pill">Signature Sales Journey</span>
+    <p>Trust-first greeting, discovery, guest support, value-building, transparent options, clean follow-up, and long-term loyalty.</p>
   </div>
 </div>
 
 ---
 
 ## Best Price Promise
+<div class="quick-grid three">
+  <div class="training-card green">
+    <span class="label-pill">No Haggling</span>
+    <p>The guest should not feel like they need to battle for a fair price.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">No Games</span>
+    <p>We keep the process transparent, clean, and easy to understand.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">No Pressure</span>
+    <p>Our job is to listen, understand, and help — not force the decision.</p>
+  </div>
+</div>
 
-- No haggling  
-- No games  
-- No pressure  
-
-Our job is to **listen, understand, and help** — not persuade.
-
----
-
-## The Natural Sales Process (NSP)
-
-> **NSP definition:** Guests never feel “sold,” and consultants don’t feel like they’re “selling,” even though the engagement often culminates in a transaction.  
-> — Babak R.M
-
-### What You’ll Learn
-- Building genuine relationships  
-- Active listening  
-- Educate and inform  
-- Solution-oriented consulting  
-- Transparent engagement  
-- Natural follow-up  
-- Fostering referrals  
-- Continuous evolution  
+<div class="coach-check">
+  <p><strong>Culture standard:</strong> Because doing the right thing is not just our culture — it is our promise.</p>
+</div>
 
 ---
 
-## Our Modular Training Framework
+## The Natural Sales Process
+<div class="training-card blue">
+  <span class="label-pill">NSP Definition</span>
+  <p><strong>Guests never feel “sold,” and consultants do not feel like they are “selling,” even though the engagement often culminates in a transaction.</strong></p>
+  <p class="muted">— Babak R.M</p>
+</div>
 
-- **Scalability:** supports growth and change  
-- **Adaptability:** fits different learning styles  
-- **Consistency:** protects the guest experience  
+The Natural Sales Process is the heart of our customer engagement model.
 
-# Overview & Framework
+The guest should experience the visit as:
+- natural
+- helpful
+- transparent
+- informative
+- respectful
+- focused on what matters most to them
 
-The Hyundai Signature Sales Journey is a comprehensive, step-by-step training program designed to empower our sales team with the mindset, skills, and consistency needed to deliver exceptional experiences.
-
-Rooted in our foundational truths — what we call the **Natural Sales Process** — this journey aligns every customer interaction with our dealership's highest values: **transparency, trust, and a commitment to doing the right thing.**
-
-At Clark Hyundai, we’ve reimagined the car-buying process around a single idea: **trust**. Our **Best Price Promise** ensures every guest receives real, market-based pricing upfront — **no haggling, no games, and no pressure.** Instead of focusing on persuasion, our team is free to focus on what matters most: **listening, understanding, and helping.**
-
-We live out our core value — **We Do the Right Thing: A Commitment to Our Company, Customers, Colleagues, and Careers** — by offering:
-
-- **One clear price**
-- **One consistent experience**
-- **One focus: the customer**
-
----
-
-## The Natural Sales Process (NSP)
-
-> “Here, guests never feel they’re being sold to, and consultants don’t feel they’re selling, even though the engagement often culminates in a transaction.”
-> — Babak R.M
-
-The **Natural Sales Process** is the heart of our customer engagement model.
-
-In this approach, the buyer doesn’t experience a pushy sales pitch, and the consultant doesn’t feel like they’re merely selling a product or service. Instead, a transaction naturally takes place — rooted in **understanding, transparency, and mutual trust.**
-
-This authentic approach, in harmony with the buyer’s desires, transforms each transaction into a cooperative and meaningful journey.
-
-### What You’ll Learn
-
-- **Building Genuine Relationships**: Prioritize authentic connection over pressure.
-- **Active Listening**: Gain deep insight into the guest’s goals and concerns.
-- **Educate and Inform**: Share meaningful information, not sales scripts.
-- **Solution-Oriented Consulting**: Present offerings as valuable answers.
-- **Transparent Engagement**: Eliminate surprises and build trust.
-- **Natural Follow-Up**: Continue care post-sale with sincerity.
-- **Fostering Referrals**: Delighted guests create new connections.
-- **Continuous Evolution**: Reflect, learn, and grow every day.
-
-This approach elevates the experience, ensuring that each conversation revolves around the guest’s paramount interests — filtering out the unnecessary and focusing entirely on what matters most to them.
-
-The Natural Sales Process is the foundational building block of the Hyundai Signature Sales Journey.
+The consultant should experience the process as:
+- guided
+- consistent
+- professional
+- supported by managers
+- connected to long-term guest trust
 
 ---
 
-## Our Modular Training Framework
+## The training journey
+<div class="flow-line">
+  <span class="flow-step">Greeting</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Discovery</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Manager Support</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Solutions</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Demo</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Value</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Close</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Follow-Up</span>
+</div>
 
-Our Modular Training Framework is both **flexible** and **structured**, offering an engaging and adaptive learning environment tailored to the diverse needs of our sales team.
+<div class="quick-grid three">
+  <div class="training-card">
+    <span class="label-pill">Relationship</span>
+    <p>Build genuine connection before asking for commitment.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Listening</span>
+    <p>Understand the guest’s goals, concerns, trade, timing, and affordability picture.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Education</span>
+    <p>Share information that helps the guest make a better decision.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Solutions</span>
+    <p>Present vehicles, options, and value in relation to what the guest said matters.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Transparency</span>
+    <p>Remove surprises and keep the process clear.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Follow-Up</span>
+    <p>Continue care with sincerity, discipline, and useful next steps.</p>
+  </div>
+</div>
 
-This approach promotes continuous improvement through:
+---
 
-- **Scalability**: Accommodating growth and shifts within the team or market.
-- **Adaptability**: Adjusting to individual learning styles and evolving industry trends.
-- **Consistency**: Ensuring excellence in every customer interaction.
+## Our modular training framework
+<div class="quick-grid three">
+  <div class="training-card blue">
+    <span class="label-pill">Scalable</span>
+    <p>The framework can grow with the team, the market, and the business.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Adaptable</span>
+    <p>Each module can be trained in sales meetings, one-on-ones, or live coaching moments.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Consistent</span>
+    <p>Shared standards protect the guest experience across the whole team.</p>
+  </div>
+</div>
 
-### Our Training Focus
+This framework supports three operating goals:
+- sharpen sales performance
+- improve customer interactions
+- build long-term loyalty, referrals, and retention
 
-- **Honing Sales Performance**: Sharpening skills to improve outcomes and confidence.
-- **Enhancing Customer Interactions**: Building trust through empathy, transparency, and communication.
-- **Boosting Satisfaction**: Elevating the buying experience to foster loyalty and referrals.
+---
 
-By aligning this framework with our long-term business vision, we create a culture of **high performance, high trust, and long-term growth** — for our team and for our customers.
+## How to use this training hub
+<div class="quick-grid two">
+  <div class="training-card">
+    <span class="label-pill">For Salespeople</span>
+    <p>Use the scripts, role-plays, and worksheets to turn the process into daily habits.</p>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">For Managers</span>
+    <p>Use the standards, coaching cards, and AI Lab to run short, practical training meetings.</p>
+  </div>
+</div>
 
+<div class="coach-check">
+  <p><strong>Start here standard:</strong> The process is not about memorizing scripts. It is about creating a consistent guest experience that feels natural, trustworthy, and professional.</p>
+</div>
