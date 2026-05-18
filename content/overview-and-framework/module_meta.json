@@ -1,8 +1,15 @@
 {
   "title": "Overview & Framework",
   "description": "Natural Sales Process + Modular Training Framework",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
   "tabs": [
     { "id": "overview", "label": "Overview", "type": "markdown", "file": "overview.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
-  ]
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus on the Signature Sales Journey overview, Natural Sales Process, Best Price Promise, trust-first selling, modular training, and manager coaching. Help managers explain the framework clearly and turn it into short, practical sales meetings.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute Start Here sales meeting that explains the Natural Sales Process, Best Price Promise, and why our training is built around trust, clarity, and doing the right thing. Include an opening message, team discussion question, and manager closing statement."
+  }
 }
