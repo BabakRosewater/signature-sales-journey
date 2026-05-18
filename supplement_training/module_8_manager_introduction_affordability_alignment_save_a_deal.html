@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clark Hyundai | Manager Introduction & Affordability Alignment</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              blue: '#002c5f',
+              light: '#e6ebf2',
+              accent: '#007aff',
+              gold: '#f2a900'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+    .tab-active { background-color: #002c5f; color: #ffffff; font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+    .tab-inactive { color: #4b5563; background-color: transparent; }
+    .tab-inactive:hover { background-color: #f3f4f6; color: #111827; }
+    .fade-in { animation: fadeIn .35s cubic-bezier(.4,0,.2,1); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    #toast { visibility:hidden; min-width:250px; background:#111827; color:#fff; text-align:center; border-radius:12px; padding:14px 18px; position:fixed; z-index:50; left:50%; bottom:28px; transform:translateX(-50%); opacity:0; transition:opacity .3s,bottom .3s,visibility .3s; }
+    #toast.show { visibility:visible; opacity:1; bottom:48px; }
+    @media print {
+      body { background:#fff; }
+      header, nav, .no-print { display:none !important; }
+      section { display:block !important; margin-bottom:2rem; page-break-inside:avoid; }
+      .hidden { display:block !important; }
+      .shadow-sm, .shadow-md { box-shadow:none !important; border:1px solid #e5e7eb; }
+    }
+  </style>
+</head>
+<body class="text-gray-800 antialiased min-h-screen flex flex-col">
+  <header class="bg-brand-blue text-white shadow-md sticky top-0 z-40 print:hidden">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+      <div>
+        <p class="text-blue-200 text-xs md:text-sm font-bold uppercase tracking-widest mb-1">Supplement Training • Module 8</p>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Manager Introduction & Affordability Alignment</h1>
+        <p class="text-blue-200 text-sm md:text-base mt-1">Clark Hyundai • Sales Team + Sales Manager Training</p>
+      </div>
+      <div class="flex items-center gap-5">
+        <button onclick="window.print()" class="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors text-sm font-semibold no-print">
+          <i class="fa-solid fa-print"></i> Print Guide
+        </button>
+        <i class="fa-solid fa-people-arrows text-4xl text-blue-200 opacity-80 hidden md:block"></i>
+      </div>
+    </div>
+    <nav class="bg-white px-4 shadow-sm overflow-x-auto no-print">
+      <div class="max-w-6xl mx-auto flex space-x-2 py-3 whitespace-nowrap" id="tabs">
+        <button onclick="showTab('mindset')" id="tab-mindset" class="tab-active py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-brain"></i> Mindset</button>
+        <button onclick="showTab('intro')" id="tab-intro" class="tab-inactive py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-handshake"></i> Manager Intro</button>
+        <button onclick="showTab('alignment')" id="tab-alignment" class="tab-inactive py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-scale-balanced"></i> Affordability</button>
+        <button onclick="showTab('flow')" id="tab-flow" class="tab-inactive py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-route"></i> Traffic Flow</button>
+        <button onclick="showTab('words')" id="tab-words" class="tab-inactive py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-comments"></i> Word Tracks</button>
+        <button onclick="showTab('save')" id="tab-save" class="tab-inactive py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-shield-heart"></i> Save-A-Deal</button>
+        <button onclick="showTab('crm')" id="tab-crm" class="tab-inactive py-2.5 px-4 rounded-lg transition-all flex items-center gap-2"><i class="fa-solid fa-envelope-open-text"></i> CRM / Follow-Up</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow w-full max-w-6xl mx-auto p-4 md:p-6 lg:p-8">
+    <section id="content-mindset" class="fade-in block space-y-8">
+      <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border-l-4 border-brand-blue">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Core Training Theme</h2>
+        <p class="text-xl text-gray-700 italic mb-6 leading-relaxed">&ldquo;The manager introduction is not a closing move. It is an alignment move.&rdquo;</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-brand-light p-5 rounded-xl">
+            <h3 class="font-bold text-brand-blue flex items-center gap-2 mb-2"><i class="fa-solid fa-user-check"></i> Normalize Early</h3>
+            <p class="text-sm text-gray-700">The guest should meet the manager before there is pressure, tension, or a negotiation moment.</p>
+          </div>
+          <div class="bg-brand-light p-5 rounded-xl">
+            <h3 class="font-bold text-brand-blue flex items-center gap-2 mb-2"><i class="fa-solid fa-wallet"></i> Align Around Affordability</h3>
+            <p class="text-sm text-gray-700">Today&rsquo;s guests are weighing payment, trade, money down, timing, and long-term value.</p>
+          </div>
+          <div class="bg-brand-light p-5 rounded-xl">
+            <h3 class="font-bold text-brand-blue flex items-center gap-2 mb-2"><i class="fa-solid fa-clipboard-check"></i> Protect the Next Step</h3>
+            <p class="text-sm text-gray-700">If the guest leaves unsold, the team must know the real reason and the next best action.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+          <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation text-brand-gold"></i> The Current Problem</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i>Salespeople introduce managers too late.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i>Sometimes managers are not introduced at all.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i>The manager appears only when there is an objection.</li>
+            <li class="flex gap-3"><i class="fa-solid fa-xmark text-red-500 mt-1"></i>The guest experiences the manager as pressure instead of support.</li>
+          </ul>
+        </div>
+        <div class="bg-brand-blue text-white rounded-2xl shadow-sm p-6 md:p-8 flex flex-col justify-center">
+          <h3 class="text-lg font-bold mb-4 flex items-center gap-2 text-blue-200"><i class="fa-solid fa-bullseye"></i> The New Standard</h3>
+          <p class="text-xl leading-relaxed font-semibold">We introduce managers early so the guest feels supported, understood, and confident before we ever discuss numbers or overcome objections.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="content-intro" class="fade-in hidden space-y-6">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Manager Introduction Standard</h2>
+        <p class="text-gray-600">The manager should feel like part of the process, not an escalation.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h3 class="font-bold text-red-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-ban"></i> Avoid This Language</h3>
+          <ul class="space-y-3 text-red-900">
+            <li>&ldquo;Let me get my manager.&rdquo;</li>
+            <li>&ldquo;My manager wants to make sure we are good listeners.&rdquo;</li>
+            <li>&ldquo;I need to check with my manager.&rdquo;</li>
+            <li>&ldquo;My manager might be able to do something.&rdquo;</li>
+            <li>&ldquo;Let me see if my manager can help.&rdquo;</li>
+          </ul>
+        </div>
+        <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+          <h3 class="font-bold text-green-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-circle-check"></i> Use This Language</h3>
+          <ul class="space-y-3 text-green-900">
+            <li>&ldquo;I want to introduce you to one of our managers early.&rdquo;</li>
+            <li>&ldquo;We do this so we can make sure we are aligned around what matters most.&rdquo;</li>
+            <li>&ldquo;Affordability means something different to every guest.&rdquo;</li>
+            <li>&ldquo;We want to build the right plan, not just quote numbers.&rdquo;</li>
+            <li>&ldquo;Our goal is to keep this simple and help you make a confident decision.&rdquo;</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border-l-4 border-brand-blue">
+        <h3 class="text-xl font-bold text-brand-blue mb-3">The Rule</h3>
+        <p class="text-lg font-semibold text-gray-800 mb-3">The first manager touch should happen before friction.</p>
+        <p class="text-gray-700 leading-relaxed">If the first manager introduction happens when the guest says no, asks for a discount, or starts to leave, we waited too long. The salesperson must make manager involvement feel normal early in the visit.</p>
+      </div>
+    </section>
+
+    <section id="content-alignment" class="fade-in hidden space-y-6">
+      <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border-l-4 border-brand-blue">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Affordability Alignment</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-5">Today&rsquo;s customer is not just asking whether they like the vehicle. They are asking whether the decision is responsible, affordable, and aligned with their full financial picture.</p>
+        <div class="bg-brand-light p-5 rounded-xl">
+          <h3 class="font-bold text-brand-blue flex items-center gap-2 mb-2"><i class="fa-solid fa-key"></i> Golden Rule</h3>
+          <p class="text-lg font-semibold text-gray-800">Do not sell a payment. Build an affordability plan around the guest.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100"><div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-money-bill-wave"></i></div><h3 class="font-bold mb-2">Payment Comfort</h3><p class="text-gray-600 text-sm">What monthly range feels responsible without stress?</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100"><div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-car-rear"></i></div><h3 class="font-bold mb-2">Trade Value</h3><p class="text-gray-600 text-sm">Is the guest concerned about equity, payoff, or the story behind the appraisal?</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100"><div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-piggy-bank"></i></div><h3 class="font-bold mb-2">Money Down</h3><p class="text-gray-600 text-sm">Does the guest want lower cash out of pocket or a lower payment?</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100"><div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-calendar-days"></i></div><h3 class="font-bold mb-2">Timing</h3><p class="text-gray-600 text-sm">Is the guest urgent, waiting for a payoff, comparing options, or planning ahead?</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100"><div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-circle-check"></i></div><h3 class="font-bold mb-2">Vehicle Fit</h3><p class="text-gray-600 text-sm">Is this the right model, trim, color, payment lane, and ownership fit?</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100"><div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-full flex items-center justify-center mb-4 text-xl"><i class="fa-solid fa-shield-halved"></i></div><h3 class="font-bold mb-2">Overall Value</h3><p class="text-gray-600 text-sm">Warranty, fuel economy, protection, and long-term ownership confidence matter.</p></div>
+      </div>
+    </section>
+
+    <section id="content-flow" class="fade-in hidden space-y-6">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">Manager Traffic Control Loop</h2>
+        <p class="text-gray-600">When traffic is active, managers must manage the flow, not only the desk.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div class="bg-white rounded-xl shadow-sm p-5 border-t-4 border-brand-blue"><h3 class="font-bold mb-2">1. See the Floor</h3><p class="text-sm text-gray-600">Who is here? Who is working with them? What stage are they in?</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-5 border-t-4 border-brand-blue"><h3 class="font-bold mb-2">2. Step In Early</h3><p class="text-sm text-gray-600">Introduce yourself before there is friction or exit risk.</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-5 border-t-4 border-brand-blue"><h3 class="font-bold mb-2">3. Support the Salesperson</h3><p class="text-sm text-gray-600">Strengthen the consultant. Do not take over or embarrass them.</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-5 border-t-4 border-brand-blue"><h3 class="font-bold mb-2">4. Save Momentum</h3><p class="text-sm text-gray-600">Clarify what is stopping the decision before the guest leaves.</p></div>
+        <div class="bg-white rounded-xl shadow-sm p-5 border-t-4 border-brand-blue"><h3 class="font-bold mb-2">5. Assign Follow-Up</h3><p class="text-sm text-gray-600">Every real unsold guest needs an owner, next action, and time.</p></div>
+      </div>
+      <div class="bg-gray-800 text-white p-6 rounded-xl">
+        <h3 class="font-bold mb-3"><i class="fa-solid fa-clipboard-list mr-2"></i> The Five Questions</h3>
+        <p class="text-gray-300 text-sm leading-relaxed mb-4">Before an unsold showroom guest leaves, the manager must be able to answer these five questions.</p>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-sm">
+          <div class="bg-white/10 p-3 rounded-lg">Who is the guest?</div>
+          <div class="bg-white/10 p-3 rounded-lg">What vehicle?</div>
+          <div class="bg-white/10 p-3 rounded-lg">What stage?</div>
+          <div class="bg-white/10 p-3 rounded-lg">Why not today?</div>
+          <div class="bg-white/10 p-3 rounded-lg">Next best action?</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="content-words" class="fade-in hidden space-y-6">
+      <div class="bg-green-50 border border-green-200 p-5 rounded-xl flex items-start gap-4">
+        <div class="mt-1 text-green-600"><i class="fa-solid fa-play fa-xl"></i></div>
+        <div><h3 class="text-sm font-bold text-green-800 uppercase tracking-wider mb-1">Primary Opening Line</h3><p class="text-lg text-gray-800 font-medium">&ldquo;We introduce managers early so we can build the right plan around what matters most to you.&rdquo;</p></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-brand-blue relative"><div class="flex justify-between mb-2"><p class="text-sm text-gray-500 font-semibold uppercase">Early salesperson setup</p><button onclick="copyText('track-1')" class="text-gray-400 hover:text-brand-blue no-print"><i class="fa-regular fa-copy"></i></button></div><p id="track-1" class="text-lg text-gray-800 font-medium">&ldquo;Just so you know how we do things here, I&rsquo;ll help you through the vehicle side, and I&rsquo;ll introduce you to one of our managers early in the process. We do that because affordability means something different to every guest right now.&rdquo;</p></div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-brand-blue relative"><div class="flex justify-between mb-2"><p class="text-sm text-gray-500 font-semibold uppercase">Shorter daily-use version</p><button onclick="copyText('track-2')" class="text-gray-400 hover:text-brand-blue no-print"><i class="fa-regular fa-copy"></i></button></div><p id="track-2" class="text-lg text-gray-800 font-medium">&ldquo;At some point early, I&rsquo;ll introduce you to one of our managers. We do that so we can make sure we are building the right plan around what matters most to you — especially payment, trade, timing, and overall value.&rdquo;</p></div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-brand-blue relative"><div class="flex justify-between mb-2"><p class="text-sm text-gray-500 font-semibold uppercase">Manager entry</p><button onclick="copyText('track-3')" class="text-gray-400 hover:text-brand-blue no-print"><i class="fa-regular fa-copy"></i></button></div><p id="track-3" class="text-lg text-gray-800 font-medium">&ldquo;I appreciate you coming in. You are in good hands with _____. Before we get too far, I like to ask one simple question: when you think about making this decision, what matters most — payment, trade, vehicle fit, timing, or overall value?&rdquo;</p></div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-brand-blue relative"><div class="flex justify-between mb-2"><p class="text-sm text-gray-500 font-semibold uppercase">Before numbers</p><button onclick="copyText('track-4')" class="text-gray-400 hover:text-brand-blue no-print"><i class="fa-regular fa-copy"></i></button></div><p id="track-4" class="text-lg text-gray-800 font-medium">&ldquo;Before we put the numbers together, I want to make sure the structure matches what you told us matters most. Is the biggest focus payment, trade value, money down, timing, or making sure this is the right vehicle?&rdquo;</p></div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-brand-blue relative"><div class="flex justify-between mb-2"><p class="text-sm text-gray-500 font-semibold uppercase">When guest is drifting</p><button onclick="copyText('track-5')" class="text-gray-400 hover:text-brand-blue no-print"><i class="fa-regular fa-copy"></i></button></div><p id="track-5" class="text-lg text-gray-800 font-medium">&ldquo;I want to pause for a second and make sure we are not missing what matters most. What part feels unclear or not comfortable yet?&rdquo;</p></div>
+        <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-brand-blue relative"><div class="flex justify-between mb-2"><p class="text-sm text-gray-500 font-semibold uppercase">Exit prevention</p><button onclick="copyText('track-6')" class="text-gray-400 hover:text-brand-blue no-print"><i class="fa-regular fa-copy"></i></button></div><p id="track-6" class="text-lg text-gray-800 font-medium">&ldquo;Before you head out, I do not want to pressure you. I just want to make sure we understand what would need to be different for this to make sense.&rdquo;</p></div>
+      </div>
+    </section>
+
+    <section id="content-save" class="fade-in hidden space-y-6">
+      <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8 border-l-4 border-brand-blue">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Save-A-Deal Logic</h2>
+        <p class="text-xl text-gray-700 italic leading-relaxed">&ldquo;What stopped the deal today, and what action gives us the best chance to keep it alive?&rdquo;</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm text-left">
+            <thead class="bg-gray-50 text-gray-700 uppercase text-xs"><tr><th class="px-4 py-3">Deal Risk</th><th class="px-4 py-3">What It Usually Means</th><th class="px-4 py-3">Next Best Action</th></tr></thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-4 py-3 font-semibold">Payment concern</td><td class="px-4 py-3">Guest likes the vehicle but structure feels heavy.</td><td class="px-4 py-3">Build affordability options: term, money down, lease, or alternative vehicle.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Trade concern</td><td class="px-4 py-3">Guest does not understand equity, payoff, or appraisal logic.</td><td class="px-4 py-3">Revisit the appraisal story and explain the unshakable facts.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Vehicle concern</td><td class="px-4 py-3">Right guest, wrong unit or unclear fit.</td><td class="px-4 py-3">Present one better-fit alternative and explain why.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Decision-maker absent</td><td class="px-4 py-3">The real decision is incomplete.</td><td class="px-4 py-3">Schedule a second visit or send a clean recap to share.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Shopping competitor</td><td class="px-4 py-3">Guest is comparing without full context.</td><td class="px-4 py-3">Clarify value, warranty, ownership experience, and availability.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold">Timing issue</td><td class="px-4 py-3">Guest may be real but not urgent.</td><td class="px-4 py-3">Create a specific future touchpoint tied to their timeline.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="content-crm" class="fade-in hidden space-y-6">
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+        <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center"><h3 class="font-bold text-gray-800 flex items-center gap-2"><i class="fa-solid fa-mobile-screen"></i> Manager Follow-Up Text</h3><button onclick="copyContent('manager-text')" class="text-sm bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-1.5 px-4 rounded-lg shadow-sm font-medium flex items-center gap-2 no-print"><i class="fa-regular fa-copy"></i> Copy</button></div>
+        <div class="p-6"><p id="manager-text" class="text-gray-700 whitespace-pre-wrap leading-relaxed">Hi [Customer Name], this is [Manager] at Clark Hyundai. I appreciated you coming in today. I know the main question was [payment/trade/timing/vehicle fit]. I am going to work with [Salesperson] on the cleanest next option and follow up with you by [time].</p></div>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+        <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center"><h3 class="font-bold text-gray-800 flex items-center gap-2"><i class="fa-solid fa-comment-dots"></i> Salesperson Follow-Up Text</h3><button onclick="copyContent('sales-text')" class="text-sm bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-1.5 px-4 rounded-lg shadow-sm font-medium flex items-center gap-2 no-print"><i class="fa-regular fa-copy"></i> Copy</button></div>
+        <div class="p-6"><p id="sales-text" class="text-gray-700 whitespace-pre-wrap leading-relaxed">Hi [Customer Name], this is [Salesperson]. Thank you again for spending time with us today. I spoke with [Manager] after you left, and we are working on the part you said mattered most: [specific concern]. I will follow up at [time] with the next best option.</p></div>
+      </div>
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+        <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center"><h3 class="font-bold text-gray-800 flex items-center gap-2"><i class="fa-solid fa-clipboard"></i> CRM Note Format</h3><button onclick="copyContent('crm-note')" class="text-sm bg-white border border-gray-300 hover:bg-gray-100 text-gray-700 py-1.5 px-4 rounded-lg shadow-sm font-medium flex items-center gap-2 no-print"><i class="fa-regular fa-copy"></i> Copy</button></div>
+        <div class="p-6"><pre id="crm-note" class="text-gray-700 whitespace-pre-wrap leading-relaxed font-sans">Showroom Save-A-Deal Review
+Guest:
+Salesperson:
+Vehicle:
+Stage reached:
+Manager introduced: Yes / No
+When introduced:
+Primary concern:
+Guest&rsquo;s exact words:
+Next best action:
+Follow-up owner:
+Follow-up time:
+Save-A-Deal needed: Yes / No</pre></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast"><i class="fa-solid fa-circle-check text-green-400 mr-2"></i> Copied to clipboard!</div>
+
+  <script>
+    function showTab(tabId) {
+      const contents = ['mindset', 'intro', 'alignment', 'flow', 'words', 'save', 'crm'];
+      contents.forEach(id => {
+        document.getElementById('content-' + id).classList.add('hidden');
+        document.getElementById('content-' + id).classList.remove('block');
+        const tab = document.getElementById('tab-' + id);
+        tab.classList.remove('tab-active');
+        tab.classList.add('tab-inactive');
+      });
+      document.getElementById('content-' + tabId).classList.remove('hidden');
+      document.getElementById('content-' + tabId).classList.add('block');
+      const activeTab = document.getElementById('tab-' + tabId);
+      activeTab.classList.remove('tab-inactive');
+      activeTab.classList.add('tab-active');
+    }
+    function copyContent(elementId) { executeCopy(document.getElementById(elementId).innerText); }
+    function copyText(elementId) { executeCopy(document.getElementById(elementId).innerText); }
+    function executeCopy(textToCopy) {
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = textToCopy;
+      tempTextArea.style.position = 'absolute';
+      tempTextArea.style.left = '-9999px';
+      document.body.appendChild(tempTextArea);
+      tempTextArea.select();
+      try { document.execCommand('copy'); showToast(); } catch (err) { console.error('Failed to copy text: ', err); }
+      document.body.removeChild(tempTextArea);
+    }
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.className = 'show';
+      setTimeout(function(){ toast.className = toast.className.replace('show', ''); }, 2500);
+    }
+  </script>
+</body>
+</html>
