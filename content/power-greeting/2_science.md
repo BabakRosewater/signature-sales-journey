@@ -1,101 +1,82 @@
-# 1.0 The Science of First Impressions
+# 2.0 Science: Why First Impressions Work
 
-At Clark Hyundai, Greeting / First Impressions isn’t just “saying hello.” It’s a repeatable set of behaviors grounded in psychology — designed to create trust quickly and consistently.
+<div class="training-hero">
+  <div class="eyebrow">Why It Works</div>
+  <div class="bigIdea">Guests decide how the visit feels before the sales process even starts.</div>
+  <p>Greeting & First Impressions is not just saying hello. It is a repeatable set of behaviors that creates trust quickly and consistently.</p>
+</div>
 
----
-
-## Key Psychological Principles
-
-### 1) Thin-Slicing
-**What it means:** People make fast judgments from very limited information (often seconds).  
-**How we use it:** Your posture, tone, attire, and the environment *immediately* shape trust.
-
-**Micro-behaviors**
-- open stance, shoulders back  
-- genuine smile + eye contact  
-- calm pace (not rushed)
-
-*Reference: Ambady & Rosenthal (1992).*
-
----
-
-### 2) Halo Effect
-**What it means:** A strong first interaction shapes the guest’s perception of the whole dealership.  
-**How we use it:** The greeting is the “tone setter” for Sales, Service, and the brand.
-
-**Micro-behaviors**
-- warm welcome + professional cadence  
-- treat every guest like a referral
-
-*Reference: Nisbett & Wilson (1977).*
+<div class="quick-grid three">
+  <div class="training-card blue">
+    <span class="label-pill">Speed</span>
+    <p>People form fast impressions from limited information.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Energy</span>
+    <p>Your calm confidence transfers to the guest.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Environment</span>
+    <p>The showroom, desk, vehicle, and pathway all communicate trust.</p>
+  </div>
+</div>
 
 ---
 
-### 3) Primacy Effect
-**What it means:** First information anchors what people remember and expect next.  
-**How we use it:** The greeting should be warm **and** oriented toward help.
+## Seven principles
 
-**Micro-behaviors**
-- “What brought you in today?” (open-ended)  
-- confirm comfort + offer guidance
+<div class="quick-grid two">
+  <div class="training-card">
+    <span class="label-pill">1 • Thin-Slicing</span>
+    <p>People make fast judgments from limited information, often within seconds.</p>
+    <p><strong>Use it:</strong> Open posture, shoulders back, genuine smile, eye contact, and calm pace.</p>
+  </div>
 
-*Reference: Asch (1946).*
+  <div class="training-card blue">
+    <span class="label-pill">2 • Halo Effect</span>
+    <p>A strong first interaction shapes how the guest experiences the whole dealership.</p>
+    <p><strong>Use it:</strong> Treat every guest like a referral and make the first moment professional.</p>
+  </div>
 
----
+  <div class="training-card green">
+    <span class="label-pill">3 • Primacy Effect</span>
+    <p>First information anchors what people remember and expect next.</p>
+    <p><strong>Use it:</strong> Start with help, not pressure: “What brought you in today?”</p>
+  </div>
 
-### 4) Emotional Contagion
-**What it means:** Your energy transfers to the guest.  
-**How we use it:** We lead with calm confidence — not intensity.
+  <div class="training-card amber">
+    <span class="label-pill">4 • Emotional Contagion</span>
+    <p>Your energy transfers to the guest. High pressure creates resistance. Calm confidence creates comfort.</p>
+    <p><strong>Use it:</strong> Match energy level and avoid over-selling excitement.</p>
+  </div>
 
-**Micro-behaviors**
-- match energy level  
-- avoid “over-selling” excitement  
-- be steady and reassuring
+  <div class="training-card">
+    <span class="label-pill">5 • Expectation Confirmation</span>
+    <p>Satisfaction is shaped by expectations set early in the visit.</p>
+    <p><strong>Use it:</strong> Keep commitments simple and real: “Here’s what we’ll do next.”</p>
+  </div>
 
-*Reference: Hatfield, Cacioppo, & Rapson (1994).*
+  <div class="training-card blue">
+    <span class="label-pill">6 • Servicescape</span>
+    <p>The physical environment changes trust and perception.</p>
+    <p><strong>Use it:</strong> Clean desks, clear pathways, organized showroom, and well-presented vehicles.</p>
+  </div>
 
----
+  <div class="training-card green">
+    <span class="label-pill">7 • Mirroring & Matching</span>
+    <p>Subtle alignment builds rapport when done naturally.</p>
+    <p><strong>Use it:</strong> Match pace, tone, and formality without imitating.</p>
+  </div>
 
-### 5) Expectation Confirmation
-**What it means:** Satisfaction comes from meeting/exceeding expectations formed early.  
-**How we use it:** Don’t promise what we can’t deliver. Set clear next steps.
-
-**Micro-behaviors**
-- “Here’s what we’ll do next…”  
-- keep commitments small and real
-
-*Reference: Oliver (1980).*
-
----
-
-### 6) Environment & Context (Servicescapes)
-**What it means:** The physical space changes trust and perception.  
-**How we use it:** Clean, organized, welcoming spaces reduce friction and doubt.
-
-**Micro-behaviors**
-- tidy desks, clear pathways  
-- vehicles presented like we respect them
-
-*Reference: Bitner (1992).*
-
----
-
-### 7) Mirroring & Matching
-**What it means:** Subtle alignment builds rapport.  
-**How we use it:** Match tone, pace, and formality without imitating.
-
-**Micro-behaviors**
-- mirror speaking pace  
-- match formality (“sir/ma’am” vs first name)
-
-*Reference: Chartrand & Bargh (1999).*
+  <div class="training-card dark">
+    <span class="label-pill">Daily Application</span>
+    <p>Use professional presentation, emotional intelligence, clean environment, and manager coaching to make first impressions consistent.</p>
+  </div>
+</div>
 
 ---
 
-## Daily Application
-
-We apply these principles by:
-- prioritizing professional presentation  
-- using emotional intelligence (tone + pace)  
-- maintaining a clean, inviting environment  
-- sharing wins + coaching notes after practice
+## Coaching takeaway
+<div class="coach-check">
+  <p><strong>The first impression is not cosmetic. It changes how safe, open, and willing the guest feels during the rest of the visit.</strong></p>
+</div>
