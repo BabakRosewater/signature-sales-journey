@@ -1,91 +1,126 @@
 # 3.0 Standards
 
-This module is a process standard, not a “style preference.”
+<div class="training-hero">
+  <div class="eyebrow">Non-Negotiables</div>
+  <div class="bigIdea">Discovery is a process standard, not a style preference.</div>
+  <p>Every guest should leave discovery feeling heard, clarified, and ready for a better-fit selection.</p>
+</div>
+
+<div class="quick-grid four">
+  <div class="training-card blue">
+    <span class="label-pill">Needs</span>
+    <p>Understand lifestyle, usage, must-haves, and deal-breakers.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Budget</span>
+    <p>Clarify payment or budget comfort without pressure.</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Trade</span>
+    <p>Identify trade, no trade, or unsure — and start appraisal early when appropriate.</p>
+  </div>
+  <div class="training-card dark">
+    <span class="label-pill">Bridge</span>
+    <p>Move to 2–3 best-fit options, not a random selection.</p>
+  </div>
+</div>
 
 ---
 
-## 3.1 Discovery Standards
+## Discovery standards
+<div class="quick-grid two">
+  <div class="training-card">
+    <span class="label-pill">Discovery Goals</span>
+    <ul>
+      <li>Understand lifestyle and usage</li>
+      <li>Identify must-haves and deal-breakers</li>
+      <li>Clarify budget or payment comfort</li>
+      <li>Confirm timeline and decision-making</li>
+      <li>Identify trade / no trade / uncertain</li>
+    </ul>
+  </div>
 
-### Discovery Goals
-- Understand lifestyle + usage
-- Identify must-haves / deal-breakers
-- Clarify budget/payment comfort zone
-- Confirm timeline and decision-making
-- Identify trade / no-trade / uncertain
-
-### Question Categories (Minimum)
-1) **Usage:** commute, family, work, weather, trips  
-2) **Features:** must-have, nice-to-have, deal-breaker  
-3) **Budget:** comfort zone, payments, cash/down, flexibility  
-4) **Timeline:** when/why now  
-5) **Trade:** current vehicle story + condition + expectations
-
-### Required Behaviors
-- Ask open-ended first
-- Summarize: “So what I’m hearing is…”
-- Take notes that can be reused in Selection and Follow-Up
-
----
-
-## 3.2 Appraisal Standards (Early Integration)
-
-### When to Introduce Appraisal
-- Early—once trade is confirmed (or strongly likely)
-
-### Why We Do It Early (Customer Benefit)
-- Saves time
-- Creates clarity
-- Prevents surprises
-- Aligns options and payments
-
-### Standard Language
-- “If you have a trade, we can do a quick appraisal now so we have clean numbers and don’t waste your time later.”
-
-### Information to Capture
-- VIN / Year / Make / Model / Trim
-- Mileage estimate
-- Maintenance patterns
-- Prior accidents/repairs (customer-disclosed)
-- Title status if known
-- Condition highlights and concerns
+  <div class="training-card blue">
+    <span class="label-pill">Required Behaviors</span>
+    <ul>
+      <li>Ask open-ended first</li>
+      <li>Listen more than you talk</li>
+      <li>Summarize: “So what I’m hearing is…”</li>
+      <li>Take notes that can be reused in Selection and Follow-Up</li>
+    </ul>
+  </div>
+</div>
 
 ---
 
-## 3.3 No-Trade Standard
-If no trade:
-- Shift fully to future needs + budget + timeline
-- Keep momentum with 2–3 best-fit options
-- Do not treat it as “less serious”
-
-Standard bridge:
-- “Perfect—then we can focus 100% on the right vehicle and the right structure for you.”
-
----
-
-## 3.4 Service Customer Discovery Standard
-Service customers are warm trust opportunities.
-- Start with genuine interest in their vehicle
-- Explore future needs
-- Offer appraisal while they’re waiting (if appropriate)
+## Question categories
+<div class="quick-grid three">
+  <div class="training-card"><span class="label-pill">Usage</span><p>Commute, family, work, weather, trips, hobbies.</p></div>
+  <div class="training-card"><span class="label-pill">Features</span><p>Must-have, nice-to-have, deal-breaker.</p></div>
+  <div class="training-card"><span class="label-pill">Budget</span><p>Comfort zone, payment, cash/down, flexibility.</p></div>
+  <div class="training-card"><span class="label-pill">Timeline</span><p>When, why now, what happens if they wait.</p></div>
+  <div class="training-card"><span class="label-pill">Trade</span><p>Current vehicle story, condition, payoff, expectations.</p></div>
+  <div class="training-card green"><span class="label-pill">Decision</span><p>Who is involved and what matters most to them?</p></div>
+</div>
 
 ---
 
-## 3.5 Early Manager Involvement Standard (When Needed)
-Bring a manager early if:
-- trade complexity is high
-- customer expresses strong trade distrust
-- deal structure needs quick clarity
-
-Manager role:
-- expertise + objectivity + credibility  
-Customer experience:
-- teamwork, transparency, comfort
+## Appraisal standards
+<div class="quick-grid two">
+  <div class="training-card amber">
+    <span class="label-pill">When</span>
+    <p>Introduce appraisal early once trade is confirmed or strongly likely.</p>
+  </div>
+  <div class="training-card green">
+    <span class="label-pill">Why</span>
+    <p>It saves time, creates clarity, prevents surprises, and aligns options and payments.</p>
+  </div>
+  <div class="training-card blue">
+    <span class="label-pill">Standard Language</span>
+    <div class="script-line">“If you have a trade, we can do a quick appraisal now so we have clean numbers and don’t waste your time later.”</div>
+  </div>
+  <div class="training-card">
+    <span class="label-pill">Information to Capture</span>
+    <p>VIN, year, make, model, trim, mileage, maintenance, condition, title status, and customer-disclosed history.</p>
+  </div>
+</div>
 
 ---
 
-## 3.6 Transition to Selection Standard
-Before showing vehicles:
-1) Recap needs (confirm)
-2) Present 2–3 options (not 10)
-3) Tie each option to their priorities
-4) Invite test drive
+## No-trade standard
+<div class="training-card green">
+  <span class="label-pill">No Trade</span>
+  <p>If there is no trade, shift fully to future needs, budget, timeline, and 2–3 best-fit options. Do not treat no-trade guests as less serious.</p>
+  <div class="script-line">“Perfect — then we can focus 100% on the right vehicle and the right structure for you.”</div>
+</div>
+
+---
+
+## Service customer discovery standard
+<div class="training-card blue">
+  <span class="label-pill">Service Guests</span>
+  <p>Service customers are warm trust opportunities. Start with genuine interest in their vehicle, explore future needs, and offer appraisal while they wait when appropriate.</p>
+</div>
+
+---
+
+## Early manager involvement standard
+<div class="training-card amber">
+  <span class="label-pill">Bring Manager Early When Needed</span>
+  <p>Bring a manager early if trade complexity is high, the guest expresses strong trade distrust, or the deal structure needs quick clarity.</p>
+  <p><strong>Manager role:</strong> expertise, objectivity, and credibility.</p>
+  <p><strong>Guest experience:</strong> teamwork, transparency, and comfort.</p>
+</div>
+
+---
+
+## Transition to selection standard
+<div class="coach-check">
+  <p><strong>Before showing vehicles:</strong></p>
+  <ol>
+    <li>Recap needs and confirm understanding.</li>
+    <li>Present 2–3 options, not 10.</li>
+    <li>Tie each option to the guest’s priorities.</li>
+    <li>Invite the test drive.</li>
+  </ol>
+</div>
