@@ -248,3 +248,118 @@ body {
   color: rgba(15, 23, 42, 0.45);
   padding: 1.25rem 0 2rem;
 }
+
+/* ---------- Phase 3 coaching UX components ---------- */
+.prose .training-hero {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(30, 64, 175, 0.88));
+  color: #fff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+}
+.prose .training-hero p,
+.prose .training-hero li { color: rgba(255,255,255,0.88); }
+.prose .training-hero strong { color: #fff; }
+.prose .training-hero .eyebrow { color: rgba(191, 219, 254, 0.9); }
+.prose .bigIdea {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+.prose .quick-grid {
+  display: grid;
+  gap: 12px;
+  margin: 14px 0;
+}
+@media (min-width: 768px) {
+  .prose .quick-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prose .quick-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .prose .quick-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.prose .training-card {
+  padding: 14px 16px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+.prose .training-card.blue { background: rgba(219, 234, 254, 0.55); border-color: rgba(37, 99, 235, 0.16); }
+.prose .training-card.green { background: rgba(220, 252, 231, 0.55); border-color: rgba(22, 163, 74, 0.16); }
+.prose .training-card.amber { background: rgba(254, 243, 199, 0.65); border-color: rgba(217, 119, 6, 0.16); }
+.prose .training-card.red { background: rgba(254, 226, 226, 0.60); border-color: rgba(220, 38, 38, 0.16); }
+.prose .training-card.dark { background: #0f172a; color: #fff; }
+.prose .training-card.dark p,
+.prose .training-card.dark li { color: rgba(255,255,255,0.86); }
+.prose .training-card.dark strong { color: #fff; }
+.prose .label-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.07);
+  color: rgba(15, 23, 42, 0.72);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.prose .script-line {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  font-weight: 750;
+}
+.prose .do-dont {
+  display: grid;
+  gap: 12px;
+  margin: 14px 0;
+}
+@media (min-width: 768px) { .prose .do-dont { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.prose .dont-box,
+.prose .do-box {
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+}
+.prose .dont-box { background: rgba(254, 226, 226, 0.72); border-color: rgba(220, 38, 38, 0.18); }
+.prose .do-box { background: rgba(220, 252, 231, 0.72); border-color: rgba(22, 163, 74, 0.18); }
+.prose .flow-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 14px 0;
+}
+.prose .flow-step {
+  padding: 9px 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  font-weight: 850;
+  box-shadow: 0 6px 16px rgba(15,23,42,0.04);
+}
+.prose .flow-arrow { color: rgba(15, 23, 42, 0.35); font-weight: 900; }
+.prose .coach-check {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.9);
+  border: 1px dashed rgba(15, 23, 42, 0.20);
+}
+.prose .score-row {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+@media (min-width: 768px) { .prose .score-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.prose .score-card {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.10);
+  text-align: center;
+  font-weight: 850;
+}
