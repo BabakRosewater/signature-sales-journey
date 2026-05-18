@@ -1,6 +1,8 @@
 {
   "title": "Greeting & First Impressions",
   "description": "Trust-first presence, non-verbal cues, scenarios, role-play, and facility standards.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
   "tabs": [
     {
       "id": "overview",
@@ -37,5 +39,10 @@
       "label": "AI Lab",
       "type": "ai"
     }
-  ]
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 1: Greeting & First Impressions. Coach salespeople on trust-first presence, first 10 seconds, non-verbal cues, warm and professional greeting language, facility appearance, and role-play practice. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute sales meeting role-play for Greeting & First Impressions. Include walk-in, browser, drive-up, service guest, and busy showroom scenarios. Add winning lines, coach watch-points, and a 1-to-5 scoring rubric."
+  }
 }
