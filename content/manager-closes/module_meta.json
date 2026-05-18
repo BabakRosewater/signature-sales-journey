@@ -2,13 +2,13 @@
   "module_number": 8,
   "slug": "manager-closes",
   "title": "Manager Closes",
-  "description": "A trust-first manager turn that protects the guest experience, resolves friction, and earns a confident next step—without pressure.",
+  "description": "A trust-first manager turn that protects the guest experience, resolves friction, earns a confident next step, and reinforces manager traffic control when showroom opportunities are active.",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
-  "objective": "Use a structured, low-pressure manager close to clarify truth, resolve concerns, and align next steps—so the guest feels supported and the deal stays clean.",
-  "position_in_journey": "After Closing With Confidence → Before/During Numbers → Save-A-Deal if needed",
-  "estimated_time_minutes": 45,
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
+  "objective": "Use a structured, low-pressure manager close to clarify truth, resolve concerns, align next steps, and protect every showroom opportunity through manager awareness, involvement, Save-A-Deal logic, and follow-up ownership.",
+  "position_in_journey": "After Closing With Confidence → Before/During Numbers → Manager Traffic Control → Save-A-Deal if needed",
+  "estimated_time_minutes": 60,
   "prerequisites": [
     "showcasing-solutions-overcoming-obstacles",
     "emotional-test-drive",
@@ -20,7 +20,9 @@
     "Diagnose whether the issue is a question, concern, objection, or misalignment.",
     "Use 'Unshakable Facts' to create clarity without pressure.",
     "Resolve the real issue with one clean ask and a clear next step.",
-    "Keep team choreography clean: handoff, positioning, and roles."
+    "Keep team choreography clean: handoff, positioning, and roles.",
+    "Control active showroom traffic through manager awareness, timely involvement, and deal-flow inspection.",
+    "Apply Save-A-Deal logic to unsold showroom guests by identifying the real reason, next best action, owner, and follow-up time."
   ],
   "tabs": [
     { "id": "overview", "label": "Overview", "file": "1_overview.md" },
@@ -29,6 +31,7 @@
     { "id": "scripts", "label": "Scripts", "file": "4_scripts.md" },
     { "id": "roleplay", "label": "Role-Play", "file": "5_roleplay.md" },
     { "id": "worksheet", "label": "Worksheet", "file": "6_worksheet.md" },
+    { "id": "supplement", "label": "Supplement", "file": "7_supplement_manager_traffic_control_save_a_deal.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
@@ -38,6 +41,7 @@
     "4_scripts.md",
     "5_roleplay.md",
     "6_worksheet.md",
+    "7_supplement_manager_traffic_control_save_a_deal.md",
     "overview.csv"
   ],
   "tags": [
@@ -47,6 +51,9 @@
     "unshakable-facts",
     "clarity",
     "trust",
-    "save-a-deal"
+    "save-a-deal",
+    "showroom-traffic",
+    "manager-traffic-control",
+    "follow-up-accountability"
   ]
 }
