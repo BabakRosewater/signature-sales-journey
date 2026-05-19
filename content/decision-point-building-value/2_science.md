@@ -1,63 +1,92 @@
-# 2.0 The Science of Decision + Value (Clarity Wins)
+# 2.0 Science: Decision + Value
 
-## What’s Happening in the Guest’s Mind
-At this stage, guests are balancing:
-- excitement (this could be the one)
-- uncertainty (what if I regret it?)
-- mental load (options, trims, payments, trade)
-- social influence (partner, friends, online reviews)
+<div class="training-hero">
+  <div class="eyebrow">Module 06 • Why It Works</div>
+  <div class="bigIdea">At the Decision Point, the guest is balancing excitement, uncertainty, and fear of regret.</div>
+  <p>Your job is to reduce mental load, clarify value, and make the next step feel safe.</p>
+</div>
 
-Your job is to reduce cognitive load and increase confidence.
-
----
-
-## Principle 1: Choice Overload
-Too many choices increases delay.
-Clarity creates movement.
-
-**Application**
-- Narrow to 2–3 best-fit options
-- Use plain-language comparisons
-- Ask: “Which feels closer to your life?”
-
----
-
-## Principle 2: Framing (Outcomes Beat Specs)
-A feature is just information.
-An outcome is meaning.
-
-**Application**
-- AWD → confidence in winter
-- driver assist → peace of mind with family
-- cargo space → less stress and easier routines
-- warranty coverage → feeling protected
+<div class="quick-grid three">
+  <div class="training-card blue">
+    <span class="label-pill">Excitement</span>
+    <p>The guest may feel, “This could be the one.”</p>
+  </div>
+  <div class="training-card amber">
+    <span class="label-pill">Uncertainty</span>
+    <p>The guest may wonder, “What if I regret this?”</p>
+  </div>
+  <div class="training-card dark">
+    <span class="label-pill">Mental Load</span>
+    <p>Options, trims, payments, trade, partner input, and online information can overwhelm them.</p>
+  </div>
+</div>
 
 ---
 
-## Principle 3: Loss Aversion (Fear of a Bad Decision)
-Guests fear getting stuck or making a mistake.
+## Five decision principles
 
-**Application**
-- reduce perceived risk with calm language:
-  - “Let’s make this simple.”
-  - “We’ll keep the next step clear.”
-  - “No pressure—just clarity.”
+<div class="quick-grid two">
+  <div class="training-card blue">
+    <span class="label-pill">1 • Choice Overload</span>
+    <p>Too many choices increase delay. Clarity creates movement.</p>
+    <p><strong>Use it:</strong> Narrow to 2–3 best-fit options, use plain-language comparisons, and ask which feels closer to their life.</p>
+    <div class="script-line">“Which feels closer to your life — Option A or Option B?”</div>
+  </div>
+
+  <div class="training-card green">
+    <span class="label-pill">2 • Framing</span>
+    <p>A feature is just information. An outcome is meaning.</p>
+    <ul>
+      <li>AWD → confidence in winter</li>
+      <li>Driver assist → peace of mind with family</li>
+      <li>Cargo space → easier routines</li>
+      <li>Warranty → feeling protected</li>
+    </ul>
+  </div>
+
+  <div class="training-card amber">
+    <span class="label-pill">3 • Loss Aversion</span>
+    <p>Guests fear getting stuck or making the wrong decision.</p>
+    <p><strong>Use it:</strong> Reduce perceived risk with calm language.</p>
+    <div class="script-line">“Let’s make this simple.”</div>
+    <div class="script-line">“We’ll keep the next step clear.”</div>
+    <div class="script-line">“No pressure — just clarity.”</div>
+  </div>
+
+  <div class="training-card">
+    <span class="label-pill">4 • Commitment + Consistency</span>
+    <p>Small yes moments build momentum when they match what the guest already said matters.</p>
+    <div class="script-line">“How close is this to what you had in mind?”</div>
+    <div class="script-line">“If we can make the numbers comfortable...”</div>
+  </div>
+
+  <div class="training-card dark">
+    <span class="label-pill">5 • Peak-End</span>
+    <p>Guests remember the strongest emotional moment and how the phase ends.</p>
+    <p><strong>Use it:</strong> Create one clear “aha” moment and end with a crisp summary plus next step.</p>
+  </div>
+
+  <div class="training-card blue">
+    <span class="label-pill">Coach’s Lens</span>
+    <p>The salesperson should make the guest feel more certain, not more pressured.</p>
+  </div>
+</div>
 
 ---
 
-## Principle 4: Commitment + Consistency
-Small “yes” moments build momentum.
+## What is happening in the guest’s mind
+<div class="flow-line">
+  <span class="flow-step">I like it</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Does it fit?</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Is it smart?</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">Can I justify it?</span>
+  <span class="flow-arrow">→</span>
+  <span class="flow-step">What is next?</span>
+</div>
 
-**Application**
-- Fit check: “How close is this to what you had in mind?”
-- Conditional: “If we can make numbers comfortable…”
-- Two-choice: “Which feels closer—A or B?”
-
----
-
-## Principle 5: Peak-End
-Guests remember emotional peaks and how the phase ends.
-
-**Application**
-- create one “aha” (their favorite outcome)
-- end with a crisp summary + next step
+<div class="coach-check">
+  <p><strong>Training point:</strong> At the Decision Point, clarity is more powerful than pressure. The guest needs the “why” before the numbers.</p>
+</div>
