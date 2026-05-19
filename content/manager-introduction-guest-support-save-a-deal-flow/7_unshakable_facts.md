@@ -6,10 +6,15 @@
   <p>This supplement turns the Save-A-Deal companion deck into practical sales-meeting coaching for managers and salespeople.</p>
 </div>
 
-<div class="training-card dark">
-  <span class="label-pill">Standalone Visual Page</span>
-  <p>Open the full HTML companion page for a more visual, deck-style training experience.</p>
-  <p><a href="/unshakable-facts/" target="_blank" rel="noopener">Open The Unshakable Facts standalone page →</a></p>
+<div class="training-card dark" style="border: 2px solid #60a5fa; box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);">
+  <span class="label-pill" style="background: #dbeafe; color: #1e3a8a; font-weight: 900; letter-spacing: .12em;">Open Companion Deck</span>
+  <h2 style="margin: 12px 0 8px; font-size: 1.65rem; line-height: 1.15; color: #ffffff;">Save-A-Deal: The Unshakable Facts</h2>
+  <p style="font-size: 1.05rem; line-height: 1.55; color: #e5e7eb; max-width: 70ch;">Use the full HTML companion page for sales meetings, manager training, and the evidence behind speed, early manager support, showroom traffic control, CRM notes, and Save-A-Deal ownership.</p>
+  <p style="margin-top: 18px;">
+    <a href="/unshakable-facts/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 999px; background: #2563eb; color: #ffffff; font-weight: 900; text-decoration: none; box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);">
+      Open The Unshakable Facts Companion Deck →
+    </a>
+  </p>
 </div>
 
 <div class="quick-grid four">
