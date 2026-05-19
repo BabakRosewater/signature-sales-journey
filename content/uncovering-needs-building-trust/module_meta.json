@@ -1,6 +1,8 @@
 {
   "title": "Module 02: Uncovering Needs & Building Trust",
   "description": "Discovery + early appraisal integration to build trust, save time, and align the right solution to needs, budget, and timeline.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
   "tabs": [
     {
       "id": "overview",
@@ -43,5 +45,10 @@
       "label": "AI Lab",
       "type": "ai"
     }
-  ]
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 2: Uncovering Needs & Building Trust. Coach salespeople on discovery, active listening, budget comfort, trade appraisal integration, customer trust, service guest opportunities, transition to selection, and manager coaching. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 2 where a salesperson uncovers needs, clarifies budget comfort, introduces early appraisal, summarizes the guest priorities, and bridges into 2–3 best-fit options. Include guest lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
