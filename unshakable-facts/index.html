@@ -1,161 +1,2566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Save-A-Deal · The Unshakable Facts</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .fact-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-    .fact-card:hover { transform: translateY(-3px); box-shadow: 0 18px 45px rgba(15, 23, 42, .12); }
-    .glass { backdrop-filter: blur(18px); background: rgba(255,255,255,.78); }
-    .timeline-line { background: linear-gradient(to bottom, #2563eb, #f59e0b, #0f172a); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save-A-Deal · The Unshakable Facts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,900&family=JetBrains+Mono:wght@400;700&family=Inter+Tight:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  /* ============================================
+     DESIGN SYSTEM — editorial-dashboard
+     Display: Fraunces (a serif with surprising weight + grace)
+     Body: Inter Tight (clean, modern, condensed-ish)
+     Mono: JetBrains Mono (for stats, source attribution)
+     ============================================ */
+  :root {
+    --ink: #0A1628;
+    --paper: #F4F4F6;        /* Slightly cooler, softer off-white for better contrast */
+    --surface: #FFFFFF;      /* Pure white for elevated cards */
+    --ink-soft: #2C3E5A;
+    --gray: #4A5568;         /* Darkened for better readability */
+    --gray-light: #A0AEC0;
+    --hairline: #E2E8F0;
+
+    --signal: #1B4D8A;           /* primary blue */
+    --signal-bright: #2E75B6;
+    --signal-light: #BFD4E8;
+    --signal-pale: #E8EFF7;
+
+    --alert: #C53030;            /* deep red */
+    --alert-bright: #E53E3E;
+    --alert-light: #FC8181;
+
+    --warn: #C05621;             /* amber */
+    --warn-bright: #DD6B20;
+    --warn-light: #FBD38D;
+
+    --gold: #B8860B;
+    --green: #2F855A;
+
+    /* Depth / Shadows */
+    --shadow-sm: 0 4px 6px -1px rgba(10, 22, 40, 0.05), 0 2px 4px -1px rgba(10, 22, 40, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(10, 22, 40, 0.08), 0 4px 6px -2px rgba(10, 22, 40, 0.04);
+    --shadow-lg: 0 20px 25px -5px rgba(10, 22, 40, 0.1), 0 10px 10px -5px rgba(10, 22, 40, 0.04);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body { min-height: 100vh; }
+
+  /* Subtle background grain texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============================================
+     PAGE STRUCTURE — each slide is full-viewport
+     ============================================ */
+  .slide {
+    position: relative;
+    min-height: 100vh;
+    padding: 6vh 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--hairline);
+    overflow: hidden;
+  }
+
+  /* Top crossbar */
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--ink);
+  }
+
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 5vh;
+  }
+
+  .slide-header .left { color: var(--ink); font-weight: 700; }
+  .slide-header .center { color: var(--gray); flex: 1; text-align: center; }
+  .slide-header .right { color: var(--gray); font-weight: 700; }
+
+  .slide-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+  .slide-footer {
+    margin-top: 5vh;
+    padding-top: 2.5vh;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+  }
+
+  .slide-footer em { color: var(--ink-soft); font-style: italic; font-family: 'Fraunces', serif; font-weight: 600; font-size: 13px; letter-spacing: 0; }
+
+  /* ============================================
+     TITLE TREATMENT
+     ============================================ */
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--signal-bright);
+    margin-bottom: 1.5vh;
+    font-weight: 700;
+    opacity: 0;
+    animation: fade-up 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .eyebrow.alert { color: var(--alert); }
+  .eyebrow.warn { color: var(--warn); }
+
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(36px, 5vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    max-width: 18ch;
+    opacity: 0;
+    animation: fade-up 0.7s 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  }
+
+  h1.headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--signal);
+  }
+  h1.headline em.alert { color: var(--alert); }
+
+  /* ============================================
+     ANIMATIONS
+     ============================================ */
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scale-in {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* ============================================
+     COUNTERS — large stat displays
+     ============================================ */
+  .stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(120px, 20vw, 280px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums lining-nums;
+    position: relative;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .stat-number.signal { color: var(--signal); }
+  .stat-number.alert { color: var(--alert); }
+  .stat-number.warn { color: var(--warn); }
+
+  .stat-number .unit {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 0.45em;
+    color: var(--signal-bright);
+    vertical-align: super;
+    margin-left: -0.05em;
+  }
+  .stat-number.alert .unit { color: var(--alert-bright); }
+  .stat-number.warn .unit { color: var(--warn-bright); }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 2vh;
+    font-weight: 700;
+  }
+
+  .stat-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--gray);
+    margin-top: 0.5vh;
+    max-width: 32ch;
+    line-height: 1.4;
+  }
+
+  /* ============================================
+     TWO-COLUMN LAYOUT
+     ============================================ */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8vw;
+    align-items: center;
+  }
+
+  .visual-zone {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============================================
+     TALK-TRACK BLOCK (Elevated Card)
+     ============================================ */
+  .talk-track {
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--hairline);
+    border-left: 6px solid var(--signal);
+    padding: 28px 36px;
+    margin-top: 4vh;
+    max-width: 85ch;
+    opacity: 0;
+    animation: fade-up 0.6s 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .talk-track-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--signal-bright);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .talk-track-body {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  .talk-track-body strong {
+    font-weight: 600;
+    color: var(--signal);
+  }
+
+  /* ============================================
+     COVER PAGE
+     ============================================ */
+  #cover {
+    background: var(--ink);
+    color: var(--paper);
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(46, 117, 182, 0.2), transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(184, 134, 11, 0.15), transparent 60%);
+  }
+
+  .cover-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw;
+  }
+
+  .cover-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--signal-light);
+    margin-bottom: 3vh;
+    font-weight: 700;
+    opacity: 0;
+    animation: fade-up 1s 0.3s forwards;
+  }
+
+  .cover-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(64px, 12vw, 190px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+    margin-bottom: 1.5vh;
+    opacity: 0;
+    animation: fade-up 1.2s 0.5s forwards;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .cover-title em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--signal-light);
+  }
+
+  .cover-subtitle {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(22px, 2.5vw, 36px);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 35ch;
+    margin-top: 2vh;
+    opacity: 0;
+    animation: fade-up 1.4s 1s forwards;
+  }
+
+  .cover-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-top: 6vh;
+    opacity: 0;
+    animation: fade-up 1.4s 1.4s forwards;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .author-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    text-transform: none;
+    transition: background 0.3s;
+  }
+  
+  .author-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .author-badge a {
+    color: var(--signal-light);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 6px;
+  }
+
+  /* Cover stats preview */
+  .cover-stats {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1vw;
+    margin-top: 8vh;
+    opacity: 0;
+    animation: fade-up 1s 1.8s forwards;
+  }
+
+  .cover-stat {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .cover-stat:hover { transform: translateY(-6px); background: rgba(255, 255, 255, 0.08); }
+  .cover-stat:hover .cover-stat-num { color: var(--signal-light); }
+
+  .cover-stat-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(20px, 2.2vw, 36px);
+    color: #FFFFFF;
+    transition: color 0.3s;
+  }
+
+  .cover-stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-top: 1vh;
+  }
+
+  .cover-prompt {
+    position: absolute;
+    bottom: 4vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    animation: bounce-soft 2s infinite;
+  }
+
+  @keyframes bounce-soft {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+    50% { transform: translateX(-50%) translateY(10px); opacity: 1; }
+  }
+
+  /* ============================================
+     SECTION DIVIDER
+     ============================================ */
+  .section-divider {
+    background: var(--ink);
+    color: var(--surface);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-divider .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.35em;
+    color: var(--signal-light);
+    margin-bottom: 2.5vh;
+    font-weight: 700;
+  }
+
+  .section-divider h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(64px, 10vw, 150px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .section-divider h2 em {
+    font-style: italic;
+    color: var(--signal-light);
+    font-weight: 600;
+  }
+
+  .section-divider .section-blurb {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.2vw, 28px);
+    color: var(--gray-light);
+    margin-top: 4vh;
+    max-width: 55ch;
+    line-height: 1.4;
+  }
+
+  /* ============================================
+     VISUAL — DEALERSHIP ROW (Page 2)
+     ============================================ */
+  .dealership-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+    max-width: 500px;
+  }
+
+  .dealership-grid .house {
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+  }
+
+  .house svg { width: 100%; height: 100%; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); }
+  .house path, .house rect { fill: var(--gray-light); transition: fill 0.6s; }
+
+  .house.winner.lit path,
+  .house.winner.lit rect { fill: var(--signal); }
+
+  .house.winner::after {
+    content: 'WINS';
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--signal);
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.4s 0.8s;
+  }
+  .house.winner.lit::after { opacity: 1; }
+
+  /* ============================================
+     VISUAL — CLOCK (Page 3)
+     ============================================ */
+  .clock-container {
+    position: relative;
+    width: 380px;
+    height: 380px;
+  }
+
+  .clock-face {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 3px solid var(--hairline);
+    position: relative;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .clock-marks {
+    position: absolute;
+    inset: 0;
+  }
+
+  .clock-mark {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 3px;
+    height: 14px;
+    background: var(--gray-light);
+    transform-origin: 50% 178px;
+    border-radius: 2px;
+  }
+
+  .clock-wedge {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .clock-wedge.active { opacity: 1; }
+
+  .clock-hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 140px;
+    background: var(--ink);
+    transform-origin: 3px 100%;
+    transform: translate(-50%, -100%) rotate(0deg);
+    border-radius: 3px;
+    transition: transform 8s linear;
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .clock-hand.active { transform: translate(-50%, -100%) rotate(180deg); }
+
+  .clock-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--ink);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .clock-label {
+    position: absolute;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .clock-label.window {
+    top: 40px;
+    right: -100px;
+    color: var(--green);
+  }
+  .clock-label.window::before {
+    content: '0–5 MIN ↗';
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .clock-label.decay {
+    top: 50%;
+    right: -100px;
+    color: var(--alert);
+  }
+  .clock-label.decay::before {
+    content: '5–30 MIN ↘';
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  /* ============================================
+     VISUAL — DECAY BARS (Page 4)
+     ============================================ */
+  .decay-chart {
+    width: 100%;
+    max-width: 540px;
+    background: var(--surface);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .decay-row {
+    margin-bottom: 24px;
+  }
+  .decay-row:last-child { margin-bottom: 0; }
+
+  .decay-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+
+  .decay-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .decay-pct {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .decay-bar-bg {
+    height: 38px;
+    background: var(--hairline);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .decay-bar-fill {
+    height: 100%;
+    width: 0;
+    background: var(--signal);
+    border-radius: 8px;
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .decay-bar-fill.warn { background: var(--warn); }
+  .decay-bar-fill.alert { background: var(--alert); }
+
+  /* ============================================
+     VISUAL — RACETRACK (Page 5)
+     ============================================ */
+  .racetrack {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .lane {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    height: 100px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .lane-label {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gray);
+  }
+
+  .lane-finish {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 16px;
+    background-image:
+      linear-gradient(45deg, var(--ink) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--ink) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--ink) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--ink) 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    border-left: 1px solid var(--hairline);
+  }
+
+  .car {
+    position: absolute;
+    bottom: 20px;
+    width: 65px;
+    height: 38px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  }
+
+  .car-body { fill: var(--signal); }
+  .lane.slow .car-body { fill: var(--alert); }
+
+  .car.fast {
+    left: 0;
+    animation: drive-fast 3s 0.4s forwards ease-out;
+  }
+  .car.slow {
+    left: 0;
+    animation: drive-slow 3s 0.4s forwards linear;
+  }
+
+  @keyframes drive-fast {
+    from { left: 0; }
+    to { left: calc(100% - 85px); }
+  }
+
+  @keyframes drive-slow {
+    from { left: 0; }
+    to { left: 15%; }
+  }
+
+  .race-callout {
+    background: var(--alert);
+    color: var(--surface);
+    padding: 22px 28px;
+    border-radius: 8px;
+    margin-top: 16px;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    opacity: 0;
+    box-shadow: var(--shadow-md);
+    transition: opacity 0.6s 3.6s;
+  }
+  .race-callout.show { opacity: 1; }
+
+  /* ============================================
+     VISUAL — CALENDAR (Page 6)
+     ============================================ */
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .day-card {
+    background: var(--signal);
+    color: var(--surface);
+    padding: 24px 20px;
+    border-radius: 12px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateY(20px);
+    opacity: 0;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .day-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .day-card.day-2 { background: var(--signal-bright); }
+  .day-card.day-3 { background: #4A90D9; }
+
+  .day-card.show { animation: fade-up 0.6s forwards; }
+  .day-card.day-1.show { animation-delay: 0.2s; }
+  .day-card.day-2.show { animation-delay: 0.5s; }
+  .day-card.day-3.show { animation-delay: 0.8s; }
+
+  .day-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+  }
+
+  .day-pct {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .day-of {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .tail-bar {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    color: var(--gray);
+    padding: 18px 24px;
+    border-radius: 12px;
+    text-align: center;
+    opacity: 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--hairline);
+  }
+  .tail-bar.show {
+    animation: fade-up 0.6s 1.2s forwards;
+  }
+  .tail-bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .tail-bar-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+  }
+
+  /* ============================================
+     VISUAL — PEOPLE GRID (Pages 7, 10)
+     ============================================ */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .person {
+    aspect-ratio: 1;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  .person.show {
+    animation: scale-in 0.3s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .person svg { width: 100%; height: 100%; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.05)); }
+  .person .body { fill: var(--gray-light); transition: fill 1s; }
+  .person.highlight.lit .body { fill: var(--alert); }
+  .person.highlight-warn.lit .body { fill: var(--warn-bright); }
+  .person.calm.lit .body { fill: var(--signal); opacity: 0.4; }
+
+  .people-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: var(--surface);
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .legend-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+  }
+
+  /* ============================================
+     VISUAL — VENN (Page 8)
+     ============================================ */
+  .venn-container {
+    position: relative;
+    width: 480px;
+    height: 340px;
+  }
+
+  .venn-circle {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    top: 40px;
+    opacity: 0;
+    transition: opacity 1s, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-md);
+  }
+
+  .venn-circle.left {
+    left: 20px;
+    background: var(--signal);
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  .venn-circle.right {
+    right: 20px;
+    background: var(--warn);
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  .venn-circle.show {
+    opacity: 0.65;
+    transform: translateX(0);
+  }
+
+  .venn-label-l, .venn-label-r {
+    position: absolute;
+    top: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .venn-label-l { left: 60px; color: var(--signal); }
+  .venn-label-r { right: 60px; color: var(--warn); }
+
+  .venn-label-l small, .venn-label-r small {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray);
+    margin-top: 6px;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .venn-overlap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--surface);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.6s 1.4s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .venn-overlap.show { opacity: 1; }
+
+  .venn-overlap .pct {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1;
+  }
+
+  .venn-overlap .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    margin-top: 6px;
+    font-weight: 700;
+  }
+
+  /* ============================================
+     VISUAL — STACKED COMPARISON (Page 9)
+     ============================================ */
+  .stack-chart {
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background: var(--surface);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .stack-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stack-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .stack-bar-bg {
+    height: 60px;
+    background: var(--hairline);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .stack-bar-fill {
+    height: 100%;
+    width: 0;
+    background: var(--signal);
+    border-radius: 8px;
+    transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .stack-bar-fill.secondary { background: var(--signal-bright); opacity: 0.85; }
+  .stack-bar-fill.tertiary { background: var(--warn); }
+
+  .stack-pct {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--surface);
+    opacity: 0;
+    transition: opacity 0.3s 1.5s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .stack-bar-fill.animate .stack-pct { opacity: 1; }
+
+  /* ============================================
+     VISUAL — FUNNEL (Page 11)
+     ============================================ */
+  .funnel-container {
+    position: relative;
+    width: 440px;
+    height: 400px;
+    background: var(--surface);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+  }
+
+  .funnel-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+  }
+
+  .leak-line {
+    stroke-dasharray: 4 4;
+    stroke-dashoffset: 30;
+    opacity: 0;
+    transition: opacity 0.6s, stroke-dashoffset 0.8s;
+  }
+
+  .leak-line.show {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .funnel-leak-labels {
+    position: absolute;
+    right: -30px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .leak-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--alert);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    background: var(--surface);
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--hairline);
+  }
+
+  .leak-label.warn-color { color: var(--warn-bright); }
+
+  .leak-label.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .leak-label small {
+    display: block;
+    color: var(--gray);
+    font-style: italic;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: none;
+    margin-top: 4px;
+  }
+
+  /* ============================================
+     SOURCES PAGE
+     ============================================ */
+  #sources {
+    background: var(--paper);
+    padding: 8vh 8vw;
+  }
+
+  .sources-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vh 4vw;
+    margin-top: 5vh;
+  }
+
+  .source-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--hairline);
+  }
+  
+  .source-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .source-badge {
+    flex-shrink: 0;
+    width: 80px;
+    height: 48px;
+    background: var(--ink);
+    color: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .source-info { flex: 1; }
+
+  .source-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .source-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gray);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* ============================================
+     NAVIGATION DOTS
+     ============================================ */
+  .nav-dots {
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 200;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    padding: 16px 10px;
+    border-radius: 30px;
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-light);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+    padding: 0;
+  }
+
+  .nav-dot:hover { background: var(--signal); transform: scale(1.5); }
+  .nav-dot.active { background: var(--ink); transform: scale(1.5); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+  .nav-dot-tooltip {
+    position: absolute;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--ink);
+    color: var(--surface);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .nav-dot-wrap:hover .nav-dot-tooltip { opacity: 1; transform: translateY(-50%) translateX(-5px); }
+  .nav-dot-wrap { position: relative; display: flex; align-items: center; }
+
+  /* ============================================
+     PROGRESS BAR
+     ============================================ */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--signal);
+    z-index: 300;
+    transition: width 0.1s linear;
+    box-shadow: 0 1px 3px rgba(27, 77, 138, 0.4);
+  }
+
+  /* ============================================
+     DOWNLOAD BUTTON
+     ============================================ */
+  .download-btn {
+    position: absolute;
+    bottom: 3vh;
+    right: 3vw;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--hairline);
+    color: var(--gray);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+  }
+  .slide:hover .download-btn,
+  .section-divider:hover .download-btn {
+    opacity: 0.8;
+  }
+  .download-btn:hover {
+    opacity: 1 !important;
+    background: var(--signal);
+    color: var(--surface);
+    border-color: var(--signal);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ============================================
+     PRINT
+     ============================================ */
+  @media print {
+    .slide, .section-divider { page-break-after: always; min-height: auto; }
+    .nav-dots, .progress-bar, .cover-prompt, .download-btn, header { display: none !important; }
+    body::before { display: none; }
+    * { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  /* ============================================
+     EXPORT MODE (For html2canvas downloads)
+     ============================================ */
+  .export-mode * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .export-mode .eyebrow,
+  .export-mode h1.headline,
+  .export-mode .talk-track,
+  .export-mode .cover-tag,
+  .export-mode .cover-title,
+  .export-mode .cover-subtitle,
+  .export-mode .cover-meta,
+  .export-mode .cover-stats,
+  .export-mode .day-card,
+  .export-mode .tail-bar,
+  .export-mode .person,
+  .export-mode .venn-overlap,
+  .export-mode .stack-pct,
+  .export-mode .leak-line,
+  .export-mode .leak-label,
+  .export-mode .race-callout,
+  .export-mode .house.winner::after {
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .export-mode .venn-circle {
+    opacity: 0.65 !important;
+    transform: none !important;
+  }
+
+  .export-mode .car.fast { left: calc(100% - 85px) !important; }
+  .export-mode .car.slow { left: 15% !important; }
+
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; gap: 6vh; }
+    .nav-dots { display: none; }
+    .slide { padding: 5vh 6vw; }
+    .cover-stats { grid-template-columns: repeat(5, 1fr); gap: 2vw; margin-top: 4vh; }
+    .sources-grid { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased">
-  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,.35),_transparent_38%),radial-gradient(circle_at_top_right,_rgba(245,158,11,.25),_transparent_34%),linear-gradient(180deg,#020617,#0f172a_45%,#f8fafc_45%,#f8fafc)]">
+<body>
 
-    <!-- Top bar -->
-    <header class="sticky top-0 z-50 border-b border-white/10 glass text-slate-900">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
-        <a href="/module/manager-introduction-guest-support-save-a-deal-flow?tab=unshakable-facts" class="inline-flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-blue-700">
-          <i data-lucide="arrow-left" class="h-4 w-4"></i>
-          Back to Module 03
-        </a>
-        <div class="hidden items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white md:flex">
-          <i data-lucide="shield-check" class="h-4 w-4"></i>
-          Save-A-Deal Trainer Curriculum
-        </div>
+<!-- Top bar -->
+<header class="sticky top-0 z-50 border-b border-white/10 glass text-slate-900 transition-all duration-300">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
+    <a href="/module/manager-introduction-guest-support-save-a-deal-flow?tab=unshakable-facts" class="inline-flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-blue-700" style="text-decoration: none;">
+      <i data-lucide="arrow-left" class="h-4 w-4"></i>
+      Back to Module 03
+    </a>
+    <div class="hidden items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white md:flex">
+      <i data-lucide="shield-check" class="h-4 w-4"></i>
+      Save-A-Deal Trainer Curriculum
+    </div>
+  </div>
+</header>
+
+<div class="progress-bar" id="progressBar" style="width: 0;"></div>
+
+<nav class="nav-dots" id="navDots"></nav>
+
+<!-- ============================================
+     COVER
+     ============================================ -->
+<section class="slide" id="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <div class="cover-tag">Save-A-Deal Trainer Curriculum · Companion Deck</div>
+    <h1 class="cover-title">The <em>Unshakable</em><br>Facts</h1>
+    <div class="cover-subtitle">Ten primary-sourced statistics that anchor the entire curriculum. One stat per page. One source per stat. No filler.</div>
+
+    <div class="cover-stats" id="coverStats"></div>
+
+    <div class="cover-meta">
+      <span>2025 — 2026 · Primary Sources Verified · Edition One</span>
+      <div class="author-badge">
+        Created by <a href="https://www.linkedin.com/in/babakrosenthalmohammadi/" target="_blank">Babak Rosenthal Mohammadi</a>
       </div>
-    </header>
+    </div>
+  </div>
+  <div class="cover-prompt">↓ Scroll · or use arrow keys</div>
+</section>
 
-    <!-- Hero -->
-    <section class="mx-auto max-w-7xl px-4 pb-16 pt-12 md:px-8 md:pb-24 md:pt-20">
-      <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_.85fr]">
-        <div>
-          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-300/40 bg-blue-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-blue-100">
-            <i data-lucide="zap" class="h-4 w-4"></i>
-            Module 03 Companion Page
-          </div>
-          <h1 class="text-4xl font-black leading-tight tracking-tight md:text-6xl">
-            Save-A-Deal<br />
-            <span class="text-blue-300">The Unshakable Facts</span>
-          </h1>
-          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
-            The evidence behind why speed, early manager support, showroom traffic control, CRM notes, and follow-up ownership cannot be optional.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#facts" class="rounded-2xl bg-blue-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/25 hover:bg-blue-400">Review the 10 Facts</a>
-            <a href="#meeting" class="rounded-2xl bg-white/10 px-5 py-3 text-sm font-bold text-white ring-1 ring-white/20 hover:bg-white/15">Run the 15-Min Meeting</a>
-          </div>
-        </div>
+<!-- ============================================
+     SECTION 1 DIVIDER
+     ============================================ -->
+<section class="section-divider" data-section="div-1">
+  <div class="section-num">SECTION 01 — OF 04</div>
+  <h2>The race is over<br>before <em>most dealers</em><br>have called back.</h2>
+  <div class="section-blurb">Speed-to-Lead — the four numbers every consultant and manager has to internalize before anything else in the curriculum makes sense.</div>
+</section>
 
-        <div class="rounded-[2rem] border border-white/15 bg-white/10 p-6 shadow-2xl">
-          <div class="rounded-[1.5rem] bg-slate-900/80 p-6 ring-1 ring-white/10">
-            <div class="mb-6 flex items-center justify-between">
-              <div>
-                <p class="text-xs font-bold uppercase tracking-[0.22em] text-slate-400">Operating Standard</p>
-                <h2 class="mt-2 text-2xl font-black text-white">Active opportunity = manager aware.</h2>
-              </div>
-              <div class="rounded-2xl bg-blue-500/20 p-3 text-blue-200"><i data-lucide="radio" class="h-7 w-7"></i></div>
-            </div>
-            <div class="space-y-4">
-              <div class="rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
-                <p class="text-sm font-bold text-blue-200">If the guest is active</p>
-                <p class="mt-1 text-sm text-slate-300">The manager knows who they are, where they are in the process, and whether the opportunity is moving or drifting.</p>
-              </div>
-              <div class="rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
-                <p class="text-sm font-bold text-amber-200">If the guest leaves unsold</p>
-                <p class="mt-1 text-sm text-slate-300">The Save-A-Deal plan already has an owner, next action, follow-up time, and CRM note.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Four pillars -->
-    <section class="mx-auto -mt-10 max-w-7xl px-4 md:px-8">
-      <div class="grid gap-4 md:grid-cols-4">
-        <div class="rounded-3xl bg-white p-6 text-slate-900 shadow-xl ring-1 ring-slate-200"><p class="text-xs font-black uppercase tracking-[0.2em] text-blue-600">Speed</p><h3 class="mt-3 text-xl font-black">First response matters.</h3><p class="mt-2 text-sm text-slate-600">Before price, product, or personality can help, we must earn the conversation.</p></div>
-        <div class="rounded-3xl bg-emerald-50 p-6 text-slate-900 shadow-xl ring-1 ring-emerald-200"><p class="text-xs font-black uppercase tracking-[0.2em] text-emerald-700">Window</p><h3 class="mt-3 text-xl font-black">The clock closes fast.</h3><p class="mt-2 text-sm text-slate-600">The first minutes and first days are active deal-building time.</p></div>
-        <div class="rounded-3xl bg-amber-50 p-6 text-slate-900 shadow-xl ring-1 ring-amber-200"><p class="text-xs font-black uppercase tracking-[0.2em] text-amber-700">Showroom</p><h3 class="mt-3 text-xl font-black">Traffic needs control.</h3><p class="mt-2 text-sm text-slate-600">Manager support must happen while the guest is still present, not after the exit.</p></div>
-        <div class="rounded-3xl bg-slate-900 p-6 text-white shadow-xl ring-1 ring-slate-700"><p class="text-xs font-black uppercase tracking-[0.2em] text-slate-400">Ownership</p><h3 class="mt-3 text-xl font-black">No unsold mystery.</h3><p class="mt-2 text-sm text-slate-300">Every unsold guest needs a clear reason, owner, action, and follow-up time.</p></div>
-      </div>
-    </section>
-
-    <!-- Facts -->
-    <main id="facts" class="mx-auto max-w-7xl px-4 py-16 text-slate-900 md:px-8 md:py-20">
-      <div class="mb-10 max-w-3xl">
-        <p class="text-xs font-black uppercase tracking-[0.22em] text-blue-700">The 10 Facts</p>
-        <h2 class="mt-3 text-3xl font-black tracking-tight md:text-5xl">Evidence that drives the operating standard.</h2>
-        <p class="mt-4 text-lg leading-8 text-slate-600">These are the teaching points managers can use in a sales meeting to explain why the process must be urgent, structured, manager-aware, and documented.</p>
-      </div>
-
-      <div class="grid gap-5 md:grid-cols-2">
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-blue-700">01 · First Responder Advantage</span><h3 class="mt-3 text-2xl font-black">Speed earns the conversation.</h3><p class="mt-3 text-slate-600">Most buyers reward the store that responds first with attention, trust, and a real chance to help.</p><p class="mt-4 rounded-2xl bg-blue-50 p-4 text-sm font-semibold text-blue-900">“This is not just about being good. It is about being first enough to earn the conversation.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-emerald-700">02 · Five-Minute Window</span><h3 class="mt-3 text-2xl font-black">Five minutes is the danger line.</h3><p class="mt-3 text-slate-600">The highest-quality engagement happens quickly. Waiting weakens the opportunity before the salesperson even starts.</p><p class="mt-4 rounded-2xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-900">“Five minutes is not a target. It is the danger line.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-red-700">03 · Qualification Drop</span><h3 class="mt-3 text-2xl font-black">Same customer. Different clock.</h3><p class="mt-3 text-slate-600">After the early window passes, meaningful contact becomes harder. The opportunity cools down.</p><p class="mt-4 rounded-2xl bg-red-50 p-4 text-sm font-semibold text-red-900">“Same customer. Same vehicle. Different clock.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-amber-700">04 · Average Dealer Delay</span><h3 class="mt-3 text-2xl font-black">Delay creates competitive separation.</h3><p class="mt-3 text-slate-600">A faster, more human process allows us to win before average stores even create momentum.</p><p class="mt-4 rounded-2xl bg-amber-50 p-4 text-sm font-semibold text-amber-900">“Speed is a competitive advantage only if the message is helpful.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-blue-700">05 · Three-Day Decision Window</span><h3 class="mt-3 text-2xl font-black">The first 72 hours matter.</h3><p class="mt-3 text-slate-600">The first days after engagement are not casual follow-up time. They are active deal-building time.</p><p class="mt-4 rounded-2xl bg-blue-50 p-4 text-sm font-semibold text-blue-900">“The first 72 hours are active deal-building time.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-red-700">06 · Returning Leads Get Missed</span><h3 class="mt-3 text-2xl font-black">The second signal matters.</h3><p class="mt-3 text-slate-600">When a customer returns, they are raising their hand again. The process must catch renewed intent.</p><p class="mt-4 rounded-2xl bg-red-50 p-4 text-sm font-semibold text-red-900">“When the customer comes back, they are raising their hand again.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-emerald-700">07 · Omnichannel Buyer</span><h3 class="mt-3 text-2xl font-black">Online and showroom must connect.</h3><p class="mt-3 text-slate-600">The manager touch helps bridge what the guest researched online with what they experience in-store.</p><p class="mt-4 rounded-2xl bg-emerald-50 p-4 text-sm font-semibold text-emerald-900">“The manager introduction is the human bridge.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-amber-700">08 · In-Person Still Matters</span><h3 class="mt-3 text-2xl font-black">The showroom still decides confidence.</h3><p class="mt-3 text-slate-600">Digital tools support the decision, but the in-store experience often determines belief, trust, and commitment.</p><p class="mt-4 rounded-2xl bg-amber-50 p-4 text-sm font-semibold text-amber-900">“The customer may start online, but in-store confidence still matters.”</p></article>
-        <article class="fact-card rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200"><span class="text-xs font-black uppercase tracking-[0.2em] text-slate-700">09 · Blind Walk-Ins</span><h3 class="mt-3 text-2xl font-black">Unannounced traffic requires visible process.</h3><p class="mt-3 text-slate-600">Walk-ins appear without warning. The team must be ready to pick up the process fast and transfer context.</p><p class="mt-4 rounded-2xl bg-slate-100 p-4 text-sm font-semibold text-slate-900">“Unannounced traffic is why the process must be visible and manager-aware.”</p></article>
-        <article class="fact-card rounded-3xl bg-slate-900 p-6 text-white shadow-sm ring-1 ring-slate-700"><span class="text-xs font-black uppercase tracking-[0.2em] text-red-300">10 · Funnel Leaks</span><h3 class="mt-3 text-2xl font-black">Save-A-Deal closes the leaks.</h3><p class="mt-3 text-slate-300">Missed speed, weak handoffs, poor notes, vague follow-up, and no ownership allow deals to disappear.</p><p class="mt-4 rounded-2xl bg-white/10 p-4 text-sm font-semibold text-white">“Save-A-Deal means we close the leaks before the opportunity disappears.”</p></article>
-      </div>
-    </main>
-
-    <!-- Timeline / exercise -->
-    <section id="meeting" class="bg-white py-16 text-slate-900 md:py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="grid gap-10 lg:grid-cols-[.85fr_1.15fr]">
-          <div>
-            <p class="text-xs font-black uppercase tracking-[0.22em] text-blue-700">15-Minute Sales Meeting</p>
-            <h2 class="mt-3 text-3xl font-black tracking-tight md:text-5xl">Teach it fast. Practice it immediately.</h2>
-            <p class="mt-4 text-lg leading-8 text-slate-600">Use this page as a live meeting guide. The goal is not to lecture. The goal is to connect facts to behavior.</p>
-          </div>
-          <div class="relative pl-8">
-            <div class="timeline-line absolute bottom-0 left-3 top-0 w-1 rounded-full"></div>
-            <div class="space-y-6">
-              <div class="rounded-3xl bg-blue-50 p-6 ring-1 ring-blue-200"><p class="text-xs font-black uppercase tracking-[0.2em] text-blue-700">First 5 Minutes</p><h3 class="mt-2 text-2xl font-black">Teach three facts.</h3><p class="mt-2 text-slate-600">First responder advantage, five-minute window, and 72-hour decision window.</p></div>
-              <div class="rounded-3xl bg-emerald-50 p-6 ring-1 ring-emerald-200"><p class="text-xs font-black uppercase tracking-[0.2em] text-emerald-700">Next 5 Minutes</p><h3 class="mt-2 text-2xl font-black">Role-play manager introduction.</h3><p class="mt-2 text-slate-600">Salesperson introduces manager after discovery. Manager aligns around payment, trade, timing, and vehicle fit.</p></div>
-              <div class="rounded-3xl bg-amber-50 p-6 ring-1 ring-amber-200"><p class="text-xs font-black uppercase tracking-[0.2em] text-amber-700">Final 5 Minutes</p><h3 class="mt-2 text-2xl font-black">Build a Save-A-Deal next action.</h3><p class="mt-2 text-slate-600">Before the guest leaves, define reason, owner, action, follow-up time, and CRM note.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Inspection questions -->
-    <section class="bg-slate-100 py-16 text-slate-900 md:py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
-        <div class="rounded-[2rem] bg-slate-900 p-8 text-white shadow-2xl md:p-10">
-          <div class="grid gap-8 lg:grid-cols-[.75fr_1.25fr]">
-            <div>
-              <p class="text-xs font-black uppercase tracking-[0.22em] text-blue-300">Manager Inspection</p>
-              <h2 class="mt-3 text-3xl font-black">Questions that protect the deal.</h2>
-            </div>
-            <ol class="grid gap-3 text-slate-200 md:grid-cols-2">
-              <li class="rounded-2xl bg-white/10 p-4">Did we respond while the opportunity was still warm?</li>
-              <li class="rounded-2xl bg-white/10 p-4">Did the manager know about the guest early enough to help?</li>
-              <li class="rounded-2xl bg-white/10 p-4">Did the customer understand who was supporting them?</li>
-              <li class="rounded-2xl bg-white/10 p-4">Did we identify payment, trade, timing, vehicle fit, or decision-maker friction?</li>
-              <li class="rounded-2xl bg-white/10 p-4 md:col-span-2">If unsold, did we leave with owner, next action, timing, and CRM notes?</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-slate-950 px-4 py-10 text-center text-slate-400 md:px-8">
-      <p class="text-sm">Clark Hyundai · Signature Sales Journey · Save-A-Deal Logic</p>
-      <p class="mt-2 text-xs">Operating Standard: If the opportunity is active, the manager is aware; if the guest leaves unsold, the Save-A-Deal plan is already owned.</p>
-    </footer>
+<!-- ============================================
+     PAGE 2 — 78% FIRST RESPONDER
+     ============================================ -->
+<section class="slide" data-section="first-mover">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 01 · Speed-to-Lead</span>
+    <span class="right">02 / 12</span>
   </div>
 
-  <script>lucide.createIcons();</script>
+  <div class="slide-body">
+    <div class="eyebrow">The First Responder</div>
+    <h1 class="headline">Most buyers choose the dealership that <em>responds first.</em></h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number signal" data-count-to="78" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Of Buyers</div>
+        <div class="stat-sub">choose the first dealership to respond to their inquiry</div>
+      </div>
+
+      <div class="visual-zone">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700; margin-bottom:20px;">If 22 dealerships get the same lead:</div>
+          <div class="dealership-grid" id="dealershipGrid"></div>
+          <div style="margin-top: 36px; font-family:'Fraunces',serif; font-style:italic; font-size:18px; color:var(--ink-soft); max-width: 30ch; line-height: 1.4;">
+            Only one wins. The other 21 are competing for the remaining 22%.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">This isn't about being <strong>good</strong>. It's about being <strong>first</strong>. When a customer fills out a form, they're not waiting for the dealership with the best price — they're waiting for the dealership that picks up the phone.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Lead Connect / Lead Response Management Study, 2025–2026</span>
+    <span>Page 02</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 3 — 21X IN 5 MINUTES
+     ============================================ -->
+<section class="slide" data-section="five-minute">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 01 · Speed-to-Lead</span>
+    <span class="right">03 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow">The Five-Minute Window</div>
+    <h1 class="headline">Five minutes is the difference between <em>a deal</em> and a lost lead.</h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number signal" data-count-to="21" data-suffix="x">
+          0<span class="unit">x</span>
+        </div>
+        <div class="stat-label">More Likely To Qualify</div>
+        <div class="stat-sub">when contacted within 5 minutes vs. 30 minutes</div>
+      </div>
+
+      <div class="visual-zone">
+        <div class="clock-container" id="clockContainer">
+          <div class="clock-face">
+            <div class="clock-marks" id="clockMarks"></div>
+            <svg class="clock-wedge" viewBox="0 0 360 360" style="position:absolute; width:100%; height:100%; left:0; top:0;">
+              <!-- 0-5 min green wedge -->
+              <path d="M 180 180 L 180 10 A 170 170 0 0 1 261 25 Z" fill="#2F855A" opacity="0.85" id="wedgeGreen" />
+              <!-- 5-30 min orange wedge -->
+              <path d="M 180 180 L 261 25 A 170 170 0 0 1 180 350 Z" fill="#DD6B20" opacity="0.35" id="wedgeOrange" />
+            </svg>
+            <div class="clock-hand" id="clockHand"></div>
+            <div class="clock-center"></div>
+          </div>
+          <div class="clock-label window"></div>
+          <div class="clock-label decay"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">Every five minutes you wait, your odds of qualifying that lead collapse. This isn't a rule of thumb — it's a finding from a <strong>Harvard Business Review</strong> study of 100,000 leads. Five minutes. That's the entire ballgame.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Oldroyd, McElheran &amp; Elkington, Harvard Business Review</span>
+    <span>Page 03</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 4 — 80% QUALIFICATION DROP
+     ============================================ -->
+<section class="slide" data-section="eighty-drop">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 01 · Speed-to-Lead</span>
+    <span class="right">04 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow alert">The 80% Collapse</div>
+    <h1 class="headline">After five minutes, qualification rates <em class="alert">drop by 80%.</em></h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number alert" data-count-to="80" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Drop In Qualification Rate</div>
+        <div class="stat-sub">after the 5-minute mark passes</div>
+      </div>
+
+      <div class="visual-zone">
+        <div class="decay-chart" id="decayChart">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700; margin-bottom:28px;">Qualification rate by response time:</div>
+
+          <div class="decay-row">
+            <div class="decay-label">
+              <span class="decay-time">1 minute</span>
+              <span class="decay-pct" style="color: var(--signal);">100%</span>
+            </div>
+            <div class="decay-bar-bg"><div class="decay-bar-fill" data-pct="100"></div></div>
+          </div>
+
+          <div class="decay-row">
+            <div class="decay-label">
+              <span class="decay-time">5 minutes</span>
+              <span class="decay-pct" style="color: var(--signal);">90%</span>
+            </div>
+            <div class="decay-bar-bg"><div class="decay-bar-fill" data-pct="90"></div></div>
+          </div>
+
+          <div class="decay-row">
+            <div class="decay-label">
+              <span class="decay-time">10 minutes</span>
+              <span class="decay-pct" style="color: var(--warn);">50%</span>
+            </div>
+            <div class="decay-bar-bg"><div class="decay-bar-fill warn" data-pct="50"></div></div>
+          </div>
+
+          <div class="decay-row">
+            <div class="decay-label">
+              <span class="decay-time">30 minutes</span>
+              <span class="decay-pct" style="color: var(--alert);">18%</span>
+            </div>
+            <div class="decay-bar-bg"><div class="decay-bar-fill alert" data-pct="18"></div></div>
+          </div>
+
+          <div class="decay-row">
+            <div class="decay-label">
+              <span class="decay-time">60+ minutes</span>
+              <span class="decay-pct" style="color: var(--alert);">5%</span>
+            </div>
+            <div class="decay-bar-bg"><div class="decay-bar-fill alert" data-pct="5"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">Same lead. Same vehicle. Same customer. The only thing that changed is the clock. At minute one, qualification rates are at their peak. At minute thirty, <strong>four out of five</strong> qualifying conversations are gone — and we never get them back.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Harvard Business Review / Lead Response Management Study</span>
+    <span>Page 04</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 5 — 47-MINUTE SPEED GAP
+     ============================================ -->
+<section class="slide" data-section="speed-gap">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 01 · Speed-to-Lead</span>
+    <span class="right">05 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow alert">The Speed Gap</div>
+    <h1 class="headline">The average dealership takes <em class="alert">47 minutes</em> to respond.</h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number" data-count-to="47" data-suffix="min" style="color: var(--ink);">
+          0<span class="unit" style="color: var(--alert);">min</span>
+        </div>
+        <div class="stat-label">Average Response Time</div>
+        <div class="stat-sub">during business hours — over 90 minutes when after-hours is included</div>
+      </div>
+
+      <div class="visual-zone">
+        <div class="racetrack" id="racetrack">
+          <div class="lane fast">
+            <div class="lane-label">You · 5 min</div>
+            <svg class="car fast" viewBox="0 0 60 36">
+              <rect class="car-body" x="0" y="14" width="60" height="18" rx="4"/>
+              <rect class="car-body" x="10" y="6" width="40" height="14" rx="3"/>
+              <circle cx="14" cy="32" r="5" fill="var(--ink)"/>
+              <circle cx="46" cy="32" r="5" fill="var(--ink)"/>
+            </svg>
+            <div class="lane-finish"></div>
+          </div>
+          <div class="lane slow">
+            <div class="lane-label">Average Dealer · 47 min</div>
+            <svg class="car slow" viewBox="0 0 60 36">
+              <rect class="car-body" x="0" y="14" width="60" height="18" rx="4"/>
+              <rect class="car-body" x="10" y="6" width="40" height="14" rx="3"/>
+              <circle cx="14" cy="32" r="5" fill="var(--ink)"/>
+              <circle cx="46" cy="32" r="5" fill="var(--ink)"/>
+            </svg>
+            <div class="lane-finish"></div>
+          </div>
+          <div class="race-callout" id="raceCallout">
+            By the time the average dealer responds, your competitor has been talking to the customer for <strong>42 minutes</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">47 minutes is the <strong>industry average</strong>. That is what we're racing against. If your store responds in under 5 minutes, you have already beaten 90% of your competition before anyone has said hello to the customer.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Pied Piper Internet Lead Effectiveness (ILE) Study, 2025–2026</span>
+    <span>Page 05</span>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 2 DIVIDER
+     ============================================ -->
+<section class="section-divider" data-section="div-2">
+  <div class="section-num">SECTION 02 — OF 04</div>
+  <h2>The window is only<br><em>three days wide.</em></h2>
+  <div class="section-blurb">The Decision Window — how fast the customer decides, and how often we miss them anyway.</div>
+</section>
+
+<!-- ============================================
+     PAGE 6 — 60% IN 3 DAYS
+     ============================================ -->
+<section class="slide" data-section="three-days">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 02 · The Decision Window</span>
+    <span class="right">06 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow">The Three-Day Window</div>
+    <h1 class="headline">60% of buyers purchase within <em>three days</em> of their inquiry.</h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number signal" data-count-to="60" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Close Within 72 Hours</div>
+        <div class="stat-sub">of starting to actively engage with dealerships</div>
+      </div>
+
+      <div class="visual-zone">
+        <div style="width: 100%; max-width: 480px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700; margin-bottom:20px;">Where the sales happen:</div>
+          <div class="calendar" id="calendar">
+            <div class="day-card day-1">
+              <div class="day-label">DAY 01</div>
+              <div>
+                <div class="day-pct">22%</div>
+                <div class="day-of">of buyers</div>
+              </div>
+            </div>
+            <div class="day-card day-2">
+              <div class="day-label">DAY 02</div>
+              <div>
+                <div class="day-pct">18%</div>
+                <div class="day-of">of buyers</div>
+              </div>
+            </div>
+            <div class="day-card day-3">
+              <div class="day-label">DAY 03</div>
+              <div>
+                <div class="day-pct">20%</div>
+                <div class="day-of">of buyers</div>
+              </div>
+            </div>
+            <div class="tail-bar">
+              <div class="tail-bar-label">DAY 04 — DAY 30+</div>
+              <div class="tail-bar-text">The remaining 40% — case stays open</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">If you're not actively engaged with that customer in the first 72 hours, six out of ten times the sale has already happened — <strong>somewhere else</strong>. The decision window opens and closes fast.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Foureyes 2025 Automotive Dealer Industry Benchmarks Report</span>
+    <span>Page 06</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 7 — 65% GHOSTED
+     ============================================ -->
+<section class="slide" data-section="ghosted">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 02 · The Decision Window</span>
+    <span class="right">07 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow alert">The Ghosted Shopper</div>
+    <h1 class="headline">65% of returning leads <em class="alert">never hear back</em> within 24 hours.</h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number alert" data-count-to="65" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Return Visitors, No Follow-Up</div>
+        <div class="stat-sub">these are customers who came back to your website</div>
+      </div>
+
+      <div class="visual-zone">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700; margin-bottom:20px;">If 100 leads come back to your site:</div>
+          <div class="people-grid" id="ghostedGrid"></div>
+          <div class="people-legend">
+            <div class="legend-row">
+              <div class="legend-swatch" style="background:var(--alert)"></div>
+              <span><strong>65</strong> — never contacted within 24 hours</span>
+            </div>
+            <div class="legend-row">
+              <div class="legend-swatch" style="background:var(--signal); opacity: 0.4;"></div>
+              <span><strong>35</strong> — got the follow-up they expected</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">These are not cold leads. These are people who already gave us their information, then came <strong>BACK</strong> to look at our inventory again — and we still didn't call them. The customer raised their hand twice. We let them walk both times.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Foureyes 2025 Automotive Dealer Industry Benchmarks Report</span>
+    <span>Page 07</span>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 3 DIVIDER
+     ============================================ -->
+<section class="section-divider" data-section="div-3">
+  <div class="section-num">SECTION 03 — OF 04</div>
+  <h2>Buyers live in the<br><em>overlap.</em></h2>
+  <div class="section-blurb">The Showroom Reality — what today's car buyer actually wants from the in-store experience, and what they're already doing online before they walk in.</div>
+</section>
+
+<!-- ============================================
+     PAGE 8 — 63% OMNICHANNEL
+     ============================================ -->
+<section class="slide" data-section="omnichannel">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 03 · The Showroom Reality</span>
+    <span class="right">08 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow">The Omnichannel Buyer</div>
+    <h1 class="headline">63% want <em>online research</em> and <em>in-person buying.</em></h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number signal" data-count-to="63" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Want Both Worlds Connected</div>
+        <div class="stat-sub">and the manager touch is what connects them</div>
+      </div>
+
+      <div class="visual-zone">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700; margin-bottom:20px; text-align:center; max-width:480px;">The buyer lives in the overlap:</div>
+          <div class="venn-container" id="vennContainer">
+            <div class="venn-label-l">ONLINE<small>research, compare, price</small></div>
+            <div class="venn-label-r">IN-PERSON<small>drive, sign, drive home</small></div>
+            <div class="venn-circle left"></div>
+            <div class="venn-circle right"></div>
+            <div class="venn-overlap">
+              <div class="pct">63%</div>
+              <div class="lbl">WANT BOTH</div>
+            </div>
+          </div>
+          <div style="margin-top: 24px; font-family:'Fraunces',serif; font-style:italic; font-size:18px; color:var(--ink-soft); max-width: 40ch; text-align:center;">
+            The manager call is the human bridge that connects the two.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">Customers don't shop digital <strong>OR</strong> physical anymore — they shop both, in the same buying journey. The manager touch is what makes those two worlds feel like one experience instead of two disconnected ones.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Cox Automotive 2025 Car Buyer Journey Study</span>
+    <span>Page 08</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 9 — 53% IN-PERSON
+     ============================================ -->
+<section class="slide" data-section="in-person">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 03 · The Showroom Reality</span>
+    <span class="right">09 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow">The In-Person Close</div>
+    <h1 class="headline">53% still complete every step <em>at the dealership.</em></h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number signal" data-count-to="53" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Finish Entirely In-Person</div>
+        <div class="stat-sub">despite all the digital tools available</div>
+      </div>
+
+      <div class="visual-zone">
+        <div class="stack-chart" id="stackChart">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700;">How buyers actually buy:</div>
+
+          <div class="stack-row">
+            <div class="stack-label">All steps in-person</div>
+            <div class="stack-bar-bg">
+              <div class="stack-bar-fill" data-pct="53">
+                <div class="stack-pct">53%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <div class="stack-label">Hybrid · some online, some in-person</div>
+            <div class="stack-bar-bg">
+              <div class="stack-bar-fill secondary" data-pct="40">
+                <div class="stack-pct">40%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-row">
+            <div class="stack-label">Fully online</div>
+            <div class="stack-bar-bg">
+              <div class="stack-bar-fill tertiary" data-pct="7">
+                <div class="stack-pct">7%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">Digital tools help. They speed things up. They build trust. But when it's time to actually sign the paperwork and drive the new vehicle home, <strong>the majority</strong> of buyers still want to do that in your showroom. The in-person experience is decisive.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Cox Automotive 2025 Car Buyer Journey Study</span>
+    <span>Page 09</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 10 — 36% BLIND WALK-INS
+     ============================================ -->
+<section class="slide" data-section="walk-ins">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 03 · The Showroom Reality</span>
+    <span class="right">10 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow warn">The Blind Walk-In</div>
+    <h1 class="headline">36% of showroom traffic <em>arrives unannounced.</em></h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number warn" data-count-to="36" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Show Up With No Heads-Up</div>
+        <div class="stat-sub">— meaning the CRM must be ready for any consultant to pick up</div>
+      </div>
+
+      <div class="visual-zone">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.2em; color:var(--gray); font-weight:700; margin-bottom:20px;">If 100 customers walk in today:</div>
+          <div class="people-grid" id="walkinGrid"></div>
+          <div class="people-legend">
+            <div class="legend-row">
+              <div class="legend-swatch" style="background:var(--warn-bright)"></div>
+              <span><strong>36</strong> — unannounced walk-ins</span>
+            </div>
+            <div class="legend-row">
+              <div class="legend-swatch" style="background:var(--signal); opacity: 0.4;"></div>
+              <span><strong>64</strong> — gave us a heads-up first</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">More than a third of your floor traffic shows up cold. The consultant who greets them often has no idea who they are or what they want. <strong>The CRM has to be ready</strong> — because the customer is at the door.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> CDK Global · Dealership Appointments Study, 2025</span>
+    <span>Page 10</span>
+  </div>
+</section>
+
+<!-- ============================================
+     SECTION 4 DIVIDER
+     ============================================ -->
+<section class="section-divider" data-section="div-4">
+  <div class="section-num">SECTION 04 — OF 04</div>
+  <h2>Almost half of leads<br><em>fall through the floor.</em></h2>
+  <div class="section-blurb">The Operational Gap — where deals quietly disappear inside our own systems, and why Save-A-Deal exists to close those leaks.</div>
+</section>
+
+<!-- ============================================
+     PAGE 11 — 43.2% MISHANDLED
+     ============================================ -->
+<section class="slide" data-section="mishandled">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Section 04 · The Operational Gap</span>
+    <span class="right">11 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow alert">The Mishandled Majority</div>
+    <h1 class="headline">43.2% of dealership sales leads <em class="alert">are mishandled.</em></h1>
+
+    <div class="two-col" style="margin-top: 5vh;">
+      <div class="stat-block">
+        <div class="stat-number alert" data-count-to="43" data-suffix="%">
+          0<span class="unit">%</span>
+        </div>
+        <div class="stat-label">Of Leads, Mishandled</div>
+        <div class="stat-sub">missed calls, unlogged leads, lapsed follow-up</div>
+      </div>
+
+      <div class="visual-zone">
+        <div class="funnel-container">
+          <svg class="funnel-svg" viewBox="0 0 420 380">
+            <!-- Funnel shape -->
+            <polygon points="20,40 400,40 280,300 140,300" fill="var(--surface)" stroke="var(--hairline)" stroke-width="2" />
+            <text x="210" y="25" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" letter-spacing="2">100 LEADS IN</text>
+            <text x="210" y="335" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="var(--ink)" text-anchor="middle" letter-spacing="2">57 REMAIN</text>
+
+            <!-- Leak lines and drops -->
+            <g class="leak-group">
+              <circle cx="110" cy="100" r="7" fill="var(--alert)" class="leak-line" data-len="40" style="--length: 40px;"/>
+              <line x1="110" y1="107" x2="110" y2="140" stroke="var(--alert)" stroke-width="2" class="leak-line" stroke-dasharray="4 4"/>
+              <circle cx="106" cy="148" r="4" fill="var(--alert)" opacity="0.6" class="leak-line"/>
+              <circle cx="115" cy="156" r="3" fill="var(--alert)" opacity="0.4" class="leak-line"/>
+            </g>
+
+            <g class="leak-group">
+              <circle cx="310" cy="140" r="7" fill="var(--warn-bright)" class="leak-line"/>
+              <line x1="310" y1="147" x2="310" y2="180" stroke="var(--warn-bright)" stroke-width="2" class="leak-line" stroke-dasharray="4 4"/>
+              <circle cx="306" cy="188" r="4" fill="var(--warn-bright)" opacity="0.6" class="leak-line"/>
+              <circle cx="315" cy="196" r="3" fill="var(--warn-bright)" opacity="0.4" class="leak-line"/>
+            </g>
+
+            <g class="leak-group">
+              <circle cx="170" cy="200" r="7" fill="var(--alert)" class="leak-line"/>
+              <line x1="170" y1="207" x2="170" y2="240" stroke="var(--alert)" stroke-width="2" class="leak-line" stroke-dasharray="4 4"/>
+              <circle cx="166" cy="248" r="4" fill="var(--alert)" opacity="0.6" class="leak-line"/>
+              <circle cx="175" cy="256" r="3" fill="var(--alert)" opacity="0.4" class="leak-line"/>
+            </g>
+          </svg>
+
+          <div class="funnel-leak-labels">
+            <div class="leak-label">14.1% never logged<small>to the CRM</small></div>
+            <div class="leak-label warn-color">15.4% missed phone calls<small>during business hours</small></div>
+            <div class="leak-label">13.7% follow-up lapses<small>after the second contact</small></div>
+            <div style="font-family:'Fraunces',serif; font-style:italic; font-size:14px; color:var(--gray); margin-top:12px; font-weight: 600;">= 43.2% combined</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track">
+      <div class="talk-track-label">Trainer Talk-Track</div>
+      <div class="talk-track-body">Almost half of every lead this industry generates falls through the floor. <strong>Not because the customer changed their mind</strong> — because we never picked up the phone, never logged the lead, or never made the second call. Save-A-Deal exists to plug these leaks.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Source:</em> Foureyes 2025 Automotive Dealer Industry Benchmarks Report</span>
+    <span>Page 11</span>
+  </div>
+</section>
+
+<!-- ============================================
+     PAGE 12 — SOURCES
+     ============================================ -->
+<section class="slide" id="sources" data-section="sources">
+  <div class="slide-header">
+    <span class="left">SAVE-A-DEAL · UNSHAKABLE FACTS</span>
+    <span class="center">Sources &amp; Verification</span>
+    <span class="right">12 / 12</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow">Sources</div>
+    <h1 class="headline">Every statistic in this deck traces back to a <em>primary source.</em></h1>
+
+    <div class="sources-grid">
+      <div class="source-card">
+        <div class="source-badge">78%</div>
+        <div class="source-info">
+          <div class="source-title">Lead Connect / Lead Response Management Study</div>
+          <div class="source-note">Widely cited across industry literature, 2025–2026</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">21x</div>
+        <div class="source-info">
+          <div class="source-title">Oldroyd, McElheran &amp; Elkington (HBR)</div>
+          <div class="source-note">Built on MIT / InsideSales LRM Study, 2,241 companies</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">80%</div>
+        <div class="source-info">
+          <div class="source-title">Harvard Business Review / LRM Study</div>
+          <div class="source-note">Same source as 21x — the qualification decay metric</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">47m</div>
+        <div class="source-info">
+          <div class="source-title">Pied Piper Internet Lead Effectiveness Study</div>
+          <div class="source-note">Business-hours average; 90+ min including after-hours</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">60%</div>
+        <div class="source-info">
+          <div class="source-title">Foureyes 2025 Dealer Industry Benchmarks</div>
+          <div class="source-note">1.1B website visits across 22,500+ dealerships</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">65%</div>
+        <div class="source-info">
+          <div class="source-title">Foureyes 2025 Dealer Industry Benchmarks</div>
+          <div class="source-note">61.6% wait 8+ days for first contact</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">63%</div>
+        <div class="source-info">
+          <div class="source-title">Cox Automotive 2025 Car Buyer Journey Study</div>
+          <div class="source-note">16th annual; 2,300 recent buyers surveyed</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">53%</div>
+        <div class="source-info">
+          <div class="source-title">Cox Automotive 2025 Car Buyer Journey Study</div>
+          <div class="source-note">Only 7% complete the purchase fully online</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">36%</div>
+        <div class="source-info">
+          <div class="source-title">CDK Global — Dealership Appointments Study</div>
+          <div class="source-note">Authoritative on in-store traffic patterns</div>
+        </div>
+      </div>
+      <div class="source-card">
+        <div class="source-badge">43%</div>
+        <div class="source-info">
+          <div class="source-title">Foureyes 2025 Dealer Industry Benchmarks</div>
+          <div class="source-note">Mishandled = missed calls + unlogged + lapsed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talk-track" style="margin-top: 6vh; animation-delay: 0.5s;">
+      <div class="talk-track-label">A Note To Trainers</div>
+      <div class="talk-track-body">Industry statistics evolve year over year. <strong>Re-verify these sources annually</strong> before each major rollout. Full citations with URLs are listed in the main curriculum's Sources &amp; Citations appendix.</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span><em>Save-A-Deal Trainer Curriculum</em> · Created by <a href="https://www.linkedin.com/in/babakrosenthalmohammadi/" target="_blank" style="color: var(--signal-bright); text-decoration: none;">Babak Rosenthal Mohammadi</a></span>
+    <span>End</span>
+  </div>
+</section>
+
+<script>
+  // ============================================
+  // PEOPLE & HOUSE SVG GENERATION
+  // ============================================
+  const houseSvg = `<svg viewBox="0 0 40 40">
+    <path d="M 4 18 L 20 6 L 36 18 Z"/>
+    <rect x="8" y="18" width="24" height="20" rx="2"/>
+  </svg>`;
+
+  const personSvg = `<svg viewBox="0 0 20 28">
+    <circle class="body" cx="10" cy="6" r="5"/>
+    <path class="body" d="M 2 28 Q 2 14 10 14 Q 18 14 18 28 Z"/>
+  </svg>`;
+
+  // Populate dealership grid (22 houses)
+  const dealershipGrid = document.getElementById('dealershipGrid');
+  for (let i = 0; i < 22; i++) {
+    const house = document.createElement('div');
+    house.className = i === 0 ? 'house winner' : 'house';
+    house.innerHTML = houseSvg;
+    dealershipGrid.appendChild(house);
+  }
+
+  // Populate clock marks
+  const clockMarks = document.getElementById('clockMarks');
+  for (let i = 0; i < 12; i++) {
+    const mark = document.createElement('div');
+    mark.className = 'clock-mark';
+    mark.style.transform = `translateX(-50%) rotate(${i * 30}deg)`;
+    clockMarks.appendChild(mark);
+  }
+
+  // Populate people grids
+  function populatePeopleGrid(gridId, highlightCount, highlightClass) {
+    const grid = document.getElementById(gridId);
+    for (let i = 0; i < 100; i++) {
+      const person = document.createElement('div');
+      person.className = i < highlightCount
+        ? `person ${highlightClass}`
+        : 'person calm';
+      person.innerHTML = personSvg;
+      person.style.animationDelay = `${i * 0.008}s`;
+      grid.appendChild(person);
+    }
+  }
+  populatePeopleGrid('ghostedGrid', 65, 'highlight');
+  populatePeopleGrid('walkinGrid', 36, 'highlight-warn');
+
+  // Populate cover stats preview
+  const coverStatsEl = document.getElementById('coverStats');
+  const coverStatsList = [
+    { num: '78%', label: 'FIRST', target: 1 },
+    { num: '21×', label: '5-MIN', target: 2 },
+    { num: '80%', label: 'DROP', target: 3 },
+    { num: '47', label: 'AVG MIN', target: 4 },
+    { num: '60%', label: '3 DAYS', target: 6 },
+    { num: '65%', label: 'GHOSTED', target: 7 },
+    { num: '63%', label: 'OMNI', target: 9 },
+    { num: '53%', label: 'IN-PERSON', target: 10 },
+    { num: '36%', label: 'BLIND', target: 11 },
+    { num: '43%', label: 'LOST', target: 13 },
+  ];
+  coverStatsList.forEach(stat => {
+    const div = document.createElement('div');
+    div.className = 'cover-stat';
+    div.innerHTML = `<div class="cover-stat-num">${stat.num}</div><div class="cover-stat-label">${stat.label}</div>`;
+    div.addEventListener('click', () => {
+      const slides = document.querySelectorAll('section.slide, section.section-divider');
+      slides[stat.target]?.scrollIntoView({ behavior: 'smooth' });
+    });
+    coverStatsEl.appendChild(div);
+  });
+
+  // ============================================
+  // NAV DOTS
+  // ============================================
+  const slideSections = document.querySelectorAll('section');
+  const navDots = document.getElementById('navDots');
+  const slideNames = {
+    'cover': 'Cover',
+    'div-1': 'Section 01',
+    'first-mover': '78% · First Responder',
+    'five-minute': '21× · 5-Minute Window',
+    'eighty-drop': '80% · Drop',
+    'speed-gap': '47 min · Speed Gap',
+    'div-2': 'Section 02',
+    'three-days': '60% · 3 Days',
+    'ghosted': '65% · Ghosted',
+    'div-3': 'Section 03',
+    'omnichannel': '63% · Omnichannel',
+    'in-person': '53% · In-Person',
+    'walk-ins': '36% · Walk-Ins',
+    'div-4': 'Section 04',
+    'mishandled': '43% · Mishandled',
+    'sources': 'Sources',
+  };
+
+  slideSections.forEach((section, idx) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'nav-dot-wrap';
+    const dot = document.createElement('button');
+    dot.className = 'nav-dot';
+    dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+    dot.addEventListener('click', () => section.scrollIntoView({ behavior: 'smooth' }));
+    const tooltip = document.createElement('span');
+    tooltip.className = 'nav-dot-tooltip';
+    const sectionKey = section.id || section.dataset.section;
+    tooltip.textContent = slideNames[sectionKey] || `Slide ${idx + 1}`;
+    wrap.appendChild(tooltip);
+    wrap.appendChild(dot);
+    navDots.appendChild(wrap);
+  });
+
+  // ============================================
+  // INTERSECTION OBSERVER — trigger animations
+  // ============================================
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const section = entry.target;
+        triggerSlideAnimations(section);
+
+        // update active nav dot
+        const idx = Array.from(slideSections).indexOf(section);
+        document.querySelectorAll('.nav-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === idx);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slideSections.forEach(s => observer.observe(s));
+
+  // ============================================
+  // ANIMATION TRIGGERS
+  // ============================================
+  const animated = new Set();
+
+  function triggerSlideAnimations(section) {
+    if (animated.has(section)) return;
+    animated.add(section);
+
+    // Count-up numbers
+    section.querySelectorAll('[data-count-to]').forEach(el => {
+      animateCountUp(el);
+    });
+
+    // Dealership grid — light the winner
+    if (section.dataset.section === 'first-mover') {
+      setTimeout(() => {
+        section.querySelector('.house.winner')?.classList.add('lit');
+      }, 1200);
+    }
+
+    // Clock — tick the hand
+    if (section.dataset.section === 'five-minute') {
+      setTimeout(() => {
+        section.querySelector('.clock-hand')?.classList.add('active');
+      }, 600);
+    }
+
+    // Decay bars
+    if (section.dataset.section === 'eighty-drop') {
+      section.querySelectorAll('.decay-bar-fill').forEach((bar, i) => {
+        setTimeout(() => {
+          bar.style.width = bar.dataset.pct + '%';
+        }, 400 + i * 200);
+      });
+    }
+
+    // Racetrack callout
+    if (section.dataset.section === 'speed-gap') {
+      setTimeout(() => {
+        section.querySelector('.race-callout')?.classList.add('show');
+      }, 3600);
+    }
+
+    // Calendar day cards
+    if (section.dataset.section === 'three-days') {
+      section.querySelectorAll('.day-card, .tail-bar').forEach(c => c.classList.add('show'));
+    }
+
+    // People grid stagger
+    if (section.dataset.section === 'ghosted' || section.dataset.section === 'walk-ins') {
+      section.querySelectorAll('.person').forEach((p, i) => {
+        setTimeout(() => {
+          p.classList.add('show');
+          if (p.classList.contains('highlight') || p.classList.contains('highlight-warn') || p.classList.contains('calm')) {
+            setTimeout(() => p.classList.add('lit'), 200);
+          }
+        }, i * 8);
+      });
+    }
+
+    // Venn
+    if (section.dataset.section === 'omnichannel') {
+      setTimeout(() => {
+        section.querySelectorAll('.venn-circle, .venn-overlap').forEach(el => el.classList.add('show'));
+      }, 400);
+    }
+
+    // Stack bars
+    if (section.dataset.section === 'in-person') {
+      section.querySelectorAll('.stack-bar-fill').forEach((bar, i) => {
+        setTimeout(() => {
+          bar.style.width = bar.dataset.pct + '%';
+          bar.classList.add('animate');
+        }, 400 + i * 250);
+      });
+    }
+
+    // Funnel leaks
+    if (section.dataset.section === 'mishandled') {
+      section.querySelectorAll('.leak-line').forEach((line, i) => {
+        setTimeout(() => line.classList.add('show'), 600 + i * 200);
+      });
+      section.querySelectorAll('.leak-label').forEach((label, i) => {
+        setTimeout(() => label.classList.add('show'), 1200 + i * 300);
+      });
+    }
+  }
+
+  function animateCountUp(el) {
+    const target = parseFloat(el.dataset.countTo);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    const startVal = 0;
+
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(startVal + (target - startVal) * eased);
+      el.innerHTML = `${value}<span class="unit">${suffix}</span>`;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ============================================
+  // KEYBOARD NAVIGATION
+  // ============================================
+  document.addEventListener('keydown', (e) => {
+    const currentIdx = Array.from(slideSections).findIndex(s => {
+      const rect = s.getBoundingClientRect();
+      return rect.top >= -100 && rect.top < window.innerHeight / 2;
+    });
+
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault();
+      slideSections[Math.min(currentIdx + 1, slideSections.length - 1)]?.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault();
+      slideSections[Math.max(currentIdx - 1, 0)]?.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'Home') {
+      e.preventDefault();
+      slideSections[0]?.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (e.key === 'End') {
+      e.preventDefault();
+      slideSections[slideSections.length - 1]?.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // ============================================
+  // PROGRESS BAR
+  // ============================================
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = (scrolled / total) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+  });
+
+  // ============================================
+  // SLIDE DOWNLOAD FEATURE
+  // ============================================
+  document.querySelectorAll('section').forEach((section, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'download-btn';
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`;
+    btn.title = "Download this slide as Image";
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      // Temporarily hide the button itself during the screenshot capture
+      const originalOpacity = btn.style.opacity;
+      btn.style.opacity = '0';
+      btn.style.pointerEvents = 'none';
+
+      html2canvas(section, {
+        scale: 2, // Capture in high resolution
+        backgroundColor: getComputedStyle(document.body).backgroundColor,
+        useCORS: true,
+        onclone: function(clonedDoc) {
+          // Force elements to their final visible state to fix faint/invisible text in images
+          clonedDoc.body.classList.add('export-mode');
+        }
+      }).then(canvas => {
+        // Create an invisible link to trigger the download
+        const link = document.createElement('a');
+        const slideName = section.dataset.section || section.id || `slide-${index + 1}`;
+        link.download = `Save-A-Deal-${slideName}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        
+        // Restore the button visibility
+        btn.style.opacity = originalOpacity;
+        btn.style.pointerEvents = 'auto';
+      }).catch(err => {
+        console.error("Error capturing slide:", err);
+        btn.style.opacity = originalOpacity;
+        btn.style.pointerEvents = 'auto';
+      });
+    });
+
+    // Add the download button to each slide section
+    section.appendChild(btn);
+  });
+
+  // Initialize Lucide icons
+  lucide.createIcons();
+</script>
+
 </body>
 </html>
