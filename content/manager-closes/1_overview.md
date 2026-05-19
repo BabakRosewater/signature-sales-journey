@@ -13,6 +13,10 @@
   <div class="training-card dark"><span class="label-pill">One Ask</span><p>End with one clean question and one next step.</p></div>
 </div>
 
+<div class="coach-check">
+  <p><strong>Cross-reference:</strong> Before training manager closes, review Module 03 → Unshakable Facts. Those facts explain why speed, manager awareness, showroom traffic control, and Save-A-Deal ownership are required before the final manager turn ever happens.</p>
+</div>
+
 ---
 
 ## Objective
