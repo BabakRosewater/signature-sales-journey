@@ -1,25 +1,36 @@
 {
-  "module_number": 4,
+  "module_number": 5,
   "slug": "emotional-test-drive",
   "title": "Emotional Test Drive",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
-  "objective": "Guide the guest through a test drive that connects features to feelings, reduces uncertainty, and builds confident ownership vision—without pressure.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
+  "objective": "Guide the guest through a test drive that connects features to feelings, reduces uncertainty, and builds confident ownership vision without pressure.",
   "position_in_journey": "Discovery → Selection → Test Drive → Decision",
   "estimated_time_minutes": 60,
   "prerequisites": [
     "power-greeting",
-    "uncovering-needs-and-trust",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
     "showcasing-solutions-overcoming-obstacles"
   ],
   "learning_outcomes": [
     "Set expectations and create psychological safety before leaving the lot.",
-    "Run a simple, repeatable Emotional Test Drive flow (Setup → Experience → Confirm).",
-    "Translate features into life benefits using a values bridge (Need → Feature → Feeling → Moment).",
+    "Run a simple, repeatable Emotional Test Drive flow: Setup → Experience → Confirm.",
+    "Translate features into life benefits using a values bridge: Need → Feature → Feeling → Moment.",
     "Use future pacing to help the guest imagine ownership in real scenarios.",
     "Use micro-confirmations every 60–90 seconds to keep alignment and comfort high.",
-    "Handle uncertainty mid-drive using calm empathy and simplified choices."
+    "Handle uncertainty mid-drive using calm empathy and simplified choices.",
+    "Ask post-drive fit questions and clarify a pressure-free next step."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -37,6 +48,12 @@
     "confidence",
     "future-pacing",
     "benefit-translation",
-    "micro-confirmations"
-  ]
+    "micro-confirmations",
+    "ownership-vision"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 5: Emotional Test Drive. Coach salespeople on pre-drive setup, psychological safety, comfort and control, values bridge language, future pacing, micro-confirmations, quiet/unsure guests, peak moments, post-drive fit questions, and pressure-free next steps. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 5 where a salesperson sets up the test drive, confirms the guest’s top two priorities, uses a values bridge during the drive, handles a quiet guest, creates one peak moment, and asks post-drive fit questions. Include guest lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
