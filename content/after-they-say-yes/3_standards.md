@@ -1,55 +1,92 @@
-# 3.0 Success Standards (Non-Negotiables)
+# 3.0 Success Standards
 
-## Standard 1: Confirm the Yes Cleanly
-No ambiguity.
-- “Perfect — we’ll go with the {vehicle} in {trim/color}. Sound good?”
+<div class="training-hero">
+  <div class="eyebrow">Non-Negotiables</div>
+  <div class="bigIdea">Confirm the yes, explain the roadmap, and never let silence create doubt.</div>
+  <p>These standards keep the guest confident from commitment through delivery setup.</p>
+</div>
 
----
-
-## Standard 2: Celebrate Briefly (Human, Not Hype)
-A small positive moment:
-- “Nice choice.”
-- “You’re going to love this.”
-- “This fits what you told me.”
-
----
-
-## Standard 3: The 3-Step Roadmap
-Always use a clear structure:
-1) quick details confirmation
-2) next step / finance / paperwork
-3) delivery timing + what to expect
+<div class="quick-grid four">
+  <div class="training-card blue"><span class="label-pill">Confirm</span><p>No ambiguity. Confirm vehicle, trim, color, and direction.</p></div>
+  <div class="training-card green"><span class="label-pill">Roadmap</span><p>Three steps: details, paperwork, delivery.</p></div>
+  <div class="training-card amber"><span class="label-pill">Timing</span><p>Set honest time expectations up front.</p></div>
+  <div class="training-card dark"><span class="label-pill">Updates</span><p>If they wait, update every 10–15 minutes.</p></div>
+</div>
 
 ---
 
-## Standard 4: Time Expectations Up Front
-Set an honest timeframe.
-- “This typically takes about __ minutes. I’ll keep it moving and keep you updated.”
+## Eight standards
+
+<div class="quick-grid two">
+  <div class="training-card blue">
+    <span class="label-pill">Standard 1</span>
+    <p><strong>Confirm the yes cleanly.</strong></p>
+    <div class="script-line">“Perfect — we’ll go with the {vehicle} in {trim/color}. Sound good?”</div>
+  </div>
+
+  <div class="training-card green">
+    <span class="label-pill">Standard 2</span>
+    <p><strong>Celebrate briefly.</strong></p>
+    <p>Human, not hype. Keep it warm and sincere.</p>
+    <div class="script-line">“Nice choice — this fits what you told me.”</div>
+  </div>
+
+  <div class="training-card amber">
+    <span class="label-pill">Standard 3</span>
+    <p><strong>Use the three-step roadmap.</strong></p>
+    <ol>
+      <li>Confirm a few details.</li>
+      <li>Get paperwork / finance moving.</li>
+      <li>Set delivery timing and expectations.</li>
+    </ol>
+  </div>
+
+  <div class="training-card blue">
+    <span class="label-pill">Standard 4</span>
+    <p><strong>Set time expectations up front.</strong></p>
+    <div class="script-line">“This typically takes about __ minutes. I’ll keep it moving and keep you updated.”</div>
+  </div>
+
+  <div class="training-card">
+    <span class="label-pill">Standard 5</span>
+    <p><strong>Use no-surprises language.</strong></p>
+    <div class="script-line">“My goal is zero surprises. If anything changes, I’ll tell you right away and explain it clearly.”</div>
+  </div>
+
+  <div class="training-card green">
+    <span class="label-pill">Standard 6</span>
+    <p><strong>Warm handoff. No dumping.</strong></p>
+    <p>Introduce the next person with name, role, what they will help with, and why it benefits the guest.</p>
+  </div>
+
+  <div class="training-card dark">
+    <span class="label-pill">Standard 7</span>
+    <p><strong>Capture notes immediately.</strong></p>
+    <ul>
+      <li>vehicle chosen + alternates</li>
+      <li>trade details and expectations</li>
+      <li>payment / term guardrails</li>
+      <li>delivery preferences + timing</li>
+      <li>sensitivities: time, anxiety, past bad experience, urgency</li>
+    </ul>
+  </div>
+
+  <div class="training-card amber">
+    <span class="label-pill">Standard 8</span>
+    <p><strong>Update every 10–15 minutes if waiting.</strong></p>
+    <p>Silence creates doubt. Short updates protect trust.</p>
+  </div>
+</div>
 
 ---
 
-## Standard 5: No Surprises Language
-If something might change, say it calmly:
-- “The only variable is approval timing, but I’ll walk you through it.”
+## Green / Yellow / Red standard
+<div class="quick-grid three">
+  <div class="training-card green"><span class="label-pill">Green</span><p>Guest knows what happens next, feels updated, and stays excited.</p></div>
+  <div class="training-card amber"><span class="label-pill">Yellow</span><p>Guest said yes but timing, handoff, or next step is not fully clear.</p></div>
+  <div class="training-card red"><span class="label-pill">Red</span><p>Guest waits without updates, feels confused, or sees the tone turn transactional.</p></div>
+</div>
 
----
-
-## Standard 6: Warm Handoff (No Dumping)
-Introduce the next person with context + confidence:
-- name, role, what they’ll help with, and why it benefits the guest
-
----
-
-## Standard 7: Capture Notes Immediately
-Your CRM notes must include:
-- vehicle chosen + alternates
-- trade details and expectations
-- payment/term guardrails (if discussed)
-- delivery preferences + timing
-- any sensitivities (time, anxiety, past bad experience)
-
----
-
-## Standard 8: Keep Them Informed Every 10–15 Minutes
-If they’re waiting, they need updates.
-Silence creates doubt.
+<div class="coach-check">
+  <p><strong>Manager inspection question:</strong> After the yes, did we make the guest feel more confident or more uncertain?</p>
+</div>
