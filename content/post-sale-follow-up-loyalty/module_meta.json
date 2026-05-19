@@ -3,21 +3,39 @@
   "slug": "post-sale-follow-up-loyalty",
   "title": "Post-Sale Follow-Up & Loyalty",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
-  "objective": "Turn delivery into long-term loyalty by executing a consistent post-sale follow-up system that protects trust, builds confidence in ownership, and creates repeat/referral momentum—without sounding scripted or pushy.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
+  "objective": "Turn delivery into long-term loyalty by executing a consistent post-sale follow-up system that protects trust, builds confidence in ownership, and creates repeat/referral momentum without sounding scripted or pushy.",
   "position_in_journey": "Delivery → Ownership Success → Repeat & Referral",
   "estimated_time_minutes": 50,
   "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive",
+    "decision-point-building-value",
+    "dealership-tour-introduction",
+    "closing-with-confidence",
+    "manager-closes",
     "after-they-say-yes"
   ],
   "learning_outcomes": [
     "Run a simple post-sale follow-up cadence that feels personal and helpful.",
-    "Prevent buyer’s remorse and reduce early ownership friction (features, service, questions).",
+    "Prevent buyer’s remorse and reduce early ownership friction.",
     "Set the first service appointment and explain what to expect in a trust-first way.",
     "Ask for referrals and reviews naturally by earning them through support.",
     "Use CRM notes to personalize follow-up and build long-term relationship memory.",
-    "Re-engage unsold opportunities ethically when the time is right (without pressure)."
+    "Re-engage opportunities ethically when the time is right without pressure."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -36,6 +54,12 @@
     "reviews",
     "service-introduction",
     "retention",
-    "relationship"
-  ]
+    "relationship",
+    "crm-discipline"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 11: Post-Sale Follow-Up & Loyalty. Coach salespeople and managers on post-sale follow-up cadence, ownership success, buyer’s remorse prevention, love + friction questions, service introduction, problem ownership, CRM notes, review asks, referral asks, and long-term loyalty. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 11 where a salesperson makes a 24–48 hour follow-up call, asks love + friction questions, handles a tech confusion issue, introduces first service at 30 days, owns a customer problem, and earns a review or referral ask. Include customer lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
