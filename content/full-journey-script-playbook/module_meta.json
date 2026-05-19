@@ -1,17 +1,18 @@
 {
-  "module_number": 11,
+  "module_number": 12,
   "slug": "full-journey-script-playbook",
   "title": "Full Journey Script Playbook",
   "brand": "Clark Hyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-11",
-  "objective": "Provide one complete, ready-to-use word-track library for every step of the sales journey—from first greeting through post-sale follow-up and save-a-deal recovery.",
-  "position_in_journey": "Greeting → Discovery → Presentation → Drive → Numbers → Close → Delivery → Follow-Up",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
+  "objective": "Provide one complete, ready-to-use word-track library for every step of the Clark Hyundai sales journey, from first greeting through manager support, presentation, test drive, numbers, close, delivery, follow-up, and Save-A-Deal recovery.",
+  "position_in_journey": "Complete Reference: Greeting → Discovery → Manager Support → Presentation → Drive → Numbers → Close → Delivery → Follow-Up",
   "estimated_time_minutes": 45,
   "prerequisites": [
     "overview-and-framework",
     "power-greeting",
     "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
     "showcasing-solutions-overcoming-obstacles",
     "emotional-test-drive",
     "decision-point-building-value",
@@ -22,13 +23,22 @@
     "post-sale-follow-up-loyalty"
   ],
   "learning_outcomes": [
-    "Deliver a confident 10-second opening for walk-in, drive-up, and weather scenarios.",
+    "Deliver a confident opening for walk-in, drive-up, and weather scenarios.",
     "Set a clear agenda that reduces guest anxiety early.",
-    "Use structured discovery and transition language to guide decision-making.",
+    "Use structured discovery, early manager support, and transition language to guide decision-making.",
     "Run a value-focused presentation and emotional test drive with clear prompts.",
     "Present one-price numbers with calm confidence and concise objection handling.",
     "Close clearly, deliver professionally, and execute post-sale follow-up scripts.",
-    "Apply a save-a-deal taillight follow-up that preserves trust and momentum."
+    "Apply Save-A-Deal and taillight follow-up that preserves trust and momentum."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -44,9 +54,16 @@
     "word-tracks",
     "sales-process",
     "discovery",
+    "manager-support",
     "objections",
     "close",
     "delivery",
-    "follow-up"
-  ]
+    "follow-up",
+    "save-a-deal"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus on the Full Journey Script Playbook. Coach salespeople and managers on using concise, natural word tracks across the complete sales journey: greeting, agenda, discovery, early manager support, trade, presentation, emotional test drive, dealership tour, Decision Point, numbers, objections, close, post-yes, delivery, follow-up, and Save-A-Deal recovery. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 20-minute sales meeting using the Full Journey Script Playbook. Pick one opening sequence, one middle sequence, and one closing sequence. Include the exact scripts to practice, role-play instructions, coaching points, and a scoring rubric."
+  }
 }
