@@ -13,6 +13,10 @@
   <div class="training-card dark"><span class="label-pill">Protect Trust</span><p>Every script should feel helpful, not scripted or pushy.</p></div>
 </div>
 
+<div class="coach-check">
+  <p><strong>Evidence anchor:</strong> Use Module 03 → Unshakable Facts as the proof behind the playbook. It explains why the early stages — speed, discovery, manager support, CRM notes, Save-A-Deal ownership, and follow-up timing — must be executed with discipline.</p>
+</div>
+
 ---
 
 ## Objective
