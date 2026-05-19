@@ -3,22 +3,38 @@
   "slug": "after-they-say-yes",
   "title": "After They Say Yes",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
-  "objective": "Lock in trust and momentum after commitment by guiding the guest through next steps with clarity, celebration, and zero surprises—so they feel confident, cared for, and excited to take delivery.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
+  "objective": "Lock in trust and momentum after commitment by guiding the guest through next steps with clarity, celebration, and zero surprises so they feel confident, cared for, and excited to take delivery.",
   "position_in_journey": "Commitment → Next Steps → Delivery Setup",
   "estimated_time_minutes": 45,
   "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
+    "showcasing-solutions-overcoming-obstacles",
+    "emotional-test-drive",
+    "decision-point-building-value",
+    "dealership-tour-introduction",
     "closing-with-confidence",
     "manager-closes"
   ],
   "learning_outcomes": [
     "Confirm commitment cleanly and reduce buyer’s remorse risk immediately.",
-    "Set a calm, confident roadmap of what happens next (no confusion, no drift).",
+    "Set a calm, confident roadmap of what happens next.",
     "Protect trust by introducing team handoffs and timing expectations properly.",
-    "Maintain momentum during paperwork/finance transition with permission-based language.",
+    "Maintain momentum during paperwork and finance transition with permission-based language.",
     "Keep the guest emotionally positive with simple celebration and reassurance.",
     "Capture clean notes and align internal team steps to avoid re-work and surprises."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -37,6 +53,12 @@
     "delivery",
     "finance-transition",
     "no-surprises",
-    "customer-experience"
-  ]
+    "customer-experience",
+    "buyers-remorse"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 10: After They Say Yes. Coach salespeople and managers on confirming commitment, reducing buyer’s remorse, explaining a three-step roadmap, setting time expectations, warm finance handoffs, permission-based finance transition, no-surprises language, waiting updates, CRM notes, and delivery setup. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 10 where a salesperson confirms the yes, briefly celebrates, explains a three-step roadmap, sets a time expectation, handles guest anxiety, creates a warm finance handoff, and gives a waiting update. Include guest lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
