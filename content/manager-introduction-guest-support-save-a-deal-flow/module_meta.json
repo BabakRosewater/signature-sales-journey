@@ -4,11 +4,11 @@
   "title": "Manager Introduction, Guest Support & Save-A-Deal Flow",
   "description": "Natural manager handoff, early guest support, affordability alignment, showroom flow, and Save-A-Deal follow-up discipline.",
   "brand": "Clark Hyundai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "last_updated": "2026-05-18",
-  "objective": "Teach salespeople and managers how to introduce manager involvement early in the guest visit, position the manager as guest support rather than pressure, align around what matters most to the guest, and protect every unsold opportunity through Save-A-Deal logic and disciplined follow-up ownership.",
+  "objective": "Teach salespeople and managers how to introduce manager involvement early in the guest visit, position the manager as guest support rather than pressure, align around what matters most to the guest, and protect every unsold opportunity through Save-A-Deal logic, disciplined follow-up ownership, and the Unshakable Facts behind speed and showroom traffic control.",
   "position_in_journey": "After Uncovering Needs & Building Trust → Before Showcasing Solutions & Overcoming Obstacles",
-  "estimated_time_minutes": 55,
+  "estimated_time_minutes": 65,
   "prerequisites": [
     "power-greeting",
     "uncovering-needs-building-trust"
@@ -20,6 +20,7 @@
     "Support the salesperson without taking over or weakening credibility.",
     "Recognize when a showroom guest is drifting, unclear, or at risk of leaving without a next step.",
     "Complete a Save-A-Deal review for unsold showroom opportunities.",
+    "Use the Unshakable Facts to explain why speed, manager awareness, and follow-up ownership are operating standards.",
     "Document guest support and follow-up clearly in CRM."
   ],
   "tabs": [
@@ -29,6 +30,7 @@
     { "id": "scripts", "label": "Scripts", "file": "4_scripts.md" },
     { "id": "roleplay", "label": "Role-Play", "file": "5_roleplay.md" },
     { "id": "worksheet", "label": "Worksheet", "file": "6_worksheet.md" },
+    { "id": "unshakable-facts", "label": "Unshakable Facts", "file": "7_unshakable_facts.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
@@ -38,6 +40,7 @@
     "4_scripts.md",
     "5_roleplay.md",
     "6_worksheet.md",
+    "7_unshakable_facts.md",
     "overview.csv"
   ],
   "tags": [
@@ -47,12 +50,15 @@
     "showroom-flow",
     "salesperson-handoff",
     "save-a-deal",
+    "unshakable-facts",
+    "speed-to-lead",
+    "traffic-control",
     "follow-up-accountability",
     "crm-notes"
   ],
   "ai": {
-    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 3: Manager Introduction, Guest Support & Save-A-Deal Flow. Coach salespeople and sales managers on early manager introduction, guest-support positioning, affordability alignment, showroom flow, Save-A-Deal review, CRM notes, and same-day follow-up. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 3: Manager Introduction, Guest Support & Save-A-Deal Flow. Coach salespeople and sales managers on early manager introduction, guest-support positioning, affordability alignment, showroom flow, Save-A-Deal review, the Unshakable Facts behind speed-to-lead and traffic control, CRM notes, and same-day follow-up. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
     "model": "gemini-2.5-flash",
-    "starterPrompt": "Create a 10-minute role-play for today where a salesperson introduces the manager after discovery, the manager aligns around payment/trade/timing/vehicle fit, and the team creates a Save-A-Deal follow-up plan if the guest leaves unsold. Include the guest line, salesperson line, manager line, coaching points, and scoring rubric."
+    "starterPrompt": "Create a 15-minute role-play for today where the trainer opens with three Unshakable Facts, a salesperson introduces the manager after discovery, the manager aligns around payment/trade/timing/vehicle fit, and the team creates a Save-A-Deal follow-up plan if the guest leaves unsold. Include the guest line, salesperson line, manager line, coaching points, and scoring rubric."
   }
 }
