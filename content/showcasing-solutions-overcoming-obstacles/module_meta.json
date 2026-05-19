@@ -1,6 +1,8 @@
 {
   "title": "Showcasing Solutions & Overcoming Obstacles",
   "description": "Selection + alternate selection, transition into options, questions/concerns/objections, Feel-Felt-Found, and the Turn process.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
   "tabs": [
     { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
     { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
@@ -9,5 +11,10 @@
     { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
     { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
     { "id": "ai", "label": "AI Lab", "type": "ai" }
-  ]
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 4: Showcasing Solutions & Overcoming Obstacles. Coach salespeople on 2–3 best-fit option presentation, needs-feature-benefit language, alternate selection, questions vs concerns vs objections, AERI, Feel-Felt-Found, objection isolation, and the Turn 100% process. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 4 where a salesperson transitions from discovery into 2–3 best-fit options, presents one vehicle using needs-feature-benefit language, pivots to an alternate selection, handles a payment concern, isolates the real objection, and gives a clean turn to a manager. Include guest lines, salesperson lines, manager lines, coaching points, and a scoring rubric."
+  }
 }
