@@ -6,6 +6,12 @@
   <p>This supplement turns the Save-A-Deal companion deck into practical sales-meeting coaching for managers and salespeople.</p>
 </div>
 
+<div class="training-card dark">
+  <span class="label-pill">Standalone Visual Page</span>
+  <p>Open the full HTML companion page for a more visual, deck-style training experience.</p>
+  <p><a href="/unshakable-facts/" target="_blank" rel="noopener">Open The Unshakable Facts standalone page →</a></p>
+</div>
+
 <div class="quick-grid four">
   <div class="training-card blue"><span class="label-pill">Speed</span><p>First response matters before price, product, or personality can help.</p></div>
   <div class="training-card green"><span class="label-pill">Window</span><p>The decision window opens and closes fast.</p></div>
