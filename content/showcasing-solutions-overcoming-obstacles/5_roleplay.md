@@ -12,6 +12,10 @@
   <div class="score-card">5 = Natural</div>
 </div>
 
+<div class="coach-check">
+  <p><strong>Score each drill on:</strong> clarity, calm tone, guest autonomy, needs-feature-benefit language, and clear next step.</p>
+</div>
+
 ---
 
 ## Drill cards
@@ -63,6 +67,20 @@
     <p><strong>Scenario A:</strong> Guest is stuck on payment and credibility. Consultant turns to manager or finance specialist.</p>
     <p><strong>Scenario B:</strong> You step in cold but must maintain continuity and comfort.</p>
     <p><strong>Observer scores:</strong> turn framed as service, guest did not repeat themselves, next step established.</p>
+  </div>
+
+  <div class="training-card red">
+    <span class="label-pill">Drill 7 • Guest Wants to Leave</span>
+    <p><strong>Scenario:</strong> Guest says, “I need to think about it.”</p>
+    <p><strong>Goal:</strong> Respect the guest while protecting the next step.</p>
+    <div class="script-line">“I completely respect that. No pressure at all. If you’d like, I can text or email the top two options we discussed so you can review at your pace.”</div>
+  </div>
+
+  <div class="training-card green">
+    <span class="label-pill">Drill 8 • Reconnect to Discovery</span>
+    <p><strong>Scenario:</strong> Salesperson is feature dumping.</p>
+    <p><strong>Goal:</strong> Coach them back to what the guest said matters.</p>
+    <div class="script-line">“Pause. What did the guest say mattered most, and how does this feature connect to that?”</div>
   </div>
 </div>
 
