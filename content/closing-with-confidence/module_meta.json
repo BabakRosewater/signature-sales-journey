@@ -1,29 +1,39 @@
 {
-  "module_number": 7,
+  "module_number": 8,
   "slug": "closing-with-confidence",
   "title": "Closing with Confidence",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
   "objective": "Guide the guest to a clear, confident decision by presenting numbers simply, confirming alignment with their priorities, addressing concerns calmly, and asking for commitment without pressure.",
   "position_in_journey": "Dealership Tour → Numbers → Commitment → Handoff",
   "estimated_time_minutes": 50,
   "prerequisites": [
     "power-greeting",
-    "uncovering-needs-and-trust",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
     "showcasing-solutions-overcoming-obstacles",
     "emotional-test-drive",
     "decision-point-building-value",
     "dealership-tour-introduction"
   ],
   "learning_outcomes": [
-    "Present numbers with clarity and calm confidence (no overwhelm).",
-    "Use a simple close structure: recap → numbers → confirm → commit.",
-    "Separate questions vs concerns vs objections during the close.",
+    "Present numbers with clarity and calm confidence.",
+    "Use a simple close structure: recap, numbers, confirm, commit.",
+    "Separate questions, concerns, and objections during the close.",
     "Use two-option choice architecture to reduce anxiety and delay.",
-    "Handle common closing stalls (\"I need to think\", \"I want to shop\", payment).",
+    "Handle common closing stalls such as payment, shopping, spouse/partner, and I need to think.",
     "Ask for commitment in a respectful, professional way.",
     "End with clean next steps so the guest feels in control."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -41,6 +51,13 @@
     "confidence",
     "choice-architecture",
     "objections",
-    "next-steps"
-  ]
+    "next-steps",
+    "strategic-silence",
+    "trust-first"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 8: Closing with Confidence. Coach salespeople on presenting numbers clearly, recapping guest priorities, using strategic silence, separating questions from concerns and objections, handling payment stalls, shopping, spouse/partner, and I need to think, using two-option closes, asking for commitment respectfully, and setting clean next steps. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 8 where a salesperson recaps guest priorities, presents one best-fit number option, pauses with strategic silence, handles a payment concern, uses a two-option close, and sets clean next steps if the guest does not buy today. Include guest lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
