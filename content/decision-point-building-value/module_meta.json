@@ -1,26 +1,36 @@
 {
-  "module_number": 5,
+  "module_number": 6,
   "slug": "decision-point-building-value",
   "title": "Decision Point & Building Value",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
   "objective": "Guide guests to a confident decision by clarifying what matters most, translating features into real-life outcomes, and leading a calm, trust-first Decision Point conversation before numbers.",
-  "position_in_journey": "Emotional Test Drive → Decision Point (Hood Ornament) → Numbers",
+  "position_in_journey": "Emotional Test Drive → Decision Point → Numbers",
   "estimated_time_minutes": 55,
   "prerequisites": [
     "power-greeting",
-    "uncovering-needs-and-trust",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
     "showcasing-solutions-overcoming-obstacles",
     "emotional-test-drive"
   ],
   "learning_outcomes": [
     "Recognize the Decision Point moment and guide it without pressure.",
     "Summarize the guest’s priorities in their words and confirm fit.",
-    "Translate features into outcomes (confidence, comfort, safety, simplicity).",
+    "Translate features into outcomes such as confidence, comfort, safety, simplicity, and ease.",
     "Use a simple value stack that feels factual and respectful.",
-    "Use permission-based commitment language (micro-commitments) to maintain trust.",
-    "Transition to numbers as a helpful next step—not a confrontation."
+    "Use permission-based micro-commitment language to maintain trust.",
+    "Transition to numbers as a helpful next step, not a confrontation."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -38,6 +48,13 @@
     "clarity",
     "commitment",
     "trust-first",
-    "one-price"
-  ]
+    "one-price",
+    "affordability",
+    "numbers-transition"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 6: Decision Point & Building Value. Coach salespeople on recognizing the Hood Ornament / Decision Point moment, recapping the guest’s priorities in their words, building value through outcomes and feelings, using respectful micro-commitments, isolating uncertainty, aligning partner/spouse concerns, and transitioning to numbers as a helpful service step. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 6 where a salesperson recaps the guest’s top three priorities, builds a three-sentence value stack, asks one Decision Point question, handles 'I need to think,' and transitions to numbers as a service step. Include guest lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
