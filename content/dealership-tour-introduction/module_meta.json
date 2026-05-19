@@ -1,27 +1,37 @@
 {
-  "module_number": 6,
+  "module_number": 7,
   "slug": "dealership-tour-introduction",
   "title": "Dealership Tour & Introduction",
   "brand": "SignatureHyundai",
-  "version": "1.0.0",
-  "last_updated": "2026-02-10",
-  "objective": "Use a short, purposeful dealership tour to increase comfort, credibility, and trust—introducing key people and touchpoints that reinforce how we support the guest before, during, and after the sale.",
+  "version": "1.0.1",
+  "last_updated": "2026-05-18",
+  "objective": "Use a short, purposeful dealership tour to increase comfort, credibility, and trust by introducing key people and support touchpoints that reinforce how we support the guest before, during, and after the sale.",
   "position_in_journey": "Decision Point → Dealership Tour → Numbers / Commitment",
   "estimated_time_minutes": 35,
   "prerequisites": [
     "power-greeting",
-    "uncovering-needs-and-trust",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
     "showcasing-solutions-overcoming-obstacles",
     "emotional-test-drive",
     "decision-point-building-value"
   ],
   "learning_outcomes": [
-    "Explain why we do the tour and when to do it (timing).",
-    "Deliver a 3–6 minute tour that feels helpful, not corny.",
+    "Explain why we do the tour and when to do it.",
+    "Deliver a 3–6 minute tour that feels helpful, natural, and not corny.",
     "Introduce the right people with a trust-first purpose.",
     "Use the tour to reduce anxiety and increase confidence before numbers.",
-    "Create one ‘proof of support’ moment (service + ownership).",
-    "Transition smoothly from tour to the next step."
+    "Create one proof-of-support moment through service and ownership support.",
+    "Transition smoothly from the tour to the next step."
+  ],
+  "tabs": [
+    { "id": "overview", "label": "Overview", "type": "markdown", "file": "1_overview.md" },
+    { "id": "science", "label": "Science", "type": "markdown", "file": "2_science.md" },
+    { "id": "standards", "label": "Standards", "type": "markdown", "file": "3_standards.md" },
+    { "id": "scripts", "label": "Scripts", "type": "markdown", "file": "4_scripts.md" },
+    { "id": "roleplay", "label": "Role-Play", "type": "markdown", "file": "5_roleplay.md" },
+    { "id": "worksheet", "label": "Worksheet", "type": "markdown", "file": "6_worksheet.md" },
+    { "id": "ai", "label": "AI Lab", "type": "ai" }
   ],
   "files": [
     "1_overview.md",
@@ -39,6 +49,12 @@
     "credibility",
     "service",
     "ownership",
-    "transition"
-  ]
+    "transition",
+    "support-proof"
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 7: Dealership Tour & Introduction. Coach salespeople on short purposeful dealership tours, purpose-first language, service proof moments, key introductions, guest comfort, service anxiety, rushed guests, and clean transitions back to numbers or commitment. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 7 where a salesperson asks permission for a 3-minute dealership tour, explains the purpose, creates one service proof moment, handles a rushed guest, responds to service anxiety, and transitions cleanly back to numbers. Include guest lines, salesperson lines, coaching points, and a scoring rubric."
+  }
 }
