@@ -1,26 +1,30 @@
 {
-  "module_number": 8,
+  "module_number": 9,
   "slug": "manager-closes",
   "title": "Manager Closes",
   "description": "A trust-first manager turn that protects the guest experience, resolves friction, earns a confident next step, and reinforces manager traffic control when showroom opportunities are active.",
   "brand": "SignatureHyundai",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "last_updated": "2026-05-18",
   "objective": "Use a structured, low-pressure manager close to clarify truth, resolve concerns, align next steps, and protect every showroom opportunity through manager awareness, involvement, Save-A-Deal logic, and follow-up ownership.",
-  "position_in_journey": "After Closing With Confidence → Before/During Numbers → Manager Traffic Control → Save-A-Deal if needed",
+  "position_in_journey": "After Closing With Confidence → Manager Turn → Save-A-Deal if needed",
   "estimated_time_minutes": 60,
   "prerequisites": [
+    "power-greeting",
+    "uncovering-needs-building-trust",
+    "manager-introduction-guest-support-save-a-deal-flow",
     "showcasing-solutions-overcoming-obstacles",
     "emotional-test-drive",
     "decision-point-building-value",
+    "dealership-tour-introduction",
     "closing-with-confidence"
   ],
   "learning_outcomes": [
     "Run a consistent manager turn that feels supportive, not confrontational.",
     "Diagnose whether the issue is a question, concern, objection, or misalignment.",
-    "Use 'Unshakable Facts' to create clarity without pressure.",
+    "Use Unshakable Facts to create clarity without pressure.",
     "Resolve the real issue with one clean ask and a clear next step.",
-    "Keep team choreography clean: handoff, positioning, and roles.",
+    "Keep team choreography clean through handoff, positioning, and roles.",
     "Control active showroom traffic through manager awareness, timely involvement, and deal-flow inspection.",
     "Apply Save-A-Deal logic to unsold showroom guests by identifying the real reason, next best action, owner, and follow-up time."
   ],
@@ -55,5 +59,10 @@
     "showroom-traffic",
     "manager-traffic-control",
     "follow-up-accountability"
-  ]
+  ],
+  "ai": {
+    "system": "You are a Clark Hyundai sales training coach. Focus only on Module 9: Manager Closes. Coach managers and salespeople on clean handoffs, trust-first manager turns, diagnosing questions vs concerns vs objections vs misalignment, Unshakable Facts, two-options-max simplification, one clean ask, protecting the salesperson, Save-A-Deal logic, and unsold guest follow-up ownership. Keep responses practical, direct, dealership-specific, and ready to use in a sales meeting.",
+    "model": "gemini-2.5-flash",
+    "starterPrompt": "Create a 10-minute role-play for Module 9 where a salesperson hands off to a manager cleanly, the manager diagnoses the guest issue, uses three Unshakable Facts, offers two options max, makes one clean ask, and if the guest leaves unsold, creates a Save-A-Deal follow-up plan. Include guest lines, salesperson lines, manager lines, coaching points, and a scoring rubric."
+  }
 }
