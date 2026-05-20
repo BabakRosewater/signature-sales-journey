@@ -1,19 +1,19 @@
-# 6.0 Worksheet: Manager Introduction & Save-A-Deal Planner
+# 6.0 Worksheet: Guest Experience Introduction & Save-A-Deal Planner
 
 <div class="training-hero">
   <div class="eyebrow">Action Plan</div>
-  <div class="bigIdea">Use this to inspect whether the opportunity was truly managed.</div>
+  <div class="bigIdea">Use this to inspect whether the opportunity was truly supported.</div>
   <p>This worksheet can be used during a sales meeting, desk review, or end-of-day showroom traffic review.</p>
 </div>
 
 <div class="quick-grid three">
   <div class="training-card blue">
     <span class="label-pill">Step 1</span>
-    <p>Confirm the manager was introduced early and positioned correctly.</p>
+    <p>Confirm Josh or Brock was introduced by name, purpose, and guest benefit.</p>
   </div>
   <div class="training-card green">
     <span class="label-pill">Step 2</span>
-    <p>Capture what matters most to the guest: payment, trade, timing, fit, or value.</p>
+    <p>Capture what mattered to the guest and what was checked in the background.</p>
   </div>
   <div class="training-card amber">
     <span class="label-pill">Step 3</span>
@@ -30,7 +30,7 @@ Guest name: __________________________________________
 
 Salesperson: __________________________________________
 
-Manager: _____________________________________________
+Josh / Brock involved: _________________________________
 
 Vehicle of interest: ____________________________________
 
@@ -54,25 +54,26 @@ Stage reached:
 ---
 
 <div class="training-card blue">
-  <span class="label-pill">Part B • Manager Introduction</span>
+  <span class="label-pill">Part B • Guest Experience Introduction</span>
 
-Was the manager introduced?
+Was Josh or Brock introduced?
 - Yes
 - No
 
-When was the manager introduced?
-- After early discovery
+When was the introduction made?
+- After basic discovery
 - Before vehicle presentation
 - Before demo drive
 - Before numbers
 - Before guest left
 - Not introduced
 
-How was the manager positioned?
-- Guest support
-- Affordability alignment
-- Process clarity
-- Numbers support
+How was Josh / Brock positioned?
+- Guest experience support
+- Vehicle options / availability
+- Appraisal / trade value support
+- Market research
+- Background checks
 - Unclear
 
 Salesperson introduction line:
@@ -85,20 +86,19 @@ _____________________________________________________________
 ---
 
 <div class="training-card green">
-  <span class="label-pill">Part C • Guest Support Alignment</span>
-
-What matters most to the guest?
+  <span class="label-pill">Part C • What Mattered to the Guest?</span>
 
 Check all that apply:
-- Payment comfort
-- Trade value
-- Money down
-- Interest rate
-- Lease flexibility
-- Timing
 - Vehicle fit
+- New vehicle availability
+- Incoming inventory
+- Pre-owned options
+- Trade value
+- Appraisal timing
+- Payment comfort
+- Lease / finance direction
+- Timing
 - Warranty / ownership confidence
-- Fuel economy
 - Overall value
 - Trust / confidence
 
@@ -112,17 +112,25 @@ _____________________________________________________________
 ---
 
 <div class="training-card amber">
-  <span class="label-pill">Part D • Manager Support Notes</span>
+  <span class="label-pill">Part D • Background Support Notes</span>
 
-What did the manager clarify?
+What did Josh / Brock check or clarify?
 
 _____________________________________________________________
+
+Examples:
+- incoming inventory
+- similar vehicle option
+- trade appraisal / market research
+- availability
+- vehicle fit
+- next best option
 
 What is the next best step?
 
 _____________________________________________________________
 
-Did the manager support the salesperson and keep the salesperson as the hero?
+Did Josh / Brock support the salesperson without taking over?
 - Yes
 - No
 - Needs coaching
@@ -170,14 +178,15 @@ Save-A-Deal needed?
 Showroom Save-A-Deal Review
 Guest:
 Salesperson:
-Manager:
+Josh/Brock involved:
 Vehicle:
 Stage reached:
-Manager introduced: Yes / No
+Josh/Brock introduced: Yes / No
 When introduced:
+How positioned:
+What was checked in background:
 Primary concern:
 Guest exact words:
-Manager support provided:
 Next best action:
 Follow-up owner:
 Follow-up time:
@@ -187,11 +196,12 @@ Save-A-Deal needed: Yes / No
 ---
 
 <div class="coach-check">
-  <p><strong>Manager accountability check:</strong> Can the manager answer these five questions?</p>
+  <p><strong>Accountability check:</strong> Can Josh or Brock answer these six questions?</p>
   <ol>
     <li>Who is the guest?</li>
     <li>What vehicle are they here on?</li>
-    <li>Where are they in the process?</li>
+    <li>What mattered most to them?</li>
+    <li>What did we check in the background?</li>
     <li>Why are they not moving forward today?</li>
     <li>What is the next best action?</li>
   </ol>
