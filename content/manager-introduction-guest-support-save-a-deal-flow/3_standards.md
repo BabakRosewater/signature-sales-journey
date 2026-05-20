@@ -2,22 +2,22 @@
 
 <div class="training-hero">
   <div class="eyebrow">Non-Negotiables</div>
-  <div class="bigIdea">What great looks like — every time.</div>
+  <div class="bigIdea">Name first. Purpose second. Benefit third.</div>
   <p>These standards give managers and salespeople a shared inspection point for every real showroom opportunity.</p>
 </div>
 
 <div class="quick-grid four">
   <div class="training-card blue">
-    <span class="label-pill">Timing</span>
-    <p>Introduce the manager <strong>after discovery</strong> and before pressure.</p>
+    <span class="label-pill">Name</span>
+    <p>Introduce Josh or Brock by name, not by title.</p>
   </div>
   <div class="training-card green">
-    <span class="label-pill">Positioning</span>
-    <p>The manager is <strong>guest support</strong>, not escalation.</p>
+    <span class="label-pill">Purpose</span>
+    <p>Explain how they support guest experience, vehicle options, appraisals, and market research.</p>
   </div>
   <div class="training-card amber">
-    <span class="label-pill">Alignment</span>
-    <p>Clarify payment, trade, timing, vehicle fit, and value.</p>
+    <span class="label-pill">Background Support</span>
+    <p>They can check availability, trade, market, or incoming options while the salesperson keeps working with the guest.</p>
   </div>
   <div class="training-card dark">
     <span class="label-pill">Follow-Up</span>
@@ -32,51 +32,43 @@
 <div class="quick-grid two">
   <div class="training-card">
     <span class="label-pill">Standard 1</span>
-    <p><strong>Manager introduction happens early.</strong></p>
-    <p>The best timing is after the salesperson understands the guest’s priorities and before the visit reaches pressure, numbers, or exit risk.</p>
-    <p><strong>Inspection question:</strong> Did the guest meet a manager before there was friction?</p>
+    <p><strong>Introduce the person, not the title.</strong></p>
+    <p>The guest should hear “Josh” or “Brock” before they hear any formal title.</p>
+    <p><strong>Inspection question:</strong> Did the introduction sound human and normal?</p>
   </div>
 
   <div class="training-card green">
     <span class="label-pill">Standard 2</span>
-    <p><strong>The manager is positioned as guest support.</strong></p>
-    <p>The manager is not the closer, boss, exception-approver, or takeover person.</p>
-    <p><strong>Inspection question:</strong> Did the introduction make the manager feel helpful and normal?</p>
+    <p><strong>The purpose must be useful to the guest.</strong></p>
+    <p>Position Josh or Brock around guest experience, vehicle options, appraisals, market research, and support in the background.</p>
+    <p><strong>Inspection question:</strong> Did the guest understand why meeting this person was helpful?</p>
   </div>
 
   <div class="training-card blue">
     <span class="label-pill">Standard 3</span>
-    <p><strong>The salesperson sets the expectation.</strong></p>
-    <div class="script-line">“At some point early, I’ll introduce you to one of our managers. We do that so we can make sure we are building the right plan around what matters most to you.”</div>
-    <p><strong>Inspection question:</strong> Did the salesperson prepare the guest before the manager appeared?</p>
+    <p><strong>The salesperson stays in control of the relationship.</strong></p>
+    <div class="script-line">“I’ll keep working with you, and Josh can help check anything in the background that may matter.”</div>
+    <p><strong>Inspection question:</strong> Did the introduction support the salesperson instead of replacing them?</p>
   </div>
 
   <div class="training-card">
     <span class="label-pill">Standard 4</span>
-    <p><strong>The salesperson stays the hero.</strong></p>
-    <div class="script-line">“You are in good hands with _____. I just wanted to meet you early and make sure we are focusing on the right things.”</div>
-    <p><strong>Inspection question:</strong> Did the manager strengthen the salesperson’s credibility?</p>
+    <p><strong>Josh or Brock does not take over.</strong></p>
+    <div class="script-line">“You’re in good hands with _____. I just wanted to introduce myself in case I can help check anything in the background while you’re here.”</div>
+    <p><strong>Inspection question:</strong> Did the guest feel supported without feeling handed off?</p>
   </div>
 
   <div class="training-card amber">
     <span class="label-pill">Standard 5</span>
-    <p><strong>Affordability is explored before numbers.</strong></p>
-    <p>Understand the guest’s focus before presenting structure.</p>
-    <ul>
-      <li>payment comfort</li>
-      <li>trade value</li>
-      <li>money down</li>
-      <li>timing</li>
-      <li>vehicle fit</li>
-      <li>overall value</li>
-      <li>ownership confidence</li>
-    </ul>
+    <p><strong>Keep the first introduction simple.</strong></p>
+    <p>Do not over-explain affordability, payment, trade, timing, or value during the first hello. Those details can be explored later if relevant.</p>
+    <p><strong>Inspection question:</strong> Did the intro sound like a normal hello, not a speech?</p>
   </div>
 
   <div class="training-card">
     <span class="label-pill">Standard 6</span>
-    <p><strong>Managers control showroom flow.</strong></p>
-    <p>During active traffic, managers must know who is in the showroom, what stage each guest has reached, whether the manager has been introduced, and whether the guest is moving forward or drifting.</p>
+    <p><strong>Managers control showroom flow through awareness.</strong></p>
+    <p>During active traffic, Josh and Brock should know who is in the showroom, what stage each guest has reached, and whether useful support is needed.</p>
   </div>
 
   <div class="training-card red">
@@ -97,11 +89,12 @@
 
 ## Manager inspection checklist
 <div class="coach-check">
-  <p><strong>Before an unsold guest leaves, the manager should be able to answer:</strong></p>
+  <p><strong>Before an unsold guest leaves, Josh or Brock should be able to answer:</strong></p>
   <ol>
     <li>Who is the guest?</li>
     <li>What vehicle are they here on?</li>
-    <li>Where are they in the process?</li>
+    <li>What mattered most to them?</li>
+    <li>What did we check in the background?</li>
     <li>Why are they not moving forward today?</li>
     <li>What is the next best action?</li>
   </ol>
@@ -113,14 +106,14 @@
 <div class="quick-grid three">
   <div class="training-card green">
     <span class="label-pill">Green</span>
-    <p>Manager introduced early, guest priorities clarified, next step clear.</p>
+    <p>Josh or Brock is introduced by name and purpose, guest understands the benefit, and next step is clear.</p>
   </div>
   <div class="training-card amber">
     <span class="label-pill">Yellow</span>
-    <p>Manager introduced late or guest concern is not fully clarified.</p>
+    <p>Introduction happened, but it sounded too formal, too title-based, or lacked guest benefit.</p>
   </div>
   <div class="training-card red">
     <span class="label-pill">Red</span>
-    <p>Guest leaves without manager touch, real reason, owner, or follow-up time.</p>
+    <p>Guest leaves without support awareness, real reason, owner, or follow-up time.</p>
   </div>
 </div>
